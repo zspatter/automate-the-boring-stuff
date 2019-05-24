@@ -8,3 +8,4 @@ My project solutions for [Automate the Boring Stuff with Python](https://automat
     - [The Collatz Sequence](./collatz_sequence/)
 * Chapter 4 - Lists
     - [Comma Code](./comma_code/)
+    - [Character Picture Grid](./character_picture_grid)
