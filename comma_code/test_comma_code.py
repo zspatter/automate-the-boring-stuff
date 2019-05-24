@@ -1,5 +1,6 @@
-from comma_code import comma_code
 from collections import Counter
+
+from comma_code import comma_code
 
 
 def test_comma_code():

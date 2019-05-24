@@ -1,5 +1,6 @@
 from collections import Counter
 
+
 def comma_code(collection):
     if len(collection) == 0:
         return ''
