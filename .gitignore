@@ -77,3 +77,4 @@ sandbox/*
 .mypy_cache
 .mypy_cache/*
 *.pyc
+*.coverage
