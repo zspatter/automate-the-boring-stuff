@@ -16,3 +16,5 @@ My project solutions for [Automate the Boring Stuff with Python](https://automat
 * Chapter 4 - Lists
     - [Comma Code](./comma_code/)
     - [Character Picture Grid](./character_picture_grid)
+* Chapter 5 - Dictionaries and Structuring Data
+    - [Fantasy Game Inventory](./fantasy_game_inventory)
