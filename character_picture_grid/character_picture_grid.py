@@ -2,11 +2,14 @@ def rotate_grid(grid):
     return list(zip(*grid[::-1]))
 
 
-def print_grid(grid):
-    output = ''
+def format_grid(grid):
+    formatted_grid = ''
     for row in grid:
-        output += ' '.join(row) + '\n'
-    print(output)
+        # list comprehension used to explicitly cast items to str.
+        # str() converts slice to list of chars
+        # this allows for the grid param to consist of non-str variables
+        formatted_grid += ' '.join([str(item) for item in row]) + '\n'
+    return formatted_grid
 
 
 if __name__ == '__main__':
@@ -19,4 +22,4 @@ if __name__ == '__main__':
             ['O', 'O', 'O', 'O', '.', '.'],
             ['.', 'O', 'O', '.', '.', '.'],
             ['.', '.', '.', '.', '.', '.']]
-    print_grid(rotate_grid(grid))
+    print(format_grid(rotate_grid(grid)))
