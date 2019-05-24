@@ -3,7 +3,7 @@ You are creating a fantasy video game. The data structure to model the player’
 `{rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}`
  means the player has 1 rope, 6 torches, 42 gold coins, and so on.
  
- Write a function named `display_inventory() that would take any possible “inventory” and display it like the following:
+ Write a function named `display_inventory()` that would take any possible “inventory” and display it like the following:
  ```
 Inventory:
 12 arrow
