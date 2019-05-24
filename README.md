@@ -6,3 +6,5 @@ My project solutions for [Automate the Boring Stuff with Python](https://automat
 
 * Chapter 3 - Functions
     - [The Collatz Sequence](./collatz_sequence/)
+* Chapter 4 - Lists
+    - [Comma Code](./comma_code/)
