@@ -11,10 +11,10 @@
 
 My project solutions for [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/ "Automate the Boring Stuff with Python") by Al Sweigart.
 
-* Chapter 3 - Functions
+* Chapter 3 – Functions
     - [The Collatz Sequence](./collatz_sequence/)
-* Chapter 4 - Lists
+* Chapter 4 – Lists
     - [Comma Code](./comma_code/)
     - [Character Picture Grid](./character_picture_grid)
-* Chapter 5 - Dictionaries and Structuring Data
+* Chapter 5 – Dictionaries and Structuring Data
     - [Fantasy Game Inventory](./fantasy_game_inventory)
