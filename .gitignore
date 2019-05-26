@@ -73,6 +73,7 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 .idea/httpRequests
+sandbox/
 sandbox/*
 .mypy_cache
 .mypy_cache/*
