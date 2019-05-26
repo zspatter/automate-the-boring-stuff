@@ -4,3 +4,4 @@ Chapter projects are included in each chapter starting in chapter 6. These proje
 
 * Chapter 6 – Manipulating Strings
     - [Password Locker](./password_locker/)
+    - [Adding Bullets to Wiki Markup](.bullet_point_adder/)
