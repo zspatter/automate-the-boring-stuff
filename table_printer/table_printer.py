@@ -19,9 +19,9 @@ def build_table(data):
         column_widths.append(max([len(element) for element in col]) + 1)
 
     # uses indices to shift the table (data[0] is column, not row)
-    for column in range(len(data[0])):
-        for row in range(len(data)):
-            output += '{}'.format(data[row][column].rjust(column_widths[row]))
+    for col_num, element in enumerate(data[0]):
+        for row_num, row in enumerate(data):
+            output += '{}'.format(data[row_num][col_num].rjust(column_widths[row_num]))
         output += '\n'
 
     return output
