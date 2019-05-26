@@ -1,3 +1,6 @@
+#! /usr/bin/env python3
+
+
 def rotate_grid(grid):
     return list(zip(*grid[::-1]))
 

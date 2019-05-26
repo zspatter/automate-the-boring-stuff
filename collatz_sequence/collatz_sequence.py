@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 def collatz(number: int) -> int:
     if number % 2 == 0:
         print(number // 2)
