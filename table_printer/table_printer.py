@@ -14,17 +14,14 @@ def build_table(data):
     output = ''
 
     # list comprehension adds the largest length within the nested list
-    # to the column_widths list
+    # to the column_widths list (with + 1 for buffer)
     for col in data:
-        column_widths.append(max([len(element) for element in col]))
-
-    # largest value amongst the column width + 1 is set to width
-    width = max(column_widths) + 1
+        column_widths.append(max([len(element) for element in col]) + 1)
 
     # uses indices to shift the table (data[0] is column, not row)
     for column in range(len(data[0])):
         for row in range(len(data)):
-            output += '{}'.format(data[row][column].rjust(width))
+            output += '{}'.format(data[row][column].rjust(column_widths[row]))
         output += '\n'
 
     return output
