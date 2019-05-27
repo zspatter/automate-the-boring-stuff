@@ -4,4 +4,6 @@ Chapter projects are included in each chapter starting in chapter 6. These proje
 
 * Chapter 6 – Manipulating Strings
     - [Password Locker](./password_locker/)
-    - [Adding Bullets to Wiki Markup](.bullet_point_adder/)
+    - [Adding Bullets to Wiki Markup](./bullet_point_adder/)
+* Chapter 7 – Pattern Matching with Regular Expressions
+    - [Phone Number and Email Address Extractor](./phone_email_extractor/)
