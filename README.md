@@ -20,5 +20,7 @@ My project solutions for [Automate the Boring Stuff with Python](https://automat
     - [Fantasy Game Inventory](./fantasy_game_inventory)
 * Chapter 6 - Manipulating Strings
     - [Table Printer](./table_printer/)
+* Chapter 7 – Pattern Matching with Regular Expressions
+    - [Strong Password Detector](strong_password_detector)
     
 The Automate the Boring Stuff text includes project examples/demonstrations. My implementations to these guided projects can be found [here](./chapter_projects). 
