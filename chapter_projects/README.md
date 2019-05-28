@@ -9,3 +9,4 @@ Chapter projects are included in each chapter starting in chapter 6. These proje
     - [Phone Number and Email Address Extractor](./phone_email_extractor/)
 * Chapter 8 – Reading and Writing Files
     - [Generating Random Quiz Files](./quiz_generator/)
+    - [Multiclipboard](./multiclipboard/)
