@@ -11,6 +11,7 @@ shelf.clear()
 assert len(shelf) == 0
 
 
+@pytest.mark.first
 @pytest.mark.skipif(sys.platform == 'linux',
                     reason="Pyperclip requires a copy/paste mechanism. "
                            "Cannot get any of these mechanisms to function "
