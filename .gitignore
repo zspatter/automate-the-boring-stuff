@@ -79,3 +79,4 @@ sandbox/*
 .mypy_cache/*
 *.pyc
 *.coverage
+/chapter_projects/quiz_generator/*.txt
