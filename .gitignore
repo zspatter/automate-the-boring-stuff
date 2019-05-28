@@ -80,3 +80,7 @@ sandbox/*
 *.pyc
 *.coverage
 /chapter_projects/quiz_generator/*.txt
+/chapter_projects/multiclipboard/mcb.bak
+/chapter_projects/multiclipboard/mcb.dat
+/chapter_projects/multiclipboard/mcb.dir
+/chapter_projects/multiclipboard/mcb.db
