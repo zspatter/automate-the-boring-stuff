@@ -23,5 +23,7 @@ My project solutions for [Automate the Boring Stuff with Python](https://automat
 * Chapter 7 – Pattern Matching with Regular Expressions
     - [Strong Password Detector](./strong_password_detector/)
     - [Regex Version of Strip](./regex_strip/)
+* Chapter 8 – Reading and Writing Files
+	- [Extending the Multi-clipboard](./multiclipboard/)
     
 The Automate the Boring Stuff text includes project examples/demonstrations. My implementations to these guided projects can be found [here](./chapter_projects). 
