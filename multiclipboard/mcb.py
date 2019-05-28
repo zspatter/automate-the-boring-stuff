@@ -1,10 +1,10 @@
 #! /usr/bin/env python3
-# mcb.pyw - Saves and loads pieces of text to the clipboard
-# Usage: mcb.pyw save <keyword> - Saves clipboard to keyword
-#        mcb.pyw <keyword> - Loads keyword to clipboard
-#        mcb.pyw list - Loads all keywords to clipboard
-#        mcb.pyw delete <keyword> - Deletes entry associated with keyword
-#        mcb.pyw delete - Deletes all saved entries
+# mcb.py - Saves and loads pieces of text to the clipboard
+# Usage: mcb.py save <keyword> - Saves clipboard to keyword
+#        mcb.py <keyword> - Loads keyword to clipboard
+#        mcb.py list - Loads all keywords to clipboard
+#        mcb.py delete <keyword> - Deletes entry associated with keyword
+#        mcb.py delete - Deletes all saved entries
 import shelve
 import sys
 
