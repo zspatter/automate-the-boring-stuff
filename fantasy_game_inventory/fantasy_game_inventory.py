@@ -1,12 +1,12 @@
 def display_inventory(inventory):
-    ouput = 'Inventory:\n'
+    output = 'Inventory:\n'
     total_items = 0
 
     for k, v in inventory.items():
-        ouput += '{} {}\n'.format(v, k)
+        output += '{} {}\n'.format(v, k)
         total_items += int(v)
 
-    return ouput + '\nTotal number of items: {}\n'.format(total_items)
+    return output + '\nTotal number of items: {}\n'.format(total_items)
 
 
 def add_to_inventory(inventory, items):
