@@ -84,3 +84,4 @@ sandbox/*
 *.dat
 *.dir
 *.db
+mad_libs/*.txt
