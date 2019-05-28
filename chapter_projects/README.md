@@ -7,3 +7,5 @@ Chapter projects are included in each chapter starting in chapter 6. These proje
     - [Adding Bullets to Wiki Markup](./bullet_point_adder/)
 * Chapter 7 – Pattern Matching with Regular Expressions
     - [Phone Number and Email Address Extractor](./phone_email_extractor/)
+* Chapter 8 – Reading and Writing Files
+    - [Generating Random Quiz Files](./quiz_generator/)
