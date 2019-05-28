@@ -80,6 +80,7 @@ for x in range(35):
         # creates 4 possible choices
         for i in range(4):
             quiz.write(f'\t{"ABCD"[i]}.\t{answer_options[i]}\n')
+        quiz.write('\n')
 
         answer_key.write(f'{Q + 1}.\t{"ABCD"[answer_options.index(correct_answer)]}\n')
 
