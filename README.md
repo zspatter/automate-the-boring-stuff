@@ -27,5 +27,7 @@ My project solutions for [Automate the Boring Stuff with Python](https://automat
 	- [Extending the Multi-clipboard](./multiclipboard/)
 	- [Mad Libs](./mad_libs/)
 	- [Regex Search](./regex_search/)
+* Chapter 9 – Organizing Files
+    - [Selective Copy](./selective_copy/)	
     
 The Automate the Boring Stuff text includes project examples/demonstrations. My implementations to these guided projects can be found [here](./chapter_projects). 
