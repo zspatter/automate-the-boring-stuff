@@ -5,16 +5,17 @@ regex = re.compile(r'ADJECTIVE|NOUN|ADVERB|VERB')
 
 def mad_libs(source, destination):
     with open(source, 'r') as source, open(destination, 'w') as out:
-        output = source.read()
+        text = source.read()
 
-        for match in regex.findall(output):
-            replacement = input(f'Enter a{"n" if match.startswith("A") else ""}'
-                                f' {match.lower()}: ')
-            output = output.replace(match, replacement)
+        if regex.findall(text):
+            for match in regex.findall(text):
+                replacement = input(f'Enter a{"n" if match.startswith("A") else ""}'
+                                    f' {match.lower()}: ')
+                text = text.replace(match, replacement)
 
-        out.write(output)
-        print('\n' + output)
+            out.write(text)
+            print('\n' + text)
 
 
 if __name__ == "__main__":
-    mad_libs('sample_files/input.txt', 'sample_files/output.txt')
+    mad_libs('./sample_files/input.txt', './sample_files/output.txt')
