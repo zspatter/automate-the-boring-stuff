@@ -12,3 +12,4 @@ Chapter projects are included in each chapter starting in chapter 6. These proje
     - [Multi-clipboard](./multiclipboard/)
 * Chapter 9 – Organizing Files
     - [Date Converter](./date_converter/)
+    - [Archive Directory](./archive_directory/)
