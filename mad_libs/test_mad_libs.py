@@ -8,8 +8,10 @@ def test_mad_libs(capsys):
         return input_values.pop(0)
 
     mad_libs.input = mock_input
-    mad_libs.mad_libs('./mad_libs/sample_files/input.txt', './mad_libs/sample_files/output.txt')
+    mad_libs.mad_libs('./mad_libs/sample_files/input.txt',
+                      './mad_libs/sample_files/output.txt')
 
     with open('./mad_libs/sample_files/output.txt') as out:
         result = out.read()
-        assert result == 'The silly panda walked to the chandelier and then screamed. A nearby chandelier was unaffected by these events.\n'
+        assert result == 'The silly panda walked to the chandelier and then screamed.' \
+                         ' A nearby chandelier was unaffected by these events.\n'
