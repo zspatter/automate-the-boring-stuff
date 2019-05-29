@@ -10,3 +10,5 @@ Chapter projects are included in each chapter starting in chapter 6. These proje
 * Chapter 8 – Reading and Writing Files
     - [Generating Random Quiz Files](./quiz_generator/)
     - [Multi-clipboard](./multiclipboard/)
+* Chapter 9 – Organizing Files
+    - [Date Converter](./date_converter/)
