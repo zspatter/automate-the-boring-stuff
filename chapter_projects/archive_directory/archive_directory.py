@@ -17,11 +17,24 @@ def archive_directory(directory):
     # gathers absolute path and determines length of path to parent directory
     directory = os.path.abspath(directory)
     path_length = len(os.path.dirname(directory))
-    file = os.path.basename(directory) + '.zip'
+    filename = os.path.basename(directory) + '.zip'
+
+    # if filename already exists, increment the filename
+    if os.path.exists(filename):
+        increment = 1
+        basename = os.path.basename(directory)
+
+        while True:
+            check_name = basename + '_' + str(increment) + '.zip'
+            if not os.path.exists(check_name):
+                break
+            increment += 1
+
+        filename = check_name
 
     # creates a .zip with the same name as the directory
-    print(f'Creating {file}\n')
-    archive = zipfile.ZipFile(file, 'w')
+    print(f'Creating {filename}\n')
+    archive = zipfile.ZipFile(filename, 'w')
 
     # walks entire tree
     for dir_name, _, files in os.walk(directory):
@@ -30,6 +43,11 @@ def archive_directory(directory):
 
         # add all the files in this directory to the zip (truncates absolute path)
         for file in files:
+            # excludes previous zips of same directory from archive
+            if file.startswith(os.path.basename(directory)):
+                continue
+
+            # writes contents to .zip
             filepath = os.path.join(dir_name, file)
             archive.write(filepath, filepath[path_length:])
 
