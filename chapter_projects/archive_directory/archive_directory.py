@@ -37,7 +37,7 @@ def archive_directory(directory):
     archive = zipfile.ZipFile(filename, 'w')
 
     # walks entire tree
-    for root, _, files in os.walk(directory):
+    for _, _, files in os.walk(directory):
         # add current directory to zip
         print(f'Adding files in {dir_name}\n')
 
