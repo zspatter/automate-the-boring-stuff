@@ -37,9 +37,9 @@ def archive_directory(directory):
     archive = zipfile.ZipFile(filename, 'w')
 
     # walks entire tree
-    for _, _, files in os.walk(directory):
+    for root, _, files in os.walk(directory):
         # add current directory to zip
-        print(f'Adding files in {dir_name}\n')
+        print(f'Adding files in {root}\n')
 
         # add all the files in this directory to the zip (truncates absolute path)
         for file in files:
@@ -48,7 +48,7 @@ def archive_directory(directory):
                 continue
 
             # writes contents to .zip
-            filepath = os.path.join(dir_name, file)
+            filepath = os.path.join(root, file)
             archive.write(filepath, filepath[path_length:])
 
     archive.close()
