@@ -28,6 +28,7 @@ My project solutions for [Automate the Boring Stuff with Python](https://automat
 	- [Mad Libs](./mad_libs/)
 	- [Regex Search](./regex_search/)
 * Chapter 9 – Organizing Files
-    - [Selective Copy](./selective_copy/)	
+    - [Selective Copy](./selective_copy/)
+    - [Find Files by Size](./find_files_by_size/)	
     
 The Automate the Boring Stuff text includes project examples/demonstrations. My implementations to these guided projects can be found [here](./chapter_projects). 
