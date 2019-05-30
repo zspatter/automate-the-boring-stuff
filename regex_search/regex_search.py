@@ -10,13 +10,13 @@ def regex_search(regex, path):
     regex = re.compile(regex)
     matches = ''
 
-    for file in os.listdir(path=path):
-        if file.endswith('.txt'):
-            with open(path + file) as document:
-                for line in document:
-                    match_object = regex.search(line)
-                    if match_object:
-                        matches += line
+    generator = (file for file in os.listdir(path=path) if file.endswith('.txt'))
+    for file in generator:
+        with open(path + file) as document:
+            for line in document:
+                match_object = regex.search(line)
+                if match_object:
+                    matches += line
 
     return matches
 
