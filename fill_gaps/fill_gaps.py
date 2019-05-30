@@ -51,7 +51,7 @@ if __name__ == '__main__':
     if os.path.exists(path):
         shutil.rmtree(path)
 
-    os.mkdir(path)
+    os.makedirs(path)
 
     # creates files with only odd numbers spam00<x>.txt
     for x in range(1, 10, 2):
