@@ -30,8 +30,8 @@ def find_large_files(path, threshold):
 def get_dir_size(path):
     """
     Get's the cumulative size of a directory and all of it's contents
-    
-    :param str path: absolute path to directory 
+
+    :param str path: absolute path to directory
     :return: int cumulative size of directroy
     """
     size = 0
