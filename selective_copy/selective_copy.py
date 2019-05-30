@@ -29,7 +29,6 @@ def selective_copy(source, destination_path, extension):
 
                 # if file of this name exists in destination
                 if os.path.exists(os.path.join(destination_path, filename)):
-                    base, _ = os.path.splitext(filename)
                     regex = re.compile(f'(.*)(_\d+)?({extension})')
 
                     increment = 1
