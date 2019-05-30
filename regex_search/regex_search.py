@@ -13,10 +13,9 @@ def regex_search(regex, path):
     generator = (file for file in os.listdir(path=path) if file.endswith('.txt'))
     for file in generator:
         with open(path + file) as document:
-            for line in document:
-                match_object = regex.search(line)
-                if match_object:
-                    matches += line
+            match_gen = (line for line in document if regex.search(line))
+            for line in match_gen:
+                matches += line
 
     return matches
 
