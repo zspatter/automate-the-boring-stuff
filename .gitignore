@@ -74,9 +74,7 @@ crashlytics-build.properties
 fabric.properties
 .idea/httpRequests
 sandbox/
-sandbox/*
 .mypy_cache
-.mypy_cache/*
 *.pyc
 *.coverage
 /chapter_projects/quiz_generator/*.txt
@@ -84,7 +82,6 @@ sandbox/*
 *.dat
 *.dir
 *.db
-mad_libs/sample_files/*.txt
+mad_libs/sample_files/
 selective_copy/matches/*
 selective_copy/test_result/
-selective_copy/test_result/*
