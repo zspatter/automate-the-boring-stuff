@@ -29,6 +29,7 @@ My project solutions for [Automate the Boring Stuff with Python](https://automat
 	- [Regex Search](./regex_search/)
 * Chapter 9 – Organizing Files
     - [Selective Copy](./selective_copy/)
-    - [Find Files by Size](./find_files_by_size/)	
+    - [Find Files by Size](./find_files_by_size/)
+    - [Fill in the Gaps](./fill_gaps/)
     
 The Automate the Boring Stuff text includes project examples/demonstrations. My implementations to these guided projects can be found [here](./chapter_projects). 
