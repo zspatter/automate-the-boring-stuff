@@ -85,5 +85,6 @@ sandbox/*
 *.dir
 *.db
 mad_libs/*.txt
+selective_copy/matches/*
 selective_copy/test_result/
 selective_copy/test_result/*

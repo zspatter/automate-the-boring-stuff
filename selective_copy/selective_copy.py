@@ -2,6 +2,7 @@
 
 import os
 import shutil
+import re
 
 
 def selective_copy(source, destination_path, extension):
@@ -29,12 +30,18 @@ def selective_copy(source, destination_path, extension):
                 # if file of this name exists in destination
                 if os.path.exists(os.path.join(destination_path, filename)):
                     base, _ = os.path.splitext(filename)
+                    regex = re.compile(f'(.*)(_\d+)?({extension})')
+
                     increment = 1
-                    check_name = os.path.join(directory, base + '_' + str(increment) + extension)
+                    check_name = os.path.join(directory,
+                                              f'{regex.search(filename).group(1)}'
+                                              f'_{increment}{extension}')
 
                     # increment filename until name is unique
                     while os.path.exists(check_name):
-                        check_name = os.path.join(directory, base + '_' + str(increment) + extension)
+                        check_name = os.path.join(directory,
+                                                  f'{regex.search(filename).group(1)}'
+                                                  f'_{increment}{extension}')
                         increment += 1
 
                     destination_path = check_name
