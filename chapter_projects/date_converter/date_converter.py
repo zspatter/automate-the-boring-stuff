@@ -42,7 +42,8 @@ def convert_dates(path):
             new_name = os.path.join(abs_path, new_name)
 
             # renames applicable files
-            print(f'Renaming {filename} to {new_name}\n')
+            print(f'Renaming {os.path.basename(filename)} '
+                  f'to {os.path.basename(new_name)}\n')
             shutil.move(filename, new_name)
 
 
