@@ -4,6 +4,37 @@ import shutil
 
 from fill_gaps import fill_gaps
 
+expected_sequence = ('spam001.txt',
+                     'spam002.txt',
+                     'spam003.txt',
+                     'spam004.txt',
+                     'spam005.txt',
+                     'spam006.txt',
+                     'spam007.txt',
+                     'spam008.txt',
+                     'spam009.txt',
+                     'spam010.txt')
+expected_gaps = ('spam001.txt',
+                 'spam003.txt',
+                 'spam005.txt',
+                 'spam007.txt',
+                 'spam009.txt',
+                 'spam011.txt',
+                 'spam013.txt',
+                 'spam015.txt',
+                 'spam017.txt',
+                 'spam019.txt')
+expected_gap = ('spam001.txt',
+                'spam002.txt',
+                'spam003.txt',
+                'spam004.txt',
+                'spam008.txt',
+                'spam009.txt',
+                'spam010.txt',
+                'spam011.txt',
+                'spam012.txt',
+                'spam013.txt')
+
 
 def test_get_matching_files():
     expected_matches = ('__init__.py',
@@ -25,25 +56,14 @@ def test_get_matching_files():
 
 
 def test_fill_sequence_gap():
-    expected_gaps = ('spam001.txt',
-                     'spam003.txt',
-                     'spam005.txt',
-                     'spam007.txt',
-                     'spam009.txt')
-    expected_sequence = ('spam001.txt',
-                         'spam002.txt',
-                         'spam003.txt',
-                         'spam004.txt',
-                         'spam005.txt')
-
     # dir at path created
     root = os.path.abspath(os.path.join('.', 'fill_gaps', 'test_files'))
     os.makedirs(root)
 
     # creates files with only odd numbers spam00<x>.txt
-    for x in range(1, 10, 2):
-        with open(os.path.join(root, f'spam00{x}.txt'), 'w') as spam:
-            spam.write(f'spam00{x}')
+    for x in range(1, 20, 2):
+        with open(os.path.join(root, f'spam{x:03d}.txt'), 'w') as spam:
+            spam.write(f'spam{x:03d}')
 
     # files created prior to filling gaps
     gap_files = os.listdir(root)
@@ -67,33 +87,14 @@ def test_fill_sequence_gap():
 
 
 def test_insert_gap():
-    expected_sequence = ('spam001.txt',
-                         'spam002.txt',
-                         'spam003.txt',
-                         'spam004.txt',
-                         'spam005.txt',
-                         'spam006.txt',
-                         'spam007.txt',
-                         'spam008.txt',
-                         'spam009.txt')
-    expected_gap = ('spam001.txt',
-                    'spam002.txt',
-                    'spam003.txt',
-                    'spam004.txt',
-                    'spam008.txt',
-                    'spam009.txt',
-                    'spam010.txt',
-                    'spam011.txt',
-                    'spam012.txt')
-
     # dir at path created
     root = os.path.abspath(os.path.join('.', 'fill_gaps', 'test_files'))
     os.makedirs(root)
 
     # creates files with sequential numbers spam00<x>.txt
-    for x in range(1, 10):
-        with open(os.path.join(root, f'spam00{x}.txt'), 'w') as spam:
-            spam.write(f'spam00{x}')
+    for x in range(1, 11):
+        with open(os.path.join(root, f'spam{x:03d}.txt'), 'w') as spam:
+            spam.write(f'spam{x:03d}')
 
     # results prior to inserting gap
     sequential_files = os.listdir(root)
