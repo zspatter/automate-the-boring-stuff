@@ -50,7 +50,7 @@ def test_fill_sequence_gaps():
         assert gap_file in expected_gaps
 
     # results after filling gaps
-    fill_gaps.fill_sequence_gaps(path, 'spam', '.txt')
+    fill_gaps.fill_sequence_gap(path, 'spam', '.txt')
     fill_files = os.listdir(path)
     regex = re.compile(r'(^spam)(\d+)(.*)?(\.txt$)')
 
