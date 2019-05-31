@@ -60,7 +60,7 @@ def test_fill_sequence_gap():
         assert fill_file in expected_sequence
         with open(os.path.join(root, fill_file), 'r') as reader:
             file_num = int(regex.search(fill_file).group(2))
-            assert reader.read() == f'spam00{(file_num * 2) - 1}'
+            assert reader.read() == f'spam{(file_num * 2) - 1:03d}'
 
     # removes dir and it's contents (to ensure consistent test results)
     shutil.rmtree(root)
