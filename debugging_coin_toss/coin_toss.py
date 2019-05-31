@@ -27,8 +27,8 @@ def coin_toss():
     """
     guess = get_input()
     toss = random.choice(('heads', 'tails'))
-    logging.debug(f'guess = {guess}')
-    logging.debug(f'toss = {toss}')
+    logging.debug(f'guess = \'{guess}\'')
+    logging.debug(f'toss = \'{toss}\'')
 
     if toss == guess:
         print('You got it!')
