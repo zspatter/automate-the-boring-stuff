@@ -95,6 +95,7 @@ def insert_gap(root, prefix, extension, start, stop=None):
     regex = re.compile(f'(^{prefix})(\\d+)(.*)?(\\.{extension}$)')
     matches = get_matching_files(root, regex)
 
+    # numbering sequence details
     max_length = len(regex.search(matches[-1]).group(2))
     start_index = int(regex.search(matches[0]).group(2))
     stop_index = int(regex.search(matches[-1]).group(2))
@@ -103,15 +104,20 @@ def insert_gap(root, prefix, extension, start, stop=None):
         stop = start + 1
 
     if start_index <= start <= stop_index:
+        # splices matches to start at index where gap starts
+        # reverses matches to ensure filenames aren't overwritten
         for match in matches[start - start_index:][::-1]:
             match_object = regex.search(match)
             new_number = int(match_object.group(2)) + stop - start
+
+            # builds new filename
             filename = f'{prefix}' \
                 f'{"0" * (max_length - len(str(new_number)))}' \
                 f'{new_number}' \
                 f'{match_object.group(3)}' \
                 f'{match_object.group(4)}'
 
+            # rename file
             shutil.move(os.path.join(root, match),
                         os.path.join(root, filename))
             print(f'Renaming {match} to {filename}')
