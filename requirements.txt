@@ -1,3 +1,4 @@
 pytest
+pytest-repeat
 pyperclip
 send2trash
