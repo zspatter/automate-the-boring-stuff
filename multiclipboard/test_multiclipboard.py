@@ -6,7 +6,7 @@ import pytest
 
 from multiclipboard import mcb
 
-shelf = shelve.open('test')
+shelf = shelve.open('multiclipboard/test')
 shelf.clear()
 assert len(shelf) == 0
 
