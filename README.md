@@ -31,5 +31,7 @@ My project solutions for [Automate the Boring Stuff with Python](https://automat
     - [Selective Copy](./selective_copy/)
     - [Find Files by Size](./find_files_by_size/)
     - [Fill in the Gaps](./fill_gaps/)
+* Chapter 10 – Debugging
+    - [Debugging Coin Toss](./debugging_coin_toss/)
     
 The Automate the Boring Stuff text includes project examples/demonstrations. My implementations to these guided projects can be found [here](./chapter_projects). 
