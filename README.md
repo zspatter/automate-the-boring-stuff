@@ -36,5 +36,13 @@ This contains my project solutions for [Automate the Boring Stuff with Python](h
     - [Fill in the Gaps](./fill_gaps/)
 * Chapter 10 – Debugging
     - [Debugging Coin Toss](./debugging_coin_toss/)
+* Chapter 11 – Web Scraping
+* Chapter 12 – Working with Excel Spreadsheets
+* Chapter 13 – Working with PDF and Word Documents
+* Chapter 14 – Working with CSV Files and JSON Data
+* Chapter 15 – Keeping Time, Scheduling Tasks, and Launching Programs
+* Chapter 16 – Sending Email and Text Messages
+* Chapter 17 – Manipulating Images
+* Chapter 18 – Controlling the Keyboard and Mouse with GUI Automation
     
 The Automate the Boring Stuff text includes project examples/demonstrations. My implementations to these guided projects can be found [here](./chapter_projects). 

@@ -20,4 +20,11 @@ Chapter projects are included in each chapter starting in chapter 6. These proje
     - [Date Converter](./date_converter/)
     - [Archive Directory](./archive_directory/)
 * Chapter 10 – Debugging
-
+* Chapter 11 – Web Scraping
+* Chapter 12 – Working with Excel Spreadsheets
+* Chapter 13 – Working with PDF and Word Documents
+* Chapter 14 – Working with CSV Files and JSON Data
+* Chapter 15 – Keeping Time, Scheduling Tasks, and Launching Programs
+* Chapter 16 – Sending Email and Text Messages
+* Chapter 17 – Manipulating Images
+* Chapter 18 – Controlling the Keyboard and Mouse with GUI Automation
