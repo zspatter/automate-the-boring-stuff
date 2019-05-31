@@ -64,6 +64,8 @@ def fill_sequence_gap(root, prefix, extension):
         # increment expected count
         expected_num += 1
 
+    print('Done\n')
+
 
 def insert_gap(root, prefix, extension, start, stop=None):
     """
@@ -122,6 +124,8 @@ def insert_gap(root, prefix, extension, start, stop=None):
                         os.path.join(root, filename))
             print(f'Renaming {match} to {filename}')
 
+        print('Done\n')
+
 
 if __name__ == '__main__':
     path = os.path.abspath('./demo_files/')
@@ -136,5 +140,4 @@ if __name__ == '__main__':
             spam.write(f'spam{x:03}')
 
     fill_sequence_gap(path, 'spam', '.txt')
-    print()
     insert_gap(path, 'spam', '.txt', 5, 10)
