@@ -1,0 +1,17 @@
+ 2019-05-31 13:55:37.544 - DEBUG - <<module>>: start of script
+ 2019-05-31 13:56:15.012 - DEBUG - <<module>>: start of script
+ 2019-05-31 13:56:21.871 - DEBUG - <get_input>: invalid input of: 'guess'
+ 2019-05-31 13:56:24.135 - DEBUG - <get_input>: invalid input of: 'invalid input'
+ 2019-05-31 13:56:24.847 - DEBUG - <get_input>: invalid input of: 'demo'
+ 2019-05-31 13:56:25.374 - DEBUG - <get_input>: invalid input of: '1'
+ 2019-05-31 13:56:26.135 - DEBUG - <get_input>: invalid input of: '0'
+ 2019-05-31 13:56:27.053 - DEBUG - <get_input>: invalid input of: 'tail'
+ 2019-05-31 13:56:27.906 - DEBUG - <get_input>: invalid input of: 'head'
+ 2019-05-31 13:56:29.333 - DEBUG - <get_input>: invalid input of: 'headss'
+ 2019-05-31 13:56:30.591 - DEBUG - <get_input>: valid input of:   'heads'
+ 2019-05-31 13:56:30.591 - DEBUG - <coin_toss>: guess = heads
+ 2019-05-31 13:56:30.591 - DEBUG - <coin_toss>: toss = tails
+ 2019-05-31 13:56:39.830 - DEBUG - <get_input>: invalid input of: 'wrong guess'
+ 2019-05-31 13:56:42.879 - DEBUG - <get_input>: valid input of:   'tails'
+ 2019-05-31 13:56:42.880 - DEBUG - <coin_toss>: toss == guess = 'tails'
+ 2019-05-31 13:56:42.880 - DEBUG - <<module>>: end of script
