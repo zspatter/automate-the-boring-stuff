@@ -12,6 +12,7 @@ This means your code will need to do the following:
 ## Sample Arguments and Output
 <p align=center>
   <img src=./sample_arguments.png alt=sample command line arguments>
+  <br>
   <img src=./sample_output.png alt=sample console output>
 </p>
 
