@@ -2,6 +2,11 @@
 
 This simple script scans the contents of the clipboard for entries that match either the phone number or email regex patterns. If there are any matches found, they are converted to a standard format and pasted to the clipboard.
 
+## Sample Output
+<p align=center>
+  <img src=./sample_output.png alt=sample console output>
+</p>
+
 ## Similar Uses
 * Find website URLs that begin with http:// or https://
 * Clean up dates in different date formats (such as 3/14/2015, 03-14-2015, and 2015/3/14) by replacing them with dates in a single, standard format

@@ -15,3 +15,8 @@ Your `build_table()` function would generate the following:
 cherries Carol moose
   banana David goose
 ```
+
+## Sample Output
+<p align=center>
+  <img src=./sample_output.png alt=sample console output>
+</p>

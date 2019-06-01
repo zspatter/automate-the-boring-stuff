@@ -20,3 +20,8 @@ else:
 ```
 
 This is just a simple debugging exercise. I chose to add some logging to the script which indicates where control currently is as well as variable values.
+
+## Sample Output
+<p align=center>
+  <img src=./sample_output.png alt=sample console output>
+</p>

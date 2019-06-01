@@ -28,3 +28,7 @@ A nearby pickup truck was unaffected by these events.
 
 The results should be printed to the screen and saved to a new text file.
 
+## Sample Output
+<p align=center>
+  <img src=./sample_output.png alt=sample console output>
+</p>

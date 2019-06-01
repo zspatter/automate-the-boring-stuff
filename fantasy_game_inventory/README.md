@@ -32,3 +32,8 @@ Inventory:
 
 Total number of items: 48
 ```
+
+## Sample Output
+<p align=center>
+  <img src=./sample_output.png alt=sample console output>
+</p>

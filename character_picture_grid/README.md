@@ -22,3 +22,8 @@ Copy the previous grid value, and write code that uses it to print the image.
 ...OOO...
 ....O....
 ```
+
+## Sample Output
+<p align=center>
+  <img src=./sample_output.png alt=sample console output>
+</p>
