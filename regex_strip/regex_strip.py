@@ -11,5 +11,5 @@ def regex_strip(text, remove=None):
 
 
 if __name__ == "__main__":
-    print(regex_strip(text='     test     '))
-    print(regex_strip(text='123home123', remove='123'))
+    print(f"'     test     ' \t->\t '{regex_strip(text='     test     ')}'")
+    print(f"'123home123' \t\t->\t '{regex_strip(text='123home123', remove='123')}'")
