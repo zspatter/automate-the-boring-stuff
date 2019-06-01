@@ -11,8 +11,8 @@ This means your code will need to do the following:
 
 ## Sample Arguments and Output
 <p align=center>
-  <img src=./sample_arguments.png hspace="20" alt=sample command line arguments>
-  <img src=./sample_output.png hspace="20" alt=sample console output>
+  <img src=./sample_arguments.png alt=sample command line arguments>
+  <img src=./sample_output.png alt=sample console output>
 </p>
 
 ## Ideas for Similar Programs
