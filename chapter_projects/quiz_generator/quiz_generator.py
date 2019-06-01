@@ -59,8 +59,8 @@ capitals = {'Alabama':        'Montgomery',
 
 # generates 35 quiz/answer key files (can be altered to any number)
 for x in range(35):
-    quiz = open(f'captals_quiz{x + 1}.txt', 'w')
-    answer_key = open(f'capitals_quiz_answers{x + 1}.txt', 'w')
+    quiz = open(f'quizzes/capitals_quiz{x + 1}.txt', 'w')
+    answer_key = open(f'quizzes/capitals_quiz_answers{x + 1}.txt', 'w')
     quiz.write('Name:\n\nDate:\n\nPeriod\n\n')
     quiz.write((' ' * 20) + f'State Capitals Quiz (Form {x + 1})\n\n')
 
