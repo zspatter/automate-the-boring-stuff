@@ -14,4 +14,4 @@ def test_mad_libs(capsys):
     with open('./mad_libs/sample_files/output.txt') as out:
         result = out.read()
         assert result == 'The silly panda walked to the chandelier and then screamed.' \
-                         ' A nearby chandelier was unaffected by these events.\n'
+                         ' A nearby pickup truck was unaffected by these events.\n'
