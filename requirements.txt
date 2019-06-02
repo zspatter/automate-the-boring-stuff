@@ -3,3 +3,4 @@ pytest-repeat
 pyperclip
 send2trash
 requests
+beautifulsoup4
