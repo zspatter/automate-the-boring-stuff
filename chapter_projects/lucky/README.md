@@ -11,11 +11,11 @@ This is what the program does:
   <img src=./sample_arguments.png alt=sample command line arguments>
 </p>
 This opens the following links in new tabs:
-* [https://djangostars.com/blog/list-comprehensions-and-generator-expressions/]
-* [https://www.python.org/dev/peps/pep-0289/]
-* [https://dbader.org/blog/python-generator-expressions]
-* [https://www.freecodecamp.org/news/python-list-comprehensions-vs-generator-expressions-cef70ccb49db/]
-* [https://www.geeksforgeeks.org/generator-expressions/]
+* <https://djangostars.com/blog/list-comprehensions-and-generator-expressions/>
+* <https://www.python.org/dev/peps/pep-0289/>
+* <https://dbader.org/blog/python-generator-expressions>
+* <https://www.freecodecamp.org/news/python-list-comprehensions-vs-generator-expressions-cef70ccb49db/>
+* <https://www.geeksforgeeks.org/generator-expressions/>
 
 ## Ideas for Similar Programs
 * Open all the product pages after searching a shopping site such as Amazon
