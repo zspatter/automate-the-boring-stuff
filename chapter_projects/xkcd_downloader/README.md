@@ -1,6 +1,6 @@
 # XKCD Comic Downloader
 
-XKCD is a popular geek webcomic.
+XKCD is a popular geek webcomic. This is a simple script that downloads the available comics hosted on [XKCD.com](https://xkcd.com).
 
 Here's what the program does:
 - Loads the XKCD home page
