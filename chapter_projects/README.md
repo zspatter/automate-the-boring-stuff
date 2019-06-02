@@ -22,6 +22,7 @@ Chapter projects are included in each chapter starting in chapter 6. These proje
 * Chapter 10 – Debugging
 * Chapter 11 – Web Scraping
     - [Map It](./map_it/)
+    - [“I’m Feeling Lucky” Google Search](./lucky/)
 * Chapter 12 – Working with Excel Spreadsheets
 * Chapter 13 – Working with PDF and Word Documents
 * Chapter 14 – Working with CSV Files and JSON Data
