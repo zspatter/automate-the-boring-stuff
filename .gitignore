@@ -87,3 +87,4 @@ mad_libs/sample_files/output.txt
 selective_copy/matches/*
 selective_copy/test_result/
 chapter_projects/quiz_generator/quizzes/
+chapter_projects/xkcd_downloader/xkcd_comics/
