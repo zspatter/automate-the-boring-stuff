@@ -15,3 +15,7 @@ This project is a good example of a program that can automatically follow links 
   <img src=./sample_output.png alt=sample console output>
 </p>
 
+## Ideas for Similar Programs
+* Back up an entire site by following all of its links
+* Copy all the messages off a web forum
+* Duplicate the catalog of items for sale on an online store
