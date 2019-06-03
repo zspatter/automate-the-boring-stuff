@@ -44,18 +44,18 @@ def emailer(sender, password, recipient, subject, message):
         # recipient
         to_elem = browser.find_element_by_name('to')
         to_elem.send_keys(recipient)
-        time.sleep(1)
+        time.sleep(.5)
 
         # subject
         subject_elem = browser.find_element_by_name('subjectbox')
         subject_elem.send_keys(subject)
-        time.sleep(1)
+        time.sleep(.5)
 
         # Message
         subject_elem.send_keys(Keys.TAB, message)
-        time.sleep(1)
+        time.sleep(.5)
         subject_elem.send_keys(Keys.TAB, Keys.TAB, Keys.ENTER)
-        time.sleep(2)
+        time.sleep(1)
         browser.quit()
 
 
