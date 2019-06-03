@@ -6,23 +6,32 @@ import bs4
 import requests
 
 
-def downloader(query, quantity=100, output_path=os.path.join('.', 'imgur')):
+def downloader(query, max_quantity=100, output_path=os.path.join('.', 'imgur')):
+    """
+    This function downloads images from imgur. The images downloaded
+    are the first N results from a given query. The results are saved
+    to the given output path.
+
+    :param str query: term(s) to search for on imgur
+    :param int max_quantity: maximum number of images to download
+    :param str output_path: path to directory for downloaded images
+    """
     # create output path if it doesn't already exist
     path = os.path.abspath(output_path)
     os.makedirs(path, exist_ok=True)
 
     # creates and downloads query url
     query_url = f'https://imgur.com/search?q={query}'
-    print(f'Downloading page: {query_url}...')
+    print(f"{'Downloading page: ':<19}{query_url}...")
     result = requests.get(query_url)
     result.raise_for_status()
 
     # parses result.content with bs4 to image_element
-    imgur_soup = bs4.BeautifulSoup(result.content)
+    imgur_soup = bs4.BeautifulSoup(result.content, features='lxml')
     image_element = imgur_soup.select('.post .image-list-link img')
 
     # sets quantity and generates links
-    quantity = min(quantity, len(image_element))
+    quantity = min(max_quantity, len(image_element))
     links = [f'https:{img.get("src")}' for img in image_element[:quantity]]
 
     for x, link in enumerate(links):
@@ -41,4 +50,4 @@ def downloader(query, quantity=100, output_path=os.path.join('.', 'imgur')):
 
 
 if __name__ == '__main__':
-    downloader('monday')
+    downloader('happy')
