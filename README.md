@@ -38,6 +38,7 @@ This contains my project solutions for [Automate the Boring Stuff with Python](h
     - [Debugging Coin Toss](./debugging_coin_toss/)
 * Chapter 11 – Web Scraping
     - [Command Line Emailer](./command_line_emailer/)
+    - [Image Site Downloader](./image_site_downloader/)
 * Chapter 12 – Working with Excel Spreadsheets
 * Chapter 13 – Working with PDF and Word Documents
 * Chapter 14 – Working with CSV Files and JSON Data
