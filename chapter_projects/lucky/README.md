@@ -1,4 +1,4 @@
-# 'I'm Feeling Lucky' Google Search
+# "I'm Feeling Lucky" Google Search
 
 This is what the program does:
 * Gets search keywords from the command line arguments
