@@ -4,5 +4,5 @@ Write a program that goes to a photo-sharing site like Flickr or Imgur, searches
 
 ## Sample Output
 <p align=center>
-  <img src=./sample_output.png alt=sample console output>
+  <img src=./sample_output.png alt=sample console output width=700>
 </p>
