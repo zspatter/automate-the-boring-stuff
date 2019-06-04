@@ -13,7 +13,9 @@ def play_2048(random_input=False):
     the browser exits and the final score is displayed
     """
     # loads 2048
-    browser = webdriver.Chrome(executable_path='C:\\chromedriver.exe')
+    browser = webdriver.Chrome()
+    browser.set_window_size(1200, 1000)
+    browser.set_window_position(0, 0)
     browser.get('https://play2048.co/')
 
     # web elements for game play
