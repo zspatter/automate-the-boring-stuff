@@ -34,7 +34,7 @@ def downloader(query, max_quantity=100, output_path=os.path.join('.', 'imgur')):
     quantity = min(max_quantity, len(image_element))
     links = [f'https:{img.get("src")}' for img in image_element[:quantity]]
 
-    for x, link in enumerate(links):
+    for x, _ in enumerate(links):
         # generates and downloads image urls
         image_url = f"https:{image_element[x].get('src')}"
         print(f'Downloading image: {image_url:<32}...')
