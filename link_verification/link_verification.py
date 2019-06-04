@@ -21,7 +21,7 @@ def verify_links(url):
         exit()
 
     # builds soup and filters for http links
-    soup = bs4.BeautifulSoup(result.content)
+    soup = bs4.BeautifulSoup(result.content, features='lxml')
     links = [link.get('href') for link in soup.select('a') if link.get('href')]
     http_links = list(filter(lambda x: (x.startswith('http')), links))
 
@@ -45,9 +45,9 @@ def verify_links(url):
     # summary of link verification
     print(f"\nOf the {len(http_links)} links found at {url}, {broken_links}"
           f" links could not be accessed."
-          f"\n Of the inaccessible links, {not_found} had a "
+          f"\n\tOf the inaccessible links, {not_found} had a "
           f"'HTTP 404 Not Found' status code.")
 
 
 if __name__ == '__main__':
-    verify_links('https://automatetheboringstuff.com')
+    verify_links('https://nostarch.com')
