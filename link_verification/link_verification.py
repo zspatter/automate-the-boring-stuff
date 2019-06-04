@@ -22,6 +22,7 @@ def verify_links(url):
     http_links = [link for link in links if link.startswith('http')]
 
     broken_links = 0
+    not_found = 0
 
     for link in http_links:
         result = requests.get(link)
@@ -29,11 +30,17 @@ def verify_links(url):
         try:
             result.raise_for_status()
         except requests.exceptions.HTTPError as e:
-            print(f'Broken link: {link}')
+            if result.status_code == 404:
+                not_found += 1
+
+            print(f'{e}')
             broken_links += 1
 
-    print(f'Of the {len(links)} links found at {url}, {broken_links} links were broken.')
+    print(f"\nOf the {len(http_links)} links found at {url}, {broken_links}"
+          f" links could not be accessed."
+          f"\n Of the inaccessible links, {not_found} had a "
+          f"'HTTP 404 Not Found' status code.")
 
 
 if __name__ == '__main__':
-    verify_links('https://automatetheboringstuff.com/chapter11/')
+    verify_links('https://automatetheboringstuff.com')
