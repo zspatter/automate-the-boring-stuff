@@ -5,3 +5,4 @@ send2trash
 requests
 beautifulsoup4
 selenium
+openpyxl
