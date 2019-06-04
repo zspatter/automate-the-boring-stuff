@@ -5,6 +5,10 @@ from selenium.webdriver.common.keys import Keys
 
 
 def play_2048():
+    """
+    This function launches and plays a game of 2048 with random inputs.
+    Once the game is over, the browser exits and the final score is displayed
+    """
     # loads 2048
     driver = webdriver.Chrome(executable_path='C:\\chromedriver.exe')
     driver.get('https://play2048.co/')
