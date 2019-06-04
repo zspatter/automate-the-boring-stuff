@@ -27,7 +27,7 @@ def downloader(query, max_quantity=100, output_path=os.path.join('.', 'imgur')):
     result.raise_for_status()
 
     # parses result.content with bs4 to image_element
-    imgur_soup = bs4.BeautifulSoup(result.content, features='lxml')
+    imgur_soup = bs4.BeautifulSoup(result.content)
     image_element = imgur_soup.select('.post .image-list-link img')
 
     # sets quantity and generates links
