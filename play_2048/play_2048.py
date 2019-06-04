@@ -10,12 +10,12 @@ def play_2048(random_input=False):
     Once the game is over, the browser exits and the final score is displayed
     """
     # loads 2048
-    driver = webdriver.Chrome(executable_path='C:\\chromedriver.exe')
-    driver.get('https://play2048.co/')
+    browser = webdriver.Chrome(executable_path='C:\\chromedriver.exe')
+    browser.get('https://play2048.co/')
 
     # web elements for game play
-    game_status = driver.find_element_by_css_selector('.game-container p')
-    html_element = driver.find_element_by_css_selector('html')
+    game_status = browser.find_element_by_css_selector('.game-container p')
+    html_element = browser.find_element_by_css_selector('html')
 
     # possible input keys for game play
     input_keys = (Keys.UP, Keys.DOWN, Keys.LEFT, Keys.RIGHT)
@@ -24,15 +24,17 @@ def play_2048(random_input=False):
         # loop while game isn't over
         while game_status.text != 'Game over!':
             html_element.send_keys(Keys.UP, Keys.RIGHT, Keys.DOWN, Keys.LEFT)
-            game_status = driver.find_element_by_css_selector('.game-container p')
+            game_status = browser.find_element_by_css_selector('.game-container p')
     else:
         while game_status.text != 'Game over!':
             html_element.send_keys(random.choice(input_keys))
-            game_status = driver.find_element_by_css_selector('.game-container p')
+            game_status = browser.find_element_by_css_selector('.game-container p')
 
-    # print score
-    score = driver.find_element_by_css_selector('.score-container').text
-    print(f'Game over - your score: {score}!')
+    # gather and print final score
+    score = int(browser.find_element_by_css_selector('.score-container').text)
+    print(f"{'Randomized input:' if random_input else 'Non-randomized input:':21}"
+          f"\tGame over - your score: {score:6,d}!")
+    browser.quit()
 
 
 if __name__ == '__main__':
