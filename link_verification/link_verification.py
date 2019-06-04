@@ -21,7 +21,7 @@ def verify_links(url):
     # builds soup and filters for http links
     soup = bs4.BeautifulSoup(result.content)
     links = [link.get('href') for link in soup.select('a') if link.get('href')]
-    http_links = [link for link in links if link.startswith('http')]
+    http_links = list(filter(lambda x: (x.startswith('http')), links))
 
     broken_links = 0
     not_found = 0
