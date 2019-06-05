@@ -42,6 +42,7 @@ This contains my project solutions for [Automate the Boring Stuff with Python](h
     - [2048](./play_2048/)
     - [Link Verification](./link_verification/)
 * Chapter 12 – Working with Excel Spreadsheets
+    - [Multiplication Table Maker](./multiplication_table/)
 * Chapter 13 – Working with PDF and Word Documents
 * Chapter 14 – Working with CSV Files and JSON Data
 * Chapter 15 – Keeping Time, Scheduling Tasks, and Launching Programs
