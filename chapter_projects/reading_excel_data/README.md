@@ -12,9 +12,20 @@ This script does the following:
 * Counts the total population of each county
 * Writes the resulting data structure to a new .py file
 
+The readCensusExcel.py program was throwaway code: Once you have its results saved to census2010.py, you won’t need to run the program again. Whenever you need the county data, you can just run import census2010.
+
+Calculating this data by hand would have taken hours; this program did it in a few seconds. Using OpenPyXL, you will have no trouble extracting information that is saved to an Excel spreadsheet and performing calculations on it. 
+
 The above data structure allows us to import the data into another script to work with and manipulate the the data.
 
 ## Sample Output
 <p align=center>
   <img src=./sample_output.png alt=sample console output width=600>
 </p>
+
+## Ideas for Similar Programs
+Many businesses and offices use Excel to store various types of data, and it’s not uncommon for spreadsheets to become large and unwieldy. Any program that parses an Excel spreadsheet has a similar structure: It loads the spreadsheet file, preps some variables or data structures, and then loops through each of the rows in the spreadsheet. Such a program could do the following:
+- Compare data across multiple rows in a spreadsheet
+- Open multiple Excel files and compare data between spreadsheets
+- Check whether a spreadsheet has blank rows or invalid data in any cells and alert the user if it does
+- Read data from a spreadsheet and use it as the input for your Python programs
