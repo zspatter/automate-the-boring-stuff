@@ -27,7 +27,6 @@ def generate_multiplication_table(n: int, filename: str = 'multiplication_table.
     :param int n: maximum value
     :param str filename: name of saved file
     """
-
     print(f'Generating a {n}x{n} multiplication table...')
 
     # creates and names worksheet appropriately

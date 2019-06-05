@@ -1,6 +1,8 @@
-from multiplication_table import multiplication_table
-import openpyxl
 import os
+
+import openpyxl
+
+from multiplication_table import multiplication_table
 
 
 def test_generate_multiplication_table():
