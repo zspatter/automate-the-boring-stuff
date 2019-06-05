@@ -11,3 +11,8 @@ This script does the following:
 * Counts the number of census tracts in each county
 * Counts the total population of each county
 * Prints the results
+
+## Sample Output
+<p align=center>
+  <img src=./sample_output.png alt=sample console output>
+</p>
