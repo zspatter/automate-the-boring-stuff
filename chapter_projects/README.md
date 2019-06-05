@@ -26,6 +26,7 @@ Chapter projects are included in each chapter starting in chapter 6. These proje
     - [XKCD Downloader](./xkcd_downloader/)
 * Chapter 12 – Working with Excel Spreadsheets
     - [Reading Data from a Spreadsheet](./reading_excel_data/)
+    - [Updating a Spreadsheet](./updating_spreadsheet/)
 * Chapter 13 – Working with PDF and Word Documents
 * Chapter 14 – Working with CSV Files and JSON Data
 * Chapter 15 – Keeping Time, Scheduling Tasks, and Launching Programs
