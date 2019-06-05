@@ -10,7 +10,9 @@ This script does the following:
 * Reads the data from the Excel spreadsheet
 * Counts the number of census tracts in each county
 * Counts the total population of each county
-* Prints the results
+* Writes the resulting data structure to a new .py file
+
+The above data structure allows us to import the data into another script to work with and manipulate the the data.
 
 ## Sample Output
 <p align=center>
