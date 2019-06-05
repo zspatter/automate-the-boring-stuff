@@ -14,5 +14,5 @@ This script does the following:
 
 ## Sample Output
 <p align=center>
-  <img src=./sample_output.png alt=sample console output>
+  <img src=./sample_output.png alt=sample console output width=600>
 </p>
