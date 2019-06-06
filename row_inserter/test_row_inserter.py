@@ -1,11 +1,12 @@
 import os
+from os.path import join, abspath
 
 import openpyxl
 
 from row_inserter import row_inserter
 
 index, offset, filename = 5, 3, 'test_multiplication_table.xlsx'
-original_wd = os.path.abspath(os.getcwd())
+original_wd = abspath(os.getcwd())
 
 
 def test_insert_blank_rows():
@@ -63,7 +64,8 @@ def setup_directory():
     This function is used by all unit tests to temporarily change the
     working directory to access the required test file.
     """
-    os.chdir(os.path.abspath(os.path.join('.', 'row_inserter', 'test_files')))
+    # os.chdir(os.path.abspath(os.path.join('.', 'row_inserter', 'test_files')))
+    os.chdir(join(abspath('.'), 'row_inserter', 'test_files'))
 
 
 def revert_directory():
