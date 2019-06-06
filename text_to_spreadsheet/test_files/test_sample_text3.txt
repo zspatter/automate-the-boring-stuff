@@ -1,0 +1,10 @@
+Line 1: sample line in test_sample_text3.txt
+Line 2: sample line in test_sample_text3.txt
+Line 3: sample line in test_sample_text3.txt
+Line 4: sample line in test_sample_text3.txt
+Line 5: sample line in test_sample_text3.txt
+Line 6: sample line in test_sample_text3.txt
+Line 7: sample line in test_sample_text3.txt
+Line 8: sample line in test_sample_text3.txt
+Line 9: sample line in test_sample_text3.txt
+Line 10: sample line in test_sample_text3.txt
