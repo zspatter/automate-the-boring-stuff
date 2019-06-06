@@ -1,3 +1,4 @@
+# throwaway script used to generate sample files
 import random
 
 for x in range(1, 6):
