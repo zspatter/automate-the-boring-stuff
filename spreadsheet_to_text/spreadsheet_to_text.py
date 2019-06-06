@@ -14,11 +14,13 @@ def spreadsheet_to_text(filename: str):
 
     :param str filename: name of spreadsheet
     """
+    print(f'Reading {filename}...')
     wb = openpyxl.load_workbook(filename=filename)
     sheet = wb.active
 
     for column in sheet.columns:
         # opens the value of the item in first row
+        print(f"Opening '{column[0].value}' to write data...")
         with open(f'{column[0].value}', 'w') as writer:
             lines = [cell.value for cell in column[1:] if cell.value]
 
