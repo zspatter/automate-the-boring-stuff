@@ -1,0 +1,4 @@
+Line 1: sample line in sample_text4.txt
+Line 2: sample line in sample_text4.txt
+Line 3: sample line in sample_text4.txt
+Line 4: sample line in sample_text4.txt
