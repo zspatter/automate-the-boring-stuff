@@ -2,7 +2,7 @@ import os
 
 import openpyxl
 
-from blank_row_inserter import blank_row_inserter
+from row_inserter import row_inserter
 
 index, offset, filename = 5, 3, 'test_multiplication_table.xlsx'
 original_wd = os.path.abspath(os.getcwd())
@@ -10,16 +10,16 @@ original_wd = os.path.abspath(os.getcwd())
 
 def test_insert_blank_rows():
     setup_directory()
-    blank_row_inserter.insert_blank_rows(index=index, offset=offset,
-                                         filename=filename)
+    row_inserter.insert_blank_rows(index=index, offset=offset,
+                                   filename=filename)
     compare_sequence()
     revert_directory()
 
 
 def test_insert_via_move_range():
     setup_directory()
-    blank_row_inserter.insert_via_move_range(index=index, offset=offset,
-                                             filename=filename)
+    row_inserter.insert_via_move_range(index=index, offset=offset,
+                                       filename=filename)
     compare_sequence()
     revert_directory()
 
@@ -27,7 +27,7 @@ def test_insert_via_move_range():
 def test_easy_insert():
     setup_directory()
 
-    blank_row_inserter.easy_insert(index=index, offset=offset, filename=filename)
+    row_inserter.easy_insert(index=index, offset=offset, filename=filename)
     compare_sequence()
     revert_directory()
 
@@ -63,7 +63,7 @@ def setup_directory():
     This function is used by all unit tests to temporarily change the
     working directory to access the required test file.
     """
-    os.chdir(os.path.abspath(os.path.join('.', 'blank_row_inserter', 'test_files')))
+    os.chdir(os.path.abspath(os.path.join('.', 'row_inserter', 'test_files')))
 
 
 def revert_directory():

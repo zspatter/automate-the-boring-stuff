@@ -85,7 +85,7 @@ def easy_insert(index: int, filename: str, offset: int = 1):
 
 if __name__ == '__main__':
     if len(sys.argv) != 4:
-        print('Usage: blank_row_inserter.py [index] [offset] [filename]')
+        print('Usage: row_inserter.py [index] [offset] [filename]')
     else:
         start = int(sys.argv[1])
         blank_number = int(sys.argv[2])
