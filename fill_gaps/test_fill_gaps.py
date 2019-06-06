@@ -58,6 +58,8 @@ def test_get_matching_files():
 def test_fill_sequence_gap():
     # dir at path created
     root = os.path.abspath(os.path.join('.', 'fill_gaps', 'test_files'))
+    if os.path.exists(root):
+        shutil.rmtree(root)
     os.makedirs(root)
 
     # creates files with only odd numbers spam00<x>.txt
@@ -89,6 +91,8 @@ def test_fill_sequence_gap():
 def test_insert_gap():
     # dir at path created
     root = os.path.abspath(os.path.join('.', 'fill_gaps', 'test_files'))
+    if os.path.exists(root):
+        shutil.rmtree(root)
     os.makedirs(root)
 
     # creates files with sequential numbers spam00<x>.txt
