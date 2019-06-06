@@ -6,3 +6,4 @@ requests
 beautifulsoup4
 selenium
 openpyxl
+PyPDF2
