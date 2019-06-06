@@ -12,7 +12,8 @@ def text_to_spreadsheet():
     wb = openpyxl.load_workbook(filename)
     sheet = wb.active
 
-    files = [file for file in os.listdir(path) if file.endswith('.txt')]
+    files = [file for file in os.listdir(path) if file.lower().endswith('.txt')]
+    assert sheet.max_column == len(files)
 
     column = 1
 

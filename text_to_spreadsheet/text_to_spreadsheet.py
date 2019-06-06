@@ -24,7 +24,7 @@ def text_to_spreadsheet(directory: str = '.',
 
     # gathers all text files in the given directory
     print(f'Searching for text files...')
-    files = [file for file in os.listdir(path) if file.endswith('.txt')]
+    files = [file for file in os.listdir(path) if file.lower().endswith('.txt')]
     column = 1
     print(f'Writing lines of text to columns...')
 
