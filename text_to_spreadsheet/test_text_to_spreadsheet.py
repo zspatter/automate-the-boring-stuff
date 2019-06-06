@@ -4,10 +4,10 @@ from text_to_spreadsheet import text_to_spreadsheet
 import openpyxl
 
 
-def text_to_spreadsheet():
+def test_text_to_spreadsheet():
     path = os.path.join(os.path.abspath('.'), 'text_to_spreadsheet', 'test_files')
     filename = 'test_text_to_sheet.xlsx'
-    text_to_spreadsheet.text_to_spreadsheet(directory=path, output=filename)
+    text_to_spreadsheet.text_to_spreadsheet(directory=path, output_file=filename)
 
     wb = openpyxl.load_workbook(filename)
     sheet = wb.active
