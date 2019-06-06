@@ -60,6 +60,7 @@ def generate_multiplication_table(n: int, filename: str = 'multiplication_table.
             sheet.cell(row=row + 1, column=column + 1).border = regular
 
     wb.save(filename)
+    print(f"{sheet.title} saved as: '{filename}'")
 
 
 if __name__ == '__main__':
