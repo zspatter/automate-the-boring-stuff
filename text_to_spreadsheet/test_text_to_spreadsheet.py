@@ -1,7 +1,8 @@
 import os
 
-from text_to_spreadsheet import text_to_spreadsheet
 import openpyxl
+
+from text_to_spreadsheet import text_to_spreadsheet
 
 
 def test_text_to_spreadsheet():

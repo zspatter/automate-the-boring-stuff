@@ -20,10 +20,10 @@ def test_spreadsheet_to_text():
     assert sheet.max_column == len(result_files)
 
     for column in sheet.columns:
-        with open(f'{column[0].value}', 'r') as read:
+        with open(f'{column[0].value}', 'r') as reader:
             lines = [cell.value for cell in column[1:] if cell.value]
             for line in lines:
-                assert line == read.readline()
+                assert line == reader.readline()
 
     revert_directory()
 
