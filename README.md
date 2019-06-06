@@ -45,6 +45,7 @@ This contains my project solutions for [Automate the Boring Stuff with Python](h
     - [Multiplication Table Maker](./multiplication_table/)
     - [Blank Row Inserter](./row_inserter/)
     - [Spreadsheet Cell Inverter](./spreadsheet_cell_inverter/)
+    - [Text Files to Spreadsheet](./text_to_spreadsheet/)
 * Chapter 13 – Working with PDF and Word Documents
 * Chapter 14 – Working with CSV Files and JSON Data
 * Chapter 15 – Keeping Time, Scheduling Tasks, and Launching Programs
