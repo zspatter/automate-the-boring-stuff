@@ -7,3 +7,4 @@ beautifulsoup4
 selenium
 openpyxl
 PyPDF2
+python-docx
