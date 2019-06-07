@@ -20,7 +20,7 @@ def test_decrypt_pdfs():
 
 def test_pdf_reader_generator():
     count = 0
-    for pdf in pdf_paranoia.pdf_reader_generator(join(abspath('.'),
+    for _ in pdf_paranoia.pdf_reader_generator(join(abspath('.'),
                                                       'pdf_paranoia',
                                                       'test_files')):
         count += 1
