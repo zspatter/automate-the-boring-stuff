@@ -48,6 +48,7 @@ This contains my project solutions for [Automate the Boring Stuff with Python](h
     - [Text Files to Spreadsheet](./text_to_spreadsheet/)
     - [Spreadsheet to Text Files](./spreadsheet_to_text/)
 * Chapter 13 – Working with PDF and Word Documents
+    - [PDF Paranoia](./pdf_paranoia/)
 * Chapter 14 – Working with CSV Files and JSON Data
 * Chapter 15 – Keeping Time, Scheduling Tasks, and Launching Programs
 * Chapter 16 – Sending Email and Text Messages
