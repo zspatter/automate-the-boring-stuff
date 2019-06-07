@@ -1,6 +1,9 @@
+import os
 from os.path import join, abspath
 
 from pdf_paranoia import pdf_paranoia
+
+original_wd = abspath(os.getcwd())
 
 
 def test_encrypt_pdfs():
@@ -26,3 +29,14 @@ def test_pdf_reader_generator():
 
 def test_copy_pdf_pages():
     pass
+
+
+def setup_directory(path):
+    os.chdir(abspath(path))
+
+
+def revert_directory(remove_files):
+    for file in remove_files:
+        os.remove(file)
+
+    os.chdir(original_wd)
