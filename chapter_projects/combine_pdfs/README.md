@@ -6,3 +6,11 @@ At a high level, here’s what the program will do:
 - Find all PDF files in the current working directory
 - Sort the filenames so the PDFs are added in order
 - Write each page, excluding the first page, of each PDF to the output file
+
+## Ideas for Similar Programs
+
+Being able to create PDFs from the pages of other PDFs will let you make programs that can do the following:
+
+- Cut out specific pages from PDFs
+- Reorder pages in a PDF
+- Create a PDF from only those pages that have some specific text, identified by extractText()
