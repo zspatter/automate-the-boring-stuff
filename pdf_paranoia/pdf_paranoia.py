@@ -6,6 +6,15 @@ import PyPDF2
 
 
 def encrypt_pdfs(path, password):
+    """
+    Finds all unencrypted pdfs at the given path (and subdirectories) and
+    encrypts them with the passed password. After creating an encrypted
+    copy, it performs a decryption check with the password. Assuming there
+    are no issues with the encryption, the original file is removed.
+
+    :param str path: path to directory to search
+    :param str password: password used for encryption
+    """
     for filepath, pdf, reader in pdf_reader_generator(path):
         if not reader.isEncrypted:
             writer = copy_pdf_pages(reader)
@@ -22,6 +31,15 @@ def encrypt_pdfs(path, password):
 
 
 def remove_unencrypted_pdf(encrypted_path, unencrypted_path, password):
+    """
+    If the file at the encrypted path can be opened with the given password,
+    the file at the unencrypted path is removed. Otherwise, an error message
+    is displayed indicating which file failed the encryption check.
+
+    :param str encrypted_path: path to encrypted pdf
+    :param str unencrypted_path: path to unencrypted (original) pdf
+    :param str password: password used for decryption
+    """
     reader = PyPDF2.PdfFileReader(open(encrypted_path, 'rb'))
     if reader.isEncrypted and reader.decrypt(password):
         os.remove(unencrypted_path)
@@ -31,6 +49,13 @@ def remove_unencrypted_pdf(encrypted_path, unencrypted_path, password):
 
 
 def decrypt_pdfs(path, password):
+    """
+    Finds all encrypted pdfs at the given path (and subdirectories) and
+    dencrypts them with the passed password.
+
+    :param str path: path to directory to search
+    :param str password: password used for encryption
+    """
     regex = re.compile(r'(?i)'              # case insensitive
                        r'^(.*?)'            # any number of characters (non-greedy)
                        r'(_encrypted)?'     # optional '_encrypted'
@@ -55,6 +80,12 @@ def decrypt_pdfs(path, password):
 
 
 def pdf_reader_generator(path):
+    """
+    Generator used to generate PDF documents within the path location
+    (including subdirectories)
+
+    :param str path: path to directory to search for PDFs
+    """
     for root, _, files in os.walk(abspath(path)):
         pdfs = [file for file in files if file.lower().endswith('.pdf')]
 
@@ -65,12 +96,18 @@ def pdf_reader_generator(path):
 
 
 def copy_pdf_pages(pdf_reader):
-    writer = PyPDF2.PdfFileWriter()
+    """
+    Copies all pages from a given pdf reader object to a pdf writer object
+
+    :param pdf_reader: PyPDF2 reader object
+    :return: pdf_writer
+    """
+    pdf_writer = PyPDF2.PdfFileWriter()
 
     for page_num in range(pdf_reader.numPages):
-        writer.addPage(pdf_reader.getPage(page_num))
+        pdf_writer.addPage(pdf_reader.getPage(page_num))
 
-    return writer
+    return pdf_writer
 
 
 if __name__ == '__main__':
