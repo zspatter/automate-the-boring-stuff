@@ -8,6 +8,8 @@ import PyPDF2
 from pdf_paranoia import pdf_paranoia
 
 original_wd = abspath(os.getcwd())
+valid_password = 'password'
+invalid_password = 'wrong password'
 
 
 def test_encrypt_pdfs():
@@ -20,24 +22,55 @@ def test_encrypt_pdfs():
                        r'(_encrypted)'  # optional '_encrypted'
                        r'(.pdf)$',  # ends with .pdf
                        re.VERBOSE)
-    setup_directory(join(abspath('.'), 'pdf_paranoia', 'test_files', 'encrypted'))
+    path = join(abspath('.'), 'pdf_paranoia', 'test_files', 'unencrypted')
+    pdf_paranoia.encrypt_pdfs(path, valid_password)
+    file_list = []
 
-    pdf_paranoia.encrypt_pdfs('.', 'password')
-    remove_files = []
-    for filename, _, pdf_reader in pdf_paranoia.pdf_reader_generator('.'):
+    # verify all PDF files are now encrypted with the desired password
+    for filename, _, pdf_reader in pdf_paranoia.pdf_reader_generator(path):
         assert regex.search(basename(filename))
-        remove_files.append(filename)
+        assert pdf_reader.isEncrypted
+        assert not pdf_reader.decrypt(invalid_password)
+        assert pdf_reader.decrypt(valid_password)
+        file_list.append(filename)
 
-    # for file in copy_filenames:
-    #     copy(join(abspath('..'), 'sample_files', file), join(abspath('.')))
+    # copy unencrypted files to directory (replace the removed files)
+    for file in copy_filenames:
+        copy(join(abspath('.'), 'pdf_paranoia', 'sample_files', file), path)
 
-    revert_directory(remove_files)
+    for file in file_list:
+        os.remove(file)
 
 
-# def test_remove_unencrypted_pdf():
-#     pass
-#
-#
+def test_remove_unencrypted_pdf():
+    encrypted_path = join(abspath('.'), 'pdf_paranoia', 'test_files', 'encrypted')
+    unencrypted_path = join(abspath('.'), 'pdf_paranoia', 'test_files', 'unencrypted')
+    filename = os.listdir(unencrypted_path)[0]
+
+    assert os.path.exists(join(unencrypted_path, filename))
+    assert len(os.listdir(unencrypted_path)) == 4
+
+    # remove unencrypted file (valid password)
+    pdf_paranoia.remove_unencrypted_pdf(join(encrypted_path, os.listdir(encrypted_path)[0]),
+                                        join(unencrypted_path, os.listdir(unencrypted_path)[0]),
+                                        password=valid_password)
+    assert not os.path.exists(join(unencrypted_path, filename))
+    assert len(os.listdir(unencrypted_path)) == 3
+    assert os.path.exists(join(unencrypted_path, os.listdir(unencrypted_path)[1]))
+
+    # fail encryption check - doesn't remove unencrypted file (invalid password)
+    pdf_paranoia.remove_unencrypted_pdf(join(encrypted_path, os.listdir(encrypted_path)[1]),
+                                        join(unencrypted_path, os.listdir(unencrypted_path)[1]),
+                                        password=invalid_password)
+    assert os.path.exists(join(unencrypted_path, os.listdir(unencrypted_path)[1]))
+    assert len(os.listdir(unencrypted_path)) == 3
+
+    # replace removed file
+    source = join(abspath('.'), 'pdf_paranoia', 'sample_files', filename)
+    destination = join(abspath('.'), 'pdf_paranoia', 'test_files', 'unencrypted')
+    copy(source, destination)
+
+
 # def test_decrypt_pdfs():
 #     pass
 
@@ -57,25 +90,14 @@ def test_pdf_reader_generator():
                                                                  'test_files')):
         assert basename(filepath) in expected
         count += 1
-    # assert count == len(expected)
+    assert count == len(expected)
 
 
 def test_copy_pdf_pages():
-    setup_directory(join(abspath('.'), 'pdf_paranoia', 'test_files', 'unencrypted'))
-    reader = PyPDF2.PdfFileReader('combinedminutes.pdf')
+    filepath = join(abspath('.'), 'pdf_paranoia', 'test_files', 'unencrypted',
+                    'combinedminutes.pdf')
+    reader = PyPDF2.PdfFileReader(open(filepath, 'rb'))
     writer = pdf_paranoia.copy_pdf_pages(pdf_reader=reader)
     assert reader.numPages == writer.getNumPages()
     for page_num in range(reader.numPages):
         assert reader.getPage(page_num) == writer.getPage(page_num)
-    revert_directory()
-
-
-def setup_directory(path):
-    os.chdir(abspath(path))
-
-
-def revert_directory(remove_files=()):
-    for file in remove_files:
-        os.remove(file)
-
-    os.chdir(original_wd)
