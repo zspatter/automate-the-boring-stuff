@@ -15,7 +15,7 @@ Then, write a program that finds all encrypted PDFs in a folder (and its subfold
   <img src=./images/after_encryption.png alt=files after running encrypt_pdfs()>
 </p>
 
-#### Before Encryption
+#### After Decryption
 <p align=center>
   <img src=./images/after_decryption.png alt=files after running edcrypt_pdfs()>
 </p>
