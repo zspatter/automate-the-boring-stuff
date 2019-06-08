@@ -7,7 +7,7 @@ import PyPDF2
 
 def encrypt_pdfs(path, password):
     """
-    Finds all unencrypted pdfs at the given path (and subdirectories) and
+    Finds all unencrypted PDFs at the given path (and subdirectories) and
     encrypts them with the passed password. After creating an encrypted
     copy, it performs a decryption check with the password. Assuming there
     are no issues with the encryption, the original file is removed.
@@ -50,8 +50,8 @@ def remove_unencrypted_pdf(encrypted_path, unencrypted_path, password):
 
 def decrypt_pdfs(path, password):
     """
-    Finds all encrypted pdfs at the given path (and subdirectories) and
-    dencrypts them with the passed password.
+    Finds all encrypted PDFs at the given path (and subdirectories) and
+    decrypts them with the passed password.
 
     :param str path: path to directory to search
     :param str password: password used for encryption
