@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 from census2010 import all_data
 
 total_tracts = 0
