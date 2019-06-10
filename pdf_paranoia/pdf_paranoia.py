@@ -61,7 +61,7 @@ def decrypt_pdfs(path, password):
     regex = re.compile(r'(?i)'              # case insensitive
                        r'^(.*?)'            # any number of characters (non-greedy)
                        r'(_encrypted)?'     # optional '_encrypted'
-                       r'(.pdf)$',          # ends with .pdf
+                       r'(\.pdf)$',          # ends with .pdf
                        re.VERBOSE)
 
     for filepath, pdf, reader in pdf_reader_generator(path):
