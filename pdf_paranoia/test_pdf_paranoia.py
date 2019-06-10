@@ -12,7 +12,7 @@ invalid_password = 'wrong password'
 encrypted_regex = re.compile(r'(?i)'                # case insensitive
                              r'^(.*?)'              # any number of characters (non-greedy)
                              r'(_encrypted)'        # optional '_encrypted'
-                             r'(/.pdf)$',            # ends with .pdf
+                             r'(\.pdf)$',            # ends with .pdf
                              re.VERBOSE)
 unencrypted_regex = re.compile(r'(?i)'              # case insensitive
                                r'^(.*?)'            # any number of characters (non-greedy)
