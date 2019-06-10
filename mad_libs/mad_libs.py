@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 import re
 
 regex = re.compile(r'ADJECTIVE|NOUN|ADVERB|VERB')

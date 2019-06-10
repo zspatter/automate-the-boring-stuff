@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 import os
 import re
 from os.path import join, abspath, splitext, basename, dirname

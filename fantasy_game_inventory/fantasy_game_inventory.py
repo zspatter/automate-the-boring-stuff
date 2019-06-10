@@ -1,3 +1,6 @@
+#! /usr/bin/env python3
+
+
 def display_inventory(inventory):
     output = 'Inventory:\n'
     total_items = 0
