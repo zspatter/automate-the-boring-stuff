@@ -113,5 +113,5 @@ def copy_pdf_pages(pdf_reader):
 
 
 if __name__ == '__main__':
-    encrypt_pdfs('.', 'password')
-    decrypt_pdfs('.', 'password')
+    encrypt_pdfs(join('.', 'sample_files'), 'password')
+    decrypt_pdfs(join('.', 'sample_files'), 'password')
