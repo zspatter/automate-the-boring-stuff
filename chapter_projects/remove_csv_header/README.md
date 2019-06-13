@@ -9,4 +9,10 @@ At a high level, the program must do the following:
 - Find all the CSV files in the current working directory
 - Read in the full contents of each file
 - Write out the contents, skipping the first line, to a new CSV file
- 
+
+Ideas for similar programs
+-
+- Compare data between different rows in a CSV file or between multiple CSV files
+- Copy specific data from a CSV file to an Excel file, or vice versa
+- Check for invalid data or formatting mistakes in CSV files and alert the user to these errors
+- Read data from a CSV file as input for your Python programs 
