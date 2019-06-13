@@ -26,7 +26,7 @@ def remove_headers(input_path='.', output_path='.'):
 
         # gather all lines but header row
         reader = csv.reader(open(join(input_path, csv_file), 'r'))
-        lines = [line for line in reader if reader.line_num != 1]
+        lines = list(reader)[1:]
 
         # write headless content
         writer = csv.writer(open(join(output_path, csv_file), 'w'))
