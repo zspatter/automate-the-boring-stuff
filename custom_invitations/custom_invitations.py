@@ -3,7 +3,7 @@ from os.path import abspath, join
 import docx
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 from docx.shared import Pt
-from docx.text import Run
+# from docx.text import Run
 
 
 def generate_invitations(textfile: str, filename: str) -> None:
@@ -53,7 +53,7 @@ def generate_invitations(textfile: str, filename: str) -> None:
     doc.save(filename)
 
 
-def style_run(run: Run, is_bold: bool = None, is_italic: bool = None, font_size: int = 12) -> None:
+def style_run(run, is_bold: bool = None, is_italic: bool = None, font_size: int = 12) -> None:
     """
     Applies rich text styles to the given Run text object.
 
