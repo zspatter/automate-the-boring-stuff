@@ -29,6 +29,7 @@ Chapter projects are included in each chapter starting in chapter 6. These proje
     - [Updating a Spreadsheet](./updating_spreadsheet/)
 * Chapter 13 – Working with PDF and Word Documents
     - [Combining Select Pages from Many PDFs](./combine_pdfs/)
+    - [Removing the Header from CSV Files](./remove_csv_header/)
 * Chapter 14 – Working with CSV Files and JSON Data
 * Chapter 15 – Keeping Time, Scheduling Tasks, and Launching Programs
 * Chapter 16 – Sending Email and Text Messages
