@@ -1,9 +1,10 @@
+#! /usr/bin/env python3
+
 from os.path import abspath, join
 
 import docx
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 from docx.shared import Pt
-# from docx.text import Run
 
 
 def generate_invitations(textfile: str, filename: str) -> None:
