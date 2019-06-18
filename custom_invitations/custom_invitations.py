@@ -25,8 +25,7 @@ def generate_invitations(textfile: str, filename: str) -> None:
                       is_bold=True,
                       is_italic=True,
                       font_size=13)
-            style_run(run=center_paragraph(document=doc).
-                      add_run(guest.strip()),
+            style_run(run=center_paragraph(document=doc).add_run(guest.strip()),
                       is_bold=True,
                       font_size=15)
             style_run(run=center_paragraph(document=doc).
