@@ -2,6 +2,8 @@ import os
 import re
 from os.path import join, abspath, basename
 from shutil import copy
+import pytest
+import sys
 
 import PyPDF2
 
@@ -21,6 +23,10 @@ unencrypted_regex = re.compile(r'(?i)'              # case insensitive
                                re.VERBOSE)
 
 
+@pytest.mark.skipif(sys.platform == 'win32',
+                    reason="Windows has file permissions issues when writing/removing "
+                           "files quickly. Only disabled for CI",
+                    allow_module_level=True)
 def test_encrypt_pdfs():
     copy_filenames = ('combinedminutes.pdf',
                       'meetingminutes.pdf',
@@ -47,6 +53,10 @@ def test_encrypt_pdfs():
         os.remove(file)
 
 
+@pytest.mark.skipif(sys.platform == 'win32',
+                    reason="Windows has file permissions issues when writing/removing "
+                           "files quickly. Only disabled for CI",
+                    allow_module_level=True)
 def test_remove_unencrypted_pdf():
     encrypted_path = join(abspath('.'), 'pdf_paranoia', 'test_files', 'encrypted')
     unencrypted_path = join(abspath('.'), 'pdf_paranoia', 'test_files', 'unencrypted')
@@ -98,6 +108,10 @@ def test_decrypt_pdfs():
             os.remove(join(path, file))
 
 
+@pytest.mark.skipif(sys.platform == 'win32',
+                    reason="Windows has file permissions issues when writing/removing "
+                           "files quickly. Only disabled for CI",
+                    allow_module_level=True)
 def test_pdf_reader_generator():
     expected = ('combinedminutes.pdf',
                 'meetingminutes.pdf',
