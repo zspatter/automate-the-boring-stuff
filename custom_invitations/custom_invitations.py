@@ -20,32 +20,21 @@ def generate_invitations(textfile: str, filename: str) -> None:
     with open(textfile, 'r') as guests:
         # generates a custom invitation for each guest
         for guest in guests:
-            paragraph1 = doc.add_paragraph()
-            paragraph1.paragraph_format.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
-            style_run(run=paragraph1.add_run('It would be a pleasure to have the company of'),
+            style_run(run=center_paragraph(document=doc).
+                      add_run('It would be a pleasure to have the company of'),
                       is_bold=True,
                       is_italic=True,
                       font_size=13)
-
-            paragraph2 = doc.add_paragraph()
-            paragraph2.paragraph_format.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
-            style_run(run=paragraph2.add_run(guest.strip()),
+            style_run(run=center_paragraph(document=doc).
+                      add_run(guest.strip()),
                       is_bold=True,
                       font_size=15)
-
-            paragraph3 = doc.add_paragraph()
-            paragraph3.paragraph_format.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
-            style_run(run=paragraph3.add_run('at 11101 Memory lane on the evening of'),
+            style_run(run=center_paragraph(document=doc).
+                      add_run('at 11101 Memory lane on the evening of'),
                       is_bold=True,
                       is_italic=True)
-
-            paragraph4 = doc.add_paragraph()
-            paragraph4.paragraph_format.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
-            style_run(run=paragraph4.add_run('April 31st'))
-
-            paragraph5 = doc.add_paragraph()
-            paragraph5.paragraph_format.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
-            style_run(run=paragraph5.add_run("at 24 O'Clock"),
+            style_run(run=center_paragraph(document=doc).add_run('April 31st'))
+            style_run(run=center_paragraph(document=doc).add_run("at 24 O'Clock"),
                       is_bold=True,
                       is_italic=True)
 
@@ -54,7 +43,20 @@ def generate_invitations(textfile: str, filename: str) -> None:
     doc.save(filename)
 
 
-def style_run(run, is_bold: bool = None, is_italic: bool = None, font_size: int = 12) -> None:
+def center_paragraph(document: 'Document') -> 'Paragraph':
+    """
+    Adds new paragraph and sets alignment to be centered
+
+    :param Document document: docx document
+    :return: centered paragraph (no text)
+    """
+    paragraph = document.add_paragraph()
+    paragraph.paragraph_format.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+    return paragraph
+
+
+def style_run(run: 'Run', is_bold: bool = None, is_italic: bool = None,
+              font_size: int = 12) -> None:
     """
     Applies rich text styles to the given Run text object.
 
