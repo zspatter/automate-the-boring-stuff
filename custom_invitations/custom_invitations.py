@@ -20,18 +20,18 @@ def generate_invitations(textfile: str, filename: str) -> None:
     with open(textfile, 'r') as guests:
         # generates a custom invitation for each guest
         for guest in guests:
-            style_run(run=center_paragraph(document=doc).
-                      add_run('It would be a pleasure to have the company of'),
-                      is_bold=True,
-                      is_italic=True,
-                      font_size=13)
+            style_run(run=center_paragraph(document=doc).add_run(
+                    'It would be a pleasure to have the company of'),
+                    is_bold=True,
+                    is_italic=True,
+                    font_size=13)
             style_run(run=center_paragraph(document=doc).add_run(guest.strip()),
                       is_bold=True,
                       font_size=15)
-            style_run(run=center_paragraph(document=doc).
-                      add_run('at 11101 Memory lane on the evening of'),
-                      is_bold=True,
-                      is_italic=True)
+            style_run(run=center_paragraph(document=doc).add_run(
+                    'at 11101 Memory lane on the evening of'),
+                    is_bold=True,
+                    is_italic=True)
             style_run(run=center_paragraph(document=doc).add_run('April 31st'))
             style_run(run=center_paragraph(document=doc).add_run("at 24 O'Clock"),
                       is_bold=True,
