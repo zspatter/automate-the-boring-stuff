@@ -18,7 +18,7 @@ def generate_invitations(textfile: str, filename: str) -> None:
     doc = docx.Document()
 
     with open(textfile, 'r') as guests:
-        # generates a custom inviation for each guest
+        # generates a custom invitation for each guest
         for guest in guests:
             paragraph1 = doc.add_paragraph()
             paragraph1.paragraph_format.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
@@ -58,7 +58,7 @@ def style_run(run, is_bold: bool = None, is_italic: bool = None, font_size: int 
     """
     Applies rich text styles to the given Run text object.
 
-    :param Run run: run of text to be style
+    :param Run run: run of text to be styled
     :param bool is_bold: indicates if run should be bold
     :param bool is_italic: indicates if run should be italic
     :param int font_size: indicates font size
