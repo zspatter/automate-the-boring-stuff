@@ -14,12 +14,10 @@ def test_style_run():
     custom_invitations.style_run(run=run, is_bold=True, is_italic=True, font_size=12)
     assert run.font.bold
     assert run.font.italic
-    # assert run.font.size == 12
 
     custom_invitations.style_run(run=run, is_bold=False, is_italic=False, font_size=15)
     assert not run.font.bold
     assert not run.font.italic
-    # assert run.font.size == 15
 
 
 def test_generate_invitations():
