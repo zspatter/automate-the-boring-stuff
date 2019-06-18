@@ -2,6 +2,7 @@ import os
 from os.path import abspath, join
 
 import docx
+from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 
 from custom_invitations import custom_invitations
 
@@ -18,6 +19,16 @@ def test_style_run():
     custom_invitations.style_run(run=run, is_bold=False, is_italic=False, font_size=15)
     assert not run.font.bold
     assert not run.font.italic
+
+
+def test_center_paragraph():
+    doc = docx.Document()
+    assert len(doc.paragraphs) == 0
+
+    for x in range(6):
+        custom_invitations.center_paragraph(document=doc)
+        assert len(doc.paragraphs) == x + 1
+        assert doc.paragraphs[x].paragraph_format.alignment == WD_PARAGRAPH_ALIGNMENT.CENTER
 
 
 def test_generate_invitations():
