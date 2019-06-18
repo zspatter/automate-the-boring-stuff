@@ -24,10 +24,10 @@ Ideas for similar programs
 
 ### Before
 <p align=center>
-  <img src=./images/before.png alt=csv before script>
+  <img src=./images/before.png alt=csv before script height=500>
 </p>
 
 ### After
 <p align=center>
-  <img src=./images/after.png alt=csv after script>
+  <img src=./images/after.png alt=csv after script height=500>
 </p> 
