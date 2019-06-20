@@ -10,8 +10,11 @@ def break_password(encrypted_pdf, pw_list):
     with open(abspath(pw_list), 'r') as reader:
         passwords = reader.read().split('\n')
 
+    # checks default case, lower, then upper
     for password in passwords:
-        if pdf.decrypt(password.lower()):
+        if pdf.decrypt(password):
+            return password
+        elif pdf.decrypt(password.lower()):
             return password.lower()
         elif pdf.decrypt(password.upper()):
             return password.upper()
