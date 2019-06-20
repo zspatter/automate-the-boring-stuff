@@ -6,8 +6,17 @@ import PyPDF2
 
 
 def break_password(encrypted_pdf, pw_list):
+    """
+    Attempts to decrypt an encrypted PDF via brute force. The passwords
+    used are lines in the text file at the pw_list path. Each password
+    is attempted in it's current case as well as upper/lower case.
+
+    :param str encrypted_pdf: path to PDF to decrypt
+    :param str pw_list: path to text file of passwords
+    :return: valid password (or None)
+    """
     pdf = PyPDF2.PdfFileReader(open(abspath(encrypted_pdf), 'rb'))
-    print(f"Attempting to decrypt '{basename(encrypted_pdf)}' via brute force")
+    print(f"Attempting to decrypt '{basename(encrypted_pdf)}' via brute force...")
 
     with open(abspath(pw_list), 'r') as reader:
         passwords = reader.read().split()
@@ -35,6 +44,5 @@ if __name__ == '__main__':
 
     # attempts to decrypt the file and prints the results
     result = break_password(encrypted_pdf=pdf_path, pw_list=passwords_path)
-    output = f"\nSuccess!\nThe password is: '{result}'" if result else \
-        f"\nFailure!\nFailed to decrypt the pdf"
-    print(output)
+    print(f"\nSuccess!\nThe password is: '{result}'" if result else
+          "\nFailure!\nFailed to decrypt the PDF")
