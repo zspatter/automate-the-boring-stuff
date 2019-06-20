@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 from os.path import abspath, basename, join
 
 import PyPDF2
@@ -18,7 +20,6 @@ def break_password(encrypted_pdf, pw_list):
             return password.lower()
         elif pdf.decrypt(password.upper()):
             return password.upper()
-
 
 
 if __name__ == '__main__':
