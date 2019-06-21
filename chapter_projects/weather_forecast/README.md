@@ -9,3 +9,10 @@ Overall, the program does the following:
 - Downloads JSON weather data from OpenWeatherMap.org
 - Converts the string of JSON data to a Python data structure
 - Prints the weather for today and the next two days
+
+Ideas for Similar Programs
+-
+Accessing weather data can form the basis for many types of programs. You can create similar programs to do the following:
+- Collect weather forecasts for several campsites or hiking trails to see which one will have the best weather
+- Schedule a program to regularly check the weather and send you a frost alert if you need to move your plants indoors
+- Pull weather data from multiple sites to show all at once, or calculate and show the average of the multiple weather predictions
