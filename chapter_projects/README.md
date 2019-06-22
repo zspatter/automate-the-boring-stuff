@@ -31,6 +31,8 @@ Chapter projects are included in each chapter starting in chapter 6. These proje
     - [Combining Select Pages from Many PDFs](./combine_pdfs/)
     - [Removing the Header from CSV Files](./remove_csv_header/)
 * Chapter 14 – Working with CSV Files and JSON Data
+    - [Removing the Header from CSV Files](./remove_csv_header/)
+    - [Fetching Current Weather Data](./weather_forecast/)
 * Chapter 15 – Keeping Time, Scheduling Tasks, and Launching Programs
 * Chapter 16 – Sending Email and Text Messages
 * Chapter 17 – Manipulating Images
