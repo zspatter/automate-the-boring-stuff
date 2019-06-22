@@ -47,5 +47,5 @@ if __name__ == '__main__':
         sys.exit(1)
 
     location = ' '.join(sys.argv[1:])
-    result = request_url(query=location)
-    print_forecast(weather_data=json.loads(result.text), query=location)
+    json_response = request_url(query=location)
+    print_forecast(weather_data=json.loads(json_response.text), query=location)
