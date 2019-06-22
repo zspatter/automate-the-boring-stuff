@@ -10,6 +10,11 @@ Overall, the program does the following:
 - Converts the string of JSON data to a Python data structure
 - Prints the weather for today and the next two days
 
+## Sample Output
+<p align=center>
+  <img src=./images/sample_output.png alt=sample console output>
+</p>
+
 Ideas for Similar Programs
 -
 Accessing weather data can form the basis for many types of programs. You can create similar programs to do the following:
