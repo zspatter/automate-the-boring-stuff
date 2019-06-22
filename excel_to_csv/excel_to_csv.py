@@ -1,8 +1,8 @@
 #! /usr/bin/env python3
 
+import csv
 import os
 from os.path import abspath, join
-import csv
 
 import openpyxl
 
