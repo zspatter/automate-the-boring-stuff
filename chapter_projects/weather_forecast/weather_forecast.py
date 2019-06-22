@@ -22,7 +22,7 @@ def print_forecast(weather_data, query):
           f"\n\t{'Temperature:':<14}{forecast_details[0]['main']['temp_min']}°F - "
           f"{forecast_details[0]['main']['temp_max']}°F"
           f"\n\t{'Humidity:':<14}{forecast_details[0]['main']['humidity']}%"
-          f""f"\n\t{'Wind speed:':<14}{forecast_details[0]['wind']['speed']} mph")
+          f"\n\t{'Wind speed:':<14}{forecast_details[0]['wind']['speed']} mph")
 
     print(f"\nTomorrow:"
           f"\n\t{'Description:':<14}{forecast_details[1]['weather'][0]['main']} - "
@@ -30,7 +30,7 @@ def print_forecast(weather_data, query):
           f"\n\t{'Temperature:':<14}{forecast_details[1]['main']['temp_min']}°F - "
           f"{forecast_details[1]['main']['temp_max']}°F"
           f"\n\t{'Humidity:':<14}{forecast_details[1]['main']['humidity']}%"
-          f""f"\n\t{'Wind speed:':<14}{forecast_details[1]['wind']['speed']} mph")
+          f"\n\t{'Wind speed:':<14}{forecast_details[1]['wind']['speed']} mph")
 
     print(f"\nDay after tomorrow:"
           f"\n\t{'Description:':<14}{forecast_details[2]['weather'][0]['main']} - "
@@ -38,7 +38,7 @@ def print_forecast(weather_data, query):
           f"\n\t{'Temperature:':<14}{forecast_details[2]['main']['temp_min']}°F - "
           f"{forecast_details[2]['main']['temp_max']}°F"
           f"\n\t{'Humidity:':<14}{forecast_details[2]['main']['humidity']}%"
-          f""f"\n\t{'Wind speed:':<14}{forecast_details[2]['wind']['speed']} mph")
+          f"\n\t{'Wind speed:':<14}{forecast_details[2]['wind']['speed']} mph")
 
 
 if __name__ == '__main__':
