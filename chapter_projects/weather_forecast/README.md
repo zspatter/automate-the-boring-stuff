@@ -12,7 +12,7 @@ Overall, the program does the following:
 
 ## Sample Output
 <p align=center>
-  <img src=./images/sample_output.png alt=sample console output>
+  <img src=./sample_output.png alt=sample console output>
 </p>
 
 Ideas for Similar Programs
