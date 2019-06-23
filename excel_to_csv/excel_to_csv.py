@@ -7,14 +7,15 @@ from os.path import abspath, join
 import openpyxl
 
 
-def excel_to_csv(path='.'):
+def excel_to_csv(path='.', save_directory='csv_output'):
     """
     Converts all .xlsx files in the provided path to CSVs. The resulting
     files are saved to a subdirectory of the path 'csv_output'.
 
-    :param path:
+    :param str path: path to directory to search for excel files
+    :param str save_directory: name of folder where output will be saved
     """
-    output_path = join(abspath(path), 'csv_output')
+    output_path = join(abspath(path), save_directory)
     os.makedirs(output_path, exist_ok=True)
 
     for workbook, sheet in worksheet_generator(root=abspath(path)):
