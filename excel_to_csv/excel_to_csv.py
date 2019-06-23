@@ -22,9 +22,8 @@ def excel_to_csv(path='.'):
         csv_filename = f"{workbook[:-5].replace(' ', '_')}_{sheet.title}.csv"
         writer = csv.writer(open(join(output_path, csv_filename), 'w'))
 
-        for row in sheet.rows:
-            row_content = [cell.value for cell in row]
-            writer.writerow(row_content)
+        sheet_content = [[cell.value for cell in row] for row in sheet.rows]
+        writer.writerows(sheet_content)
 
 
 def worksheet_generator(root):
