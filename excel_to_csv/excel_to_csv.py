@@ -20,8 +20,9 @@ def excel_to_csv(path='.'):
     for workbook, sheet in worksheet_generator(root=abspath(path)):
         # creates filename in the form [workbook]_[worksheet].csv
         csv_filename = f"{workbook[:-5].replace(' ', '_')}_{sheet.title}.csv"
-        writer = csv.writer(open(join(output_path, csv_filename), 'w'))
+        print(f"Converting '{workbook}' {sheet.title} sheet to {csv_filename}...")
 
+        writer = csv.writer(open(join(output_path, csv_filename), 'w'))
         sheet_content = [[cell.value for cell in row] for row in sheet.rows]
         writer.writerows(sheet_content)
 
@@ -37,7 +38,7 @@ def worksheet_generator(root):
     for workbook in workbooks:
         wb = openpyxl.load_workbook(filename=join(root, workbook))
 
-        for worksheet in wb.sheetnames:
+        for worksheet in sorted(wb.sheetnames):
             yield workbook, wb[worksheet]
 
 
