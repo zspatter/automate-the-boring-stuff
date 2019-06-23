@@ -19,8 +19,8 @@ def excel_to_csv(path='.'):
 
     for workbook, sheet in worksheet_generator(root=abspath(path)):
         # creates filename in the form [workbook]_[worksheet].csv
-        csv_filename = f"{workbook[:-5].replace(' ', '_')}_{sheet.title}.csv"
-        print(f"Converting '{workbook}' {sheet.title} sheet to {csv_filename}...")
+        csv_filename = f"{workbook[:-5]}_{sheet.title}.csv".replace(' ', '_')
+        print(f"Converting '{sheet.title}' in '{workbook}' to {csv_filename}...")
 
         writer = csv.writer(open(join(output_path, csv_filename), 'w'))
         sheet_content = [[cell.value for cell in row] for row in sheet.rows]
