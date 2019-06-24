@@ -5,7 +5,7 @@ A single Excel file might contain multiple sheets; you’ll have to create one C
 
 ## Sample Output
 <p align=center>
-  <img src=./images/sample_output.png alt=sample console output>
+  <img src=./images/sample_output.png alt=sample console output height=600>
 </p>
 
 Before
@@ -17,5 +17,5 @@ Before
 After
 -
 <p align=center>
-  <img src=./images/after.png alt=CSV after script>
+  <img src=./images/after.png alt=CSV after script height=600>
 </p>
