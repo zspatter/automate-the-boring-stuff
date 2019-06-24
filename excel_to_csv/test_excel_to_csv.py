@@ -39,9 +39,9 @@ def test_excel_to_csv():
 
 
 def test_worksheet_generator():
-    expected_wb_name = 'Alphabet.xlsx'
+    expected_wb_name = 'test_spreadsheet.xlsx'
     expected_sheets = [f'{alpha} sheet' for alpha in string.ascii_uppercase]
-    root = join(abspath('.'), 'excel_to_csv', 'sample_files')
+    root = join(abspath('.'), 'excel_to_csv', 'test_files')
     for sheet, workbook in excel_to_csv.worksheet_generator(root=root):
         assert sheet.title in expected_sheets
         assert workbook == expected_wb_name
