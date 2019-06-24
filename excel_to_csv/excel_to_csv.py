@@ -27,7 +27,7 @@ def excel_to_csv(path='.', save_directory='csv_output'):
 
         # writes content of the worksheet to a CSV
         sheet_content = [[cell.value for cell in row] for row in sheet.rows]
-        writer = csv.writer(open(join(output_path, csv_filename), 'w'))
+        writer = csv.writer(open(join(output_path, csv_filename), 'w', newline=''))
         writer.writerows(sheet_content)
 
 
