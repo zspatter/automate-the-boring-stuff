@@ -39,7 +39,7 @@ def worksheet_generator(root):
 
     :param str root: path to directory to search for .xlsx files
     """
-    workbooks = sorted([file for file in os.listdir(path=root) if file.endswith('.xlsx')])
+    workbooks = sorted([file for file in os.listdir(path=root) if file.lower().endswith('.xlsx')])
 
     for workbook in workbooks:
         wb = openpyxl.load_workbook(filename=join(root, workbook))
