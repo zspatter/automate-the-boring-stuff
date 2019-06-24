@@ -23,22 +23,24 @@ def excel_to_csv(path='.', save_directory='csv_output'):
         csv_filename = f"{workbook[:-5]}_{sheet.title}.csv".replace(' ', '_')
         print(f"Converting '{sheet.title}' in '{workbook}' to {csv_filename}...")
 
-        writer = csv.writer(open(join(output_path, csv_filename), 'w'))
+        # writes content of the worksheet to a CSV
         sheet_content = [[cell.value for cell in row] for row in sheet.rows]
+        writer = csv.writer(open(join(output_path, csv_filename), 'w'))
         writer.writerows(sheet_content)
 
 
 def worksheet_generator(root):
     """
-    Generates worksheet objects
+    Generates worksheet objects in alphabetical order. After all
+    worksheets within a workbook have been returned, the generator
+    will start on the next workbook in the directory.
 
-    :param root:
+    :param str root: path to directory to search for .xlsx files
     """
     workbooks = sorted([file for file in os.listdir(path=root) if file.endswith('.xlsx')])
 
     for workbook in workbooks:
         wb = openpyxl.load_workbook(filename=join(root, workbook))
-
         for worksheet in sorted(wb.sheetnames):
             yield workbook, wb[worksheet]
 
