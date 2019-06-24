@@ -52,6 +52,7 @@ This contains my project solutions for [Automate the Boring Stuff with Python](h
     - [Custom Invitations as Word Documents](./custom_invitations/)
     - [Brute-Force PDF Password Breaker](./pdf_password_breaker/)
 * Chapter 14 – Working with CSV Files and JSON Data
+    - [Excel-to-CSV Converter](./excel_to_csv/)
 * Chapter 15 – Keeping Time, Scheduling Tasks, and Launching Programs
 * Chapter 16 – Sending Email and Text Messages
 * Chapter 17 – Manipulating Images
