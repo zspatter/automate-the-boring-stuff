@@ -2,6 +2,7 @@
 
 import csv
 import os
+import re
 from os.path import abspath, join
 
 import openpyxl
@@ -20,8 +21,9 @@ def excel_to_csv(path='.', save_directory='csv_output'):
 
     for sheet, workbook in worksheet_generator(root=abspath(path)):
         # creates filename in the form [workbook]_[worksheet].csv
-        csv_filename = f"{workbook[:-5]}_{sheet.title}.csv".replace(' ', '_')
-        print(f"Converting '{sheet.title}' in '{workbook}' to {csv_filename}...")
+        csv_filename = re.sub(pattern=r'\s+', repl='_',
+                              string=f"{workbook[:-5]}_{sheet.title}.csv")
+        print(f"Converting '{sheet.title}' in '{workbook}' to '{csv_filename}'...")
 
         # writes content of the worksheet to a CSV
         sheet_content = [[cell.value for cell in row] for row in sheet.rows]
