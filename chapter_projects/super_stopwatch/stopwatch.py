@@ -11,26 +11,24 @@ def print_instructions():
     print('Starting.\n')
 
 
-def start_stopwatch():
-    global start, previous_time, lap_num
+def stopwatch():
     start = time.time()
     previous_time = start
     lap_num = 1
-    print(f"{'-' * 55}"
+    spacer = '  |  '
+
+    # prints table header
+    print(f"{'_' * 55}"
           f"\n|{'Lap #':^12} | "
           f"{'Total time':^19}| "
           f"{'Lap time':^17}|"
           f"\n{'-' * 55}", end='')
 
-
-def stopwatch_loop():
-    global lap_num, previous_time
-    spacer = '  |  '
     try:
         while True:
             input()
-            lap_time = f'{round(time.time() - previous_time, 2):.2f} s'
-            total_time = f'{round(time.time() - start, 2):,.2f} s'
+            lap_time = f'{time.time() - previous_time:.2f} s'
+            total_time = f'{time.time() - start:,.2f} s'
             print(f"|  Lap #{lap_num:<4}{spacer}"
                   f"{total_time:>16}{spacer}"
                   f"{lap_time:>14}  |", end='')
@@ -43,5 +41,4 @@ def stopwatch_loop():
 
 if __name__ == '__main__':
     print_instructions()
-    start_stopwatch()
-    stopwatch_loop()
+    stopwatch()
