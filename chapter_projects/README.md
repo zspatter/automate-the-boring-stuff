@@ -34,6 +34,7 @@ Chapter projects are included in each chapter starting in chapter 6. These proje
     - [Removing the Header from CSV Files](./remove_csv_header/)
     - [Fetching Current Weather Data](./weather_forecast/)
 * Chapter 15 – Keeping Time, Scheduling Tasks, and Launching Programs
+    - [Super Stopwatch](./super_stopwatch/)
 * Chapter 16 – Sending Email and Text Messages
 * Chapter 17 – Manipulating Images
 * Chapter 18 – Controlling the Keyboard and Mouse with GUI Automation
