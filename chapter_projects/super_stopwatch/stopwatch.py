@@ -27,7 +27,7 @@ def stopwatch():
     try:
         while True:
             input()
-            lap_time = f'{time.time() - previous_time:.2f} s'
+            lap_time = f'{time.time() - previous_time:,.2f} s'
             total_time = f'{time.time() - start:,.2f} s'
             print(f"|  Lap #{lap_num:<4}{spacer}"
                   f"{total_time:>16}{spacer}"
