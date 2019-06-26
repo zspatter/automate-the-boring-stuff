@@ -29,11 +29,11 @@ def stopwatch():
     try:
         while True:
             input()
-            lap_time = f'{time.time() - previous_time:,.2f} s'
-            total_time = f'{time.time() - start:,.2f} s'
+            lap_time = f'{time.time() - previous_time:,.2} s'
+            total_time = f'{time.time() - start:,.2} s'
 
             # prints results of current stopwatch
-            print(f"║  Lap #{lap_num:<5}{column_spacer}"
+            print(f"║  Lap #{lap_num:<5,}{column_spacer}"
                   f"{total_time:>16}{column_spacer}"
                   f"{lap_time:>14}  ║", end='')
 
