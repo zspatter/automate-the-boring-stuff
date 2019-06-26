@@ -1,5 +1,5 @@
 # automate-the-boring-stuff
-[![Python Version](https://img.shields.io/badge/python-3.4%20%7C%203.5%20%7C%203.6%20%7C%203.7-blue.svg)](https://www.python.org/getit/)
+[![Python Version](https://img.shields.io/badge/python-3.6%20%7C%203.7-blue.svg)](https://www.python.org/getit/)
 [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
 <br>
 [![Build Status](https://travis-ci.com/zspatter/automate-the-boring-stuff.svg?branch=master)](https://travis-ci.com/zspatter/automate-the-boring-stuff)
