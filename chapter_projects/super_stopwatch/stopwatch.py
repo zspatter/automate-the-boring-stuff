@@ -22,7 +22,7 @@ def stopwatch():
           f"\n║{'Super Stopwatch':^54}║"
           f"\n{build_table_separator(inner='╦')}"
           f"\n║{'Lap Number':^14}║ "
-          f"{'Total time':^19}║ "
+          f"{'Total Time':^19}║ "
           f"{'Lap Time':^17}║"
           f"\n{build_table_separator()}", end='')
 
