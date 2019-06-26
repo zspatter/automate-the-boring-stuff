@@ -19,11 +19,11 @@ def stopwatch():
 
     # print table header
     print(f"{build_table_separator(outer_left='╔', inner='═', outer_right='╗')}"
-          f"\n║{'Super Stopwatch':^54}║"
+          f"\n║{'Stopwatch':^54}║"
           f"\n{build_table_separator(inner='╦')}"
-          f"\n║{'Lap Number':^14}║ "
-          f"{'Total Time':^19}║ "
-          f"{'Lap Time':^17}║"
+          f"\n{'║':<3}{'Lap Number':^10}{column_spacer}"
+          f"{'Lap Time':^14}{column_spacer}"
+          f"{'Total Time':^16}{'║':>3}"
           f"\n{build_table_separator()}", end='')
 
     try:
@@ -33,9 +33,9 @@ def stopwatch():
             total_time = f'{time.time() - start:,.2f} s'
 
             # prints results of current stopwatch
-            print(f"║  Lap #{lap_num:<5,}{column_spacer}"
-                  f"{total_time:>16}{column_spacer}"
-                  f"{lap_time:>14}  ║", end='')
+            print(f"{'║':<3}Lap #{lap_num:<5,}{column_spacer}"
+                  f"{lap_time:>14}{column_spacer}"
+                  f"{total_time:>16}{'║':>3}", end='')
 
             lap_num += 1
             previous_time = time.time()
@@ -46,7 +46,7 @@ def stopwatch():
 
 
 def build_table_separator(outer_left='╠', inner='╬', outer_right='╣'):
-    return f"{outer_left}{'═' * 14}{inner}{'═' * 20}{inner}{'═' * 18}{outer_right}"
+    return f"{outer_left}{'═' * 14}{inner}{'═' * 18}{inner}{'═' * 20}{outer_right}"
 
 
 if __name__ == '__main__':
