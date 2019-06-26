@@ -18,7 +18,7 @@ def stopwatch():
     spacer = '  |  '
 
     # prints table header
-    print(f"{'_' * 55}"
+    print(f"{'-' * 55}"
           f"\n|{'Lap #':^12} | "
           f"{'Total time':^19}| "
           f"{'Lap time':^17}|"
@@ -35,7 +35,7 @@ def stopwatch():
             lap_num += 1
             previous_time = time.time()
     except KeyboardInterrupt:
-        print(f"{'-' * 55}"
+        print(f"\n{'-' * 55}"
               f"\n\nDone.")
 
 
