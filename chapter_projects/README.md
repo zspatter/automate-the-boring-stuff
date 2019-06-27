@@ -34,7 +34,7 @@ Chapter projects are included in each chapter starting in chapter 6. These proje
     - [Removing the Header from CSV Files](./remove_csv_header/)
     - [Fetching Current Weather Data](./weather_forecast/)
 * Chapter 15 – Keeping Time, Scheduling Tasks, and Launching Programs
-    - [Super Stopwatch](./super_stopwatch/)
+    - [Super Stopwatch](./stopwatch/)
     - [Multithreaded XKCD Downloader](./multithreaded_xkcd_downloader/)
     - [Simple Countdown Program](./simple_countdown/)
 * Chapter 16 – Sending Email and Text Messages
