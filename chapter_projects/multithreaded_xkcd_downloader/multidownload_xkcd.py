@@ -67,10 +67,9 @@ def get_latest_comic_number(comic_num=2101):
     return comic_num
 
 
-if __name__ == '__main__':
-    # store comics in ./xkcd_comics/
-    os.makedirs('xkcd_comics', exist_ok=True)
-
+def download_all_comics(output_path='xkcd_comics'):
+    # create directory for output
+    os.makedirs(output_path, exist_ok=True)
     threads = []
 
     # create threads for downloading
@@ -85,3 +84,7 @@ if __name__ == '__main__':
 
     print(f'\nAll successfully downloaded images have been saved to the /xkcd_comics/ directory.'
           f'\nDone.')
+
+
+if __name__ == '__main__':
+    download_all_comics()
