@@ -6,5 +6,5 @@ A multithreaded program that has some threads downloading comics while others ar
 
 ## Sample Output
 <p align=center>
-  <img src=./sample_output.png alt=sample console output>
+  <img src=./sample_output.png alt=sample console output height=1100>
 </p>
