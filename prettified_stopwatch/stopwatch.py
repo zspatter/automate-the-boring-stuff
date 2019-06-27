@@ -48,7 +48,7 @@ def stopwatch():
             # saves and prints current results
             output += f'\n{row_content}'
             print(row_content, end='')
-            
+
     except KeyboardInterrupt:
         # closes the stopwatch table and copies the table to clipboard
         close_table = f"\n{build_table_border(outer_left='╚', inner='╩', outer_right='╝')}"
@@ -59,7 +59,7 @@ def stopwatch():
 
 def build_header():
     """
-    Builds formatted header for the stopwatch unicode table.
+    Builds formatted unicode header for the stopwatch table.
 
     :return: formatted unicode header
     """
@@ -73,7 +73,7 @@ def build_header():
 
 def build_table_border(outer_left='╠', inner='╬', outer_right='╣'):
     """
-    Builds formatted table border for stopwatch unicode table. Default
+    Builds formatted unicode table border for stopwatch table. Default
     values create the inner borders.
 
     :param str outer_left: unicode char corresponding to outer left intersection
@@ -86,7 +86,7 @@ def build_table_border(outer_left='╠', inner='╬', outer_right='╣'):
 
 def build_row(lap_num, lap_time, total_time):
     """
-    Builds formatted row with details about the lap/total time.
+    Builds formatted unicode row with details about the lap/total time.
 
     :param int lap_num: lap number
     :param str lap_time: formatted string representing lap time in seconds
