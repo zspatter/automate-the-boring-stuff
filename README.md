@@ -54,6 +54,7 @@ This contains my project solutions for [Automate the Boring Stuff with Python](h
 * Chapter 14 – Working with CSV Files and JSON Data
     - [Excel-to-CSV Converter](./excel_to_csv/)
 * Chapter 15 – Keeping Time, Scheduling Tasks, and Launching Programs
+    - [Prettified Stopwatch](./prettified_stopwatch/)
 * Chapter 16 – Sending Email and Text Messages
 * Chapter 17 – Manipulating Images
 * Chapter 18 – Controlling the Keyboard and Mouse with GUI Automation
