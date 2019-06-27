@@ -12,7 +12,7 @@ This project is a good example of a program that can automatically follow links 
 
 ## Sample Output
 <p align=center>
-  <img src=./sample_output.png alt=sample console output>
+  <img src=./sample_output.png alt=sample console output height=1200>
 </p>
 
 ## Ideas for Similar Programs
