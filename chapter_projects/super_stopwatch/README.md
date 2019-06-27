@@ -6,6 +6,11 @@ At a high level, here’s what your program will do:
 - Track the amount of time elapsed between presses of the ENTER key, with each key press starting a new “lap” on the timer
 - Print the lap number, total time, and lap time
 
+## Sample Output
+<p align=center>
+  <img src=./sample_output.png alt=sample console output>
+</p>
+
 Ideas for Similar Programs
 -
 
