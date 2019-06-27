@@ -12,7 +12,7 @@ ANSI_RED = '\033[31;m'
 ANSI_RESET = '\033[0m'
 
 
-def scrape_xkcd(start_num, end_num):
+def download_pages(start_num, end_num):
     if start_num < 1:
         start_num = 1
     for comic_num in range(start_num, end_num - 1, -1):
@@ -74,7 +74,7 @@ def download_all_comics(output_path='xkcd_comics'):
 
     # create threads for downloading
     for x in range(get_latest_comic_number(), 0, -100):
-        download_thread = threading.Thread(target=scrape_xkcd, args=(x, x - 99))
+        download_thread = threading.Thread(target=download_pages, args=(x, x - 99))
         threads.append(download_thread)
         download_thread.start()
 
