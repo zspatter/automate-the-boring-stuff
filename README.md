@@ -55,6 +55,7 @@ This contains my project solutions for [Automate the Boring Stuff with Python](h
     - [Excel-to-CSV Converter](./excel_to_csv/)
 * Chapter 15 – Keeping Time, Scheduling Tasks, and Launching Programs
     - [Prettified Stopwatch](./prettified_stopwatch/)
+    - [Scheduled Web Comic Downloader](./webcomic_downloader/)
 * Chapter 16 – Sending Email and Text Messages
 * Chapter 17 – Manipulating Images
 * Chapter 18 – Controlling the Keyboard and Mouse with GUI Automation
