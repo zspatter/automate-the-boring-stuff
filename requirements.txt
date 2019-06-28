@@ -8,3 +8,5 @@ selenium
 openpyxl
 PyPDF2
 python-docx
+imapclient
+pyzmail
