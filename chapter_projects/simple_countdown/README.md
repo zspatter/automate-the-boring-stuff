@@ -6,6 +6,11 @@ At a high level, here’s what your program will do:
 - Count down from 60
 - Play a sound file (alarm.wav) when the countdown reaches zero
 
+## Sample Output
+<p align=center>
+  <img src=./sample_output.gif alt=sample console output>
+</p>
+
 Ideas for Similar Programs
 -
 A countdown is a simple delay before continuing the program’s execution. This can also be used for other applications and features, such as the following:
