@@ -81,7 +81,6 @@ sandbox/
 *.bak
 *.dat
 *.dir
-*.db
 mad_libs/sample_files/
 mad_libs/sample_files/output.txt
 selective_copy/matches/*
@@ -90,6 +89,8 @@ chapter_projects/quiz_generator/quizzes/
 chapter_projects/xkcd_downloader/xkcd_comics/
 image_site_downloader/imgur/
 chapter_projects/multithreaded_xkcd_downloader/xkcd_comics/
+multiclipboard/*.db
+chapter_projects/multiclipboard/*.db
 webcomic_downloader/previous_dates.bak
 webcomic_downloader/previous_dates.dat
 webcomic_downloader/previous_dates.dir
