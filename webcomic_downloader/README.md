@@ -6,7 +6,7 @@ The script searches for new releases of the [Buttersafe webcomic](https://www.bu
 
 ### Sample First Request
 <p align=center>
-  <img src=./images/sampl_first_request.png alt=sample first request>
+  <img src=./images/sample_first_request.png alt=sample first request>
 </p>
 
 ### Sample With Multiple New Comics
