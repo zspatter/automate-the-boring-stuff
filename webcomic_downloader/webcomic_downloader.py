@@ -34,7 +34,8 @@ def check_buttersafe(root=join(abspath('.'), 'webcomics'), previous_date=None):
     if not previous_date:
         print('First ever request')
         download_buttersafe_comic(soup, root)
-        print(f'\nThe most recent buttersafe comic has been saved to:\n\t{root}')
+        print(f'\nThe most recent buttersafe comic has been saved to:'
+              f'\n\t{join(basename(root), "[filename]")}')
     else:
         print('Starting chron check...')
         if previous_date == current_date:
@@ -45,7 +46,7 @@ def check_buttersafe(root=join(abspath('.'), 'webcomics'), previous_date=None):
                 download_buttersafe_comic(soup, root)
                 current_date, soup = get_previous_butterface(soup)
             print(f'\nAll buttersafe comics published after {previous_date} '
-                  f'have been saved to:\n\t{root}')
+                  f'have been saved to:\n\t{join(basename(root), "[filename]")}')
 
     return latest_date
 
