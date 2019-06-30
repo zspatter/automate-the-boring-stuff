@@ -10,6 +10,18 @@ This script does the following:
 - Loops over all the rows
 - If the row is for garlic, celery, or lemons it updates the price
 
+## Sample Spreadsheet Snippets
+
+### Before
+<p align=center>
+  <img src=./images/before.png alt=before update>
+</p>
+
+### After
+<p align=center>
+  <img src=./images/after.png alt=after update>
+</p>
+
 # Ideas for Similar Scripts
 
 Since many office workers use Excel spreadsheets all the time, a program that can automatically edit and write Excel files could be really useful. Such a program could do the following:
