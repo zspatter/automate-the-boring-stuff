@@ -8,7 +8,7 @@ Here is what the program does:
 * Writes the quizzes to 35 text files
 * Writes the answer keys to 35 text files
 
-### Sample Quiz
+## Sample Quiz
 <p align=center>
   <img src=./sample_quiz.png alt=sample quiz>
 </p>
