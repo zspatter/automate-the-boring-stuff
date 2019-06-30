@@ -10,5 +10,5 @@ Here is what the program does:
 
 ## Sample Quiz
 <p align=center>
-  <img src=./sample_quiz.png alt=sample quiz>
+  <img src=./sample_quiz.png alt=sample quiz height=800>
 </p>
