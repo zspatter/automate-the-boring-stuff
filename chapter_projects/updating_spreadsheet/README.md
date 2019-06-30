@@ -14,12 +14,12 @@ This script does the following:
 
 ### Before
 <p align=center>
-  <img src=./images/before.png alt=before update>
+  <img src=./images/before.png alt=before update height=400>
 </p>
 
 ### After
 <p align=center>
-  <img src=./images/after.png alt=after update>
+  <img src=./images/after.png alt=after update height=400>
 </p>
 
 # Ideas for Similar Scripts
