@@ -2,6 +2,7 @@
 # multidownload_xkcd.py - downloads XKCD comics using multiple threads
 
 import os
+from os.path import basename, join
 import re
 import threading
 
@@ -12,7 +13,7 @@ ANSI_RED = '\033[31;m'
 ANSI_RESET = '\033[0m'
 
 
-def download_pages(start_num, end_num):
+def download_pages(start_num, end_num, root):
     if start_num < 1:
         start_num = 1
     for comic_num in range(start_num, end_num - 1, -1):
@@ -30,10 +31,10 @@ def download_pages(start_num, end_num):
         if not comic_element:
             print(f'\n{ANSI_RED}Could not find comic image.{ANSI_RESET}\n')
         else:
-            download_image(comic_element)
+            download_image(comic_element, root)
 
 
-def download_image(comic_element):
+def download_image(comic_element, root):
     # download the image
     comic_url = f'https:{comic_element[0].get("src")}'
     print(f"{'Downloading image:':<19} {comic_url}...")
@@ -42,7 +43,7 @@ def download_image(comic_element):
         res.raise_for_status()
 
         # save the image locally
-        with open(os.path.join('xkcd_comics', os.path.basename(comic_url)), 'wb') as image:
+        with open(join(root, basename(comic_url)), 'wb') as image:
             for chunk in res.iter_content(100_000):
                 image.write(chunk)
     except requests.exceptions.MissingSchema:
@@ -74,7 +75,7 @@ def download_all_comics(output_path='xkcd_comics'):
 
     # create threads for downloading
     for x in range(get_latest_comic_number(), 0, -100):
-        download_thread = threading.Thread(target=download_pages, args=(x, x - 99))
+        download_thread = threading.Thread(target=download_pages, args=(x, x - 99, output_path))
         threads.append(download_thread)
         download_thread.start()
 
@@ -82,7 +83,8 @@ def download_all_comics(output_path='xkcd_comics'):
     for thread in threads:
         thread.join()
 
-    print(f'\nAll successfully downloaded images have been saved to the /xkcd_comics/ directory.'
+    print(f'\nAll successfully downloaded images have been saved to '
+          f'{join(output_path, "[filename]")}'
           f'\nDone.')
 
 
