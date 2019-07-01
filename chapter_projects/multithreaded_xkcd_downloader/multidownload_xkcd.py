@@ -2,9 +2,9 @@
 # multidownload_xkcd.py - downloads XKCD comics using multiple threads
 
 import os
-from os.path import basename, join
 import re
 import threading
+from os.path import basename, join
 
 import bs4
 import requests
