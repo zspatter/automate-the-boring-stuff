@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 import os
 import shelve
 from os.path import abspath, join, basename
