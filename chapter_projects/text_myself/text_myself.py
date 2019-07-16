@@ -1,12 +1,15 @@
 #! /usr/bin/env python3
 # text_myself.py - defines text_myself() that texts a message passed as string
+import os
+
 from twilio.rest import Client
 
-file = open('credentials.txt', 'r')
-credentials = file.readlines()
-ACCOUNT_SID, AUTH_TOKEN, TWILIO_NUMBER, MY_CELL = [item.strip() for item in credentials]
+ACCOUNT_SID = os.environ.get('TWILIO_ACCOUNT_SID')
+AUTH_TOKEN = os.environ.get('TWILIO_AUTH_TOKEN')
+TWILIO_NUMBER = os.environ.get('TWILIO_NUMBER')
+MY_NUMBER = os.environ.get('MY_NUMBER')
 
 
 def text_myself(message):
     client = Client(ACCOUNT_SID, AUTH_TOKEN)
-    client.messages.create(body=message, from_=TWILIO_NUMBER, to=MY_CELL)
+    client.messages.create(body=message, from_=TWILIO_NUMBER, to=MY_NUMBER)
