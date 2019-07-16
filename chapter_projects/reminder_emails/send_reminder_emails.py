@@ -48,11 +48,10 @@ if __name__ == '__main__':
     # open spreadsheet and get latest dues status
     wb = openpyxl.load_workbook(join(abspath('.'), 'duesRecords.xlsx'))
     sheet = wb.active
-
     last_month = sheet.cell(row=1, column=sheet.max_column).value
+
     unpaid = get_unpaid_members(sheet)
     email_password = sys.argv[1]
-
     send_reminders(user='cli.disposable@gmail.com',
                    password=email_password,
                    month=last_month,
