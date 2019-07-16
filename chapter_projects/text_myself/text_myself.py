@@ -1,13 +1,13 @@
 #! /usr/bin/env python3
 # text_myself.py - defines text_myself() that texts a message passed as string
-import os
+from os import environ
 
 from twilio.rest import Client
 
-ACCOUNT_SID = os.environ.get('TWILIO_ACCOUNT_SID')
-AUTH_TOKEN = os.environ.get('TWILIO_AUTH_TOKEN')
-TWILIO_NUMBER = os.environ.get('TWILIO_NUMBER')
-MY_NUMBER = os.environ.get('MY_NUMBER')
+ACCOUNT_SID = environ.get('TWILIO_ACCOUNT_SID')
+AUTH_TOKEN = environ.get('TWILIO_AUTH_TOKEN')
+TWILIO_NUMBER = environ.get('TWILIO_NUMBER')
+MY_NUMBER = environ.get('MY_NUMBER')
 
 
 def text_myself(message):
