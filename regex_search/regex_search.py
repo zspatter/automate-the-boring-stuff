@@ -1,23 +1,24 @@
 #! /usr/bin/env python3
 
-import os
 import re
+from pathlib import Path
 
 
 def regex_search(regex, path):
-    if not os.path.isdir(path):
+    if not path.is_dir():
         print('The file path must be to a directory.')
         return
 
     regex = re.compile(regex)
-    matches = ''
+    matches = []
+    generator = (file for file in path.iterdir() if file.suffix == '.txt')
 
-    generator = (file for file in os.listdir(path=path) if file.endswith('.txt'))
     for file in generator:
-        with open(path + file) as document:
-            match_gen = (line for line in document if regex.search(line))
-            for line in match_gen:
-                matches += line
+        text = file.read_text().split('\n')
+        match_gen = (line for line in text if regex.search(line))
+
+        for line in match_gen:
+            matches.append(line)
 
     return matches
 
@@ -30,4 +31,4 @@ if __name__ == '__main__':
          (\.[a-zA-Z]{2,4})      # dot-something
          )''', re.VERBOSE)
 
-    print(''.join(regex_search(email_regex, './sample_data/')))
+    print('\n'.join(regex_search(email_regex, Path('./sample_data'))))
