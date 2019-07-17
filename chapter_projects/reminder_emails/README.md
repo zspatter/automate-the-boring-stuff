@@ -6,3 +6,14 @@ At a high level, here’s what your program will do:
 - Read data from an Excel spreadsheet
 - Find all members who have not paid dues for the latest month
 - Find their email addresses and send them personalized reminders
+
+## Sample Output
+<p align=center>
+  <img src=./images/sample_output.png alt=sample console output>
+</p>
+
+## Sent Mail
+## Sample Output
+<p align=center>
+  <img src=./images/sent_mail.png alt=sample sent items>
+</p>
