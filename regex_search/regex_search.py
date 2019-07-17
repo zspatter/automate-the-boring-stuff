@@ -5,6 +5,7 @@ from pathlib import Path
 
 
 def regex_search(regex, path):
+    path = path.resolve()
     if not path.is_dir():
         print('The file path must be to a directory.')
         return

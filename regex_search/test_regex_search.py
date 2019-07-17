@@ -1,5 +1,5 @@
 import re
-from collections import Counter
+from pathlib import Path
 
 from regex_search import regex_search
 
@@ -14,10 +14,9 @@ def test_regex_search():
         (\s*(ext|x|ext.)\s*(\d{2,5}))?    # extension
         )''', re.VERBOSE)
 
-    matches = regex_search.regex_search(phone_regex, './regex_search/sample_data/')
-    counter = Counter(matches)
+    matches = regex_search.regex_search(phone_regex, Path('./regex_search/sample_data/'))
 
-    assert counter['\n'] == 3
-    assert '987-654-3210' in matches
-    assert '555-555-5555' in matches
-    assert '444-444-4444' in matches
+    assert len(matches) == 3
+    assert 'Phone: 987-654-3210' in matches
+    assert 'ph: 555-555-5555' in matches
+    assert 'phone: 444-444-4444' in matches
