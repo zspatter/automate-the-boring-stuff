@@ -1,9 +1,9 @@
 #! /usr/bin/env python3
 # date_converter - Renames files with MM-DD-YYYY dates to YYYY-MM-DD
 
-import os
 import re
 import shutil
+from pathlib import Path
 
 date_regex = re.compile(r"""^(.*?)      # all text before the date
        ((0|1)?\d)                       # one or two digits for the month
@@ -20,11 +20,12 @@ def convert_dates(path):
     This function converts all files with recognized date patterns
     in their filename to ISO 8601 format (MM-DD-YYYY to YYYY-MM-DD).
 
-    :param str path: path to directory for analysis
+    :param Path path: path to directory for analysis
     """
+    path = path.resolve()
     # iterates over all files at given path
-    for filename in os.listdir(path):
-        match_object = date_regex.search(filename)
+    for filepath in path.iterdir():
+        match_object = date_regex.search(filepath.name)
 
         # only continues if there is a regex match
         if match_object:
@@ -34,18 +35,16 @@ def convert_dates(path):
             month = match_object.group(2)
             day = match_object.group(5)
             suffix = match_object.group(10)
-            new_name = prefix + '.'.join([year, month, day]) + suffix
+            new_name = f'{prefix}{year}.{month}.{day}{suffix}'
 
-            # determines absolute path for current and new filenames
-            abs_path = os.path.abspath(path)
-            filename = os.path.join(abs_path, filename)
-            new_name = os.path.join(abs_path, new_name)
+            # determines path for new filenames
+            new_path = path.joinpath(new_name)
 
             # renames applicable files
-            print(f"Renaming '{os.path.basename(filename)}' "
-                  f"to '{os.path.basename(new_name)}'\n")
-            shutil.move(filename, new_name)
+            print(f"Renaming '{filepath.name}' "
+                  f"to '{new_path.name}'...")
+            shutil.move(filepath, new_path)
 
 
 if __name__ == '__main__':
-    convert_dates('./sample_files/')
+    convert_dates(Path('./sample_files'))
