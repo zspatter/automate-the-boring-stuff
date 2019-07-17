@@ -9,11 +9,10 @@ At a high level, here’s what your program will do:
 
 ## Sample Output
 <p align=center>
-  <img src=./images/sample_output.png alt=sample console output>
+  <img src=./images/sample_output.png alt=sample console output width=400>
 </p>
 
 ## Sent Mail
-## Sample Output
 <p align=center>
   <img src=./images/sent_mail.png alt=sample sent items>
 </p>
