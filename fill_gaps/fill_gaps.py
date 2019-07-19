@@ -1,8 +1,8 @@
 #! /usr/bin/env python3
 
-import os
 import re
 import shutil
+from pathlib import Path
 
 
 def get_matching_files(root, regex):
@@ -10,11 +10,11 @@ def get_matching_files(root, regex):
     Generates a sorted list of files that match the regex pattern at
     root's destination
 
-    :param str root: absolute path of directory to search
+    :param Path root: absolute path of directory to search
     :param Pattern regex: pattern of filename
     :return: sorted list of matching filenames
     """
-    return sorted([file for file in os.listdir(root) if regex.match(file)])
+    return sorted([file.name for file in root.iterdir() if regex.match(file.name)])
 
 
 def fill_sequence_gap(root, prefix, extension):
@@ -30,7 +30,7 @@ def fill_sequence_gap(root, prefix, extension):
     :param str extension: desired extension
     """
     # ensures path is absolute
-    root = os.path.abspath(root)
+    root = Path(root).resolve()
 
     # ensures the '.' in the extension is optional in the formal parameter
     if extension.startswith('.'):
@@ -58,7 +58,7 @@ def fill_sequence_gap(root, prefix, extension):
                 f"{match_object.group(4)}"
 
             # rename file
-            shutil.move(os.path.join(root, match), os.path.join(root, filename))
+            shutil.move(Path(f'{root}/{match}'), Path(f'{root}/{filename}'))
             print(f'Renaming {match} to {filename}')
 
         # increment expected count
@@ -80,15 +80,12 @@ def insert_gap(root, prefix, extension, start, stop=None):
     stop value is optional - if none is provided the gap will only be one
     number.
 
-    :param str root: path of directory to search
+    :param Path root: path of directory to search
     :param str prefix: text the filename begins with
     :param str extension: desired extension
     :param int start: number where gap should begin (where shift starts)
     :param int stop: number where gap ends (non-inclusive)
     """
-    # ensures path is absolute
-    root = os.path.abspath(root)
-
     # ensures the '.' in the extension is optional in the formal parameter
     if extension.startswith('.'):
         extension = extension[1:]
@@ -120,23 +117,22 @@ def insert_gap(root, prefix, extension, start, stop=None):
                 f'{match_object.group(4)}'
 
             # rename file
-            shutil.move(os.path.join(root, match),
-                        os.path.join(root, filename))
+            shutil.move(Path(f'{root}/{match}'), Path(f'{root}/{filename}'))
             print(f'Renaming {match} to {filename}')
 
         print('Done\n')
 
 
 if __name__ == '__main__':
-    path = os.path.abspath('./demo_files/')
-    if os.path.exists(path):
+    path = Path('./demo_files/').resolve()
+    if path.exists():
         shutil.rmtree(path)
 
-    os.makedirs(path)
+    path.mkdir(parents=True)
 
     # creates files with only odd numbers spam00<x>.txt
     for x in range(1, 15, 2):
-        with open(os.path.join(path, f'spam{x:03}.txt'), 'w') as spam:
+        with open(path / f'spam{x:03}.txt', 'w') as spam:
             spam.write(f'spam{x:03}')
 
     fill_sequence_gap(path, 'spam', '.txt')
