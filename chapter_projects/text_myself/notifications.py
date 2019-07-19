@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# text_myself.py - defines text_myself() that texts a message passed as string
+# notifications.py - defines text_myself() that texts a message passed as string
 from os import environ
 
 from twilio.rest import Client
