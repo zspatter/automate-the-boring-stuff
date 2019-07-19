@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 # xkcd_downloader.py - Downloads every single XKCD comic
 
-import os
+from pathlib import Path
 
 import bs4
 import requests
@@ -12,7 +12,7 @@ ANSI_RESET = '\033[0m'
 if __name__ == '__main__':
     # store comics in ./xkcd_comics/
     url, comic_url = 'http://xkcd.com', ''
-    os.makedirs('xkcd_comics', exist_ok=True)
+    Path('xkcd_comics/').mkdir(exist_ok=True)
 
     # while there is a previous comic/link
     while not url.endswith('#'):
@@ -43,7 +43,7 @@ if __name__ == '__main__':
                 continue
 
         # save the image locally
-        with open(os.path.join('xkcd_comics', os.path.basename(comic_url)), 'wb') as image:
+        with Path(f'xkcd_comics').joinpath(Path(comic_url).name).open('wb') as image:
             for chunk in res.iter_content(100_000):
                 image.write(chunk)
 
