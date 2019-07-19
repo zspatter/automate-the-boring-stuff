@@ -14,5 +14,5 @@ text_myself(message='Beep Boop: sample message')
 
 ## Sample Message
 <p align=center>
-  <img src=sample_message.png alt=sample message>
+  <img src=sample_message.png alt=sample message height=350>
 </p>
