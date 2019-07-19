@@ -1,6 +1,6 @@
-import os
 import re
 import shutil
+from pathlib import Path
 
 from fill_gaps import fill_gaps
 
@@ -41,11 +41,11 @@ def test_get_matching_files():
                         'fill_gaps.py',
                         'test_fill_gaps.py')
 
-    root = os.path.abspath('./fill_gaps/')
+    root = Path('./fill_gaps/').resolve()
 
     matches = fill_gaps.get_matching_files(root=root,
                                            regex=re.compile(r'(^.*)(\.py$)'))
-    py_files = [file for file in os.listdir(root) if file.endswith('.py')]
+    py_files = sorted([file.name for file in root.glob('*.py')])
 
     assert len(matches) == len(expected_matches)
     assert len(py_files) == len(matches)
@@ -57,30 +57,30 @@ def test_get_matching_files():
 
 def test_fill_sequence_gap():
     # dir at path created
-    root = os.path.abspath(os.path.join('.', 'fill_gaps', 'test_files'))
-    if os.path.exists(root):
+    root = Path('./fill_gaps/test_files').resolve()
+    if root.exists():
         shutil.rmtree(root)
-    os.makedirs(root)
+    root.mkdir(parents=True)
 
     # creates files with only odd numbers spam00<x>.txt
     for x in range(1, 20, 2):
-        with open(os.path.join(root, f'spam{x:03d}.txt'), 'w') as spam:
+        with open(root / f'spam{x:03}.txt', 'w') as spam:
             spam.write(f'spam{x:03d}')
 
     # files created prior to filling gaps
-    gap_files = os.listdir(root)
+    gap_files = [file.name for file in root.iterdir() if file.is_file()]
     for gap_file in gap_files:
         assert gap_file in expected_gaps
 
     # results after filling gaps
     fill_gaps.fill_sequence_gap(root, 'spam', '.txt')
-    fill_files = os.listdir(root)
+    fill_files = [file.name for file in root.iterdir()]
     regex = re.compile(r'(^spam)(\d+)(.*)?(\.txt$)')
 
     # verifies files are renamed as expected and file contents remain unchanged
     for fill_file in fill_files:
         assert fill_file in expected_sequence
-        with open(os.path.join(root, fill_file), 'r') as reader:
+        with root.joinpath(fill_file).open('r') as reader:
             file_num = int(regex.search(fill_file).group(2))
             assert reader.read() == f'spam{(file_num * 2) - 1:03d}'
 
@@ -90,31 +90,29 @@ def test_fill_sequence_gap():
 
 def test_insert_gap():
     # dir at path created
-    root = os.path.abspath(os.path.join('.', 'fill_gaps', 'test_files'))
-    if os.path.exists(root):
+    root = Path('./fill_gaps/test_files').resolve()
+    if root.exists():
         shutil.rmtree(root)
-    os.makedirs(root)
+    root.mkdir(parents=True)
 
     # creates files with sequential numbers spam00<x>.txt
     for x in range(1, 11):
-        with open(os.path.join(root, f'spam{x:03d}.txt'), 'w') as spam:
+        with open(root / f'spam{x:03}.txt', 'w') as spam:
             spam.write(f'spam{x:03d}')
 
     # results prior to inserting gap
-    sequential_files = os.listdir(root)
-    for file in sequential_files:
-        assert file in expected_sequence
+    for file in root.iterdir():
+        assert file.name in expected_sequence
 
     # results after inserting gap
     fill_gaps.insert_gap(root, 'spam', '.txt', 5, 8)
-    gap_files = os.listdir(root)
     regex = re.compile(r'(^spam)(\d+)(.*)?(\.txt$)')
 
     # verifies files are renamed as expected and file contents remain unchanged
-    for gap_file in gap_files:
-        assert gap_file in expected_gap
-        with open(os.path.join(root, gap_file), 'r') as reader:
-            file_num = int(regex.search(gap_file).group(2))
+    for gap_file in root.iterdir():
+        assert gap_file.name in expected_gap
+        with open(root / gap_file, 'r') as reader:
+            file_num = int(regex.search(gap_file.name).group(2))
             text = f'spam{file_num if file_num < 5 else file_num - 3:03d}'
             assert reader.read() == text
 
