@@ -38,6 +38,6 @@ Chapter projects are included in each chapter starting in chapter 6. These proje
     - [Simple Countdown Program](./simple_countdown/)
 * Chapter 16 – Sending Email and Text Messages
     - [Sending Member Dues Reminder Emails](./reminder_emails/)
-    - ["Just Text Me" Module](./text_myself/)
+    - ["Just Text Me" Module](./notifications/)
 * Chapter 17 – Manipulating Images
 * Chapter 18 – Controlling the Keyboard and Mouse with GUI Automation
