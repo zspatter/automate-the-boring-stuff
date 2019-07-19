@@ -9,5 +9,10 @@ This simple function can be used by other programs by placing this file in the s
 ```python
 from notifications import text_myself
 
-text_myself(message='Sample message: task complete.')
+text_myself(message='Beep Boop: sample message')
 ```
+
+## Sample Message
+<p align=center>
+  <img src=sample_message.png alt=sample message>
+</p>
