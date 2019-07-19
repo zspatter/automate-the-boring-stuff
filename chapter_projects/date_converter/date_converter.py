@@ -2,7 +2,6 @@
 # date_converter - Renames files with MM-DD-YYYY dates to YYYY-MM-DD
 
 import re
-import shutil
 from pathlib import Path
 
 date_regex = re.compile(r"""^(.*?)      # all text before the date
@@ -43,7 +42,7 @@ def convert_dates(path):
             # renames applicable files
             print(f"Renaming '{filepath.name}' "
                   f"to '{new_path.name}'...")
-            shutil.move(filepath, new_path)
+            filepath.replace(target=new_path)
 
 
 if __name__ == '__main__':
