@@ -58,7 +58,8 @@ def email_assigned_chores(chore_assignments):
     smtp.login(email, password)
 
     for recipient, chores in chore_assignments.items():
-        message = f'Subject: Chore Assignments' \
+        message = f'To: {recipient}' \
+            f'\nSubject: Chore Assignments' \
             f'\nGreetings,' \
             f'\n\nYour assigned chores are: {format_chores(chores)}.'
 
