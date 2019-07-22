@@ -62,7 +62,7 @@ def open_links(links):
     """
     Opens all of the collected unsubscribe links individually in the browser.
 
-    :param list links: unsubscribe links
+    :param list links: unsubscribe links and sender names
     """
     for link, sender in links:
         print(f"Unsubscribing from: '{sender}'")
