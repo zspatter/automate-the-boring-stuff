@@ -6,5 +6,5 @@ This script can run as a cron job to check the weather just before waking up eac
 
 ## Sample Message
 <p align=center>
-  <img src=./sample_message.jpeg alt=sample umbrella reminder message height=350>
+  <img src=./sample_message.jpeg alt=sample umbrella reminder message height=300>
 </p>
