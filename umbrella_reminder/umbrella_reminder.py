@@ -8,11 +8,12 @@ def rain_check(url, threshold=35):
     Queries today's weather to check if the chance of precipitation is
     above the threshold. If the precip_chance is, it is returned.
 
-    :param str url: url for query to scrape forecast
+    :param str url: url for query to scrape forecast (this should point
+            to a specified location on weather.com)
     :param int threshold: bound for notifications. Any precip value above
             this variable will be returned
     """
-
+    # CSS selector for precipitation chance
     selector = '#daypart-0 > div > div.today-daypart-precip > span.precip-val > span'
 
     try:
@@ -34,5 +35,5 @@ if __name__ == '__main__':
     query_url = 'https://weather.com/weather/today/l/Kokomo+IN+USIN0331:1:US'
     precipitation = rain_check(url=query_url, threshold=85)
     if precipitation:
-        text_myself(message=f'Rain alert! The chance of precipitation today is '
-        f'{precipitation}% - don\'t forget to take an umbrella!')
+        text_myself(message=f"Rain alert! The chance of precipitation today is "
+                            f"{precipitation}% - don't forget to take an umbrella!")
