@@ -1,6 +1,8 @@
+#! /usr/bin/env python3
+from notifications import text_myself
+
 import requests
 from bs4 import BeautifulSoup
-from notifications import text_myself
 
 
 def rain_check(url, threshold=35):
