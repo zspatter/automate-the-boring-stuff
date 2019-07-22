@@ -57,6 +57,7 @@ This contains my project solutions for [Automate the Boring Stuff with Python](h
     - [Prettified Stopwatch](./prettified_stopwatch/)
     - [Scheduled Web Comic Downloader](./webcomic_downloader/)
 * Chapter 16 – Sending Email and Text Messages
+    - [Random Chore Assignment Emailer](./chore_assignment/)
 * Chapter 17 – Manipulating Images
 * Chapter 18 – Controlling the Keyboard and Mouse with GUI Automation
     
