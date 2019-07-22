@@ -40,7 +40,7 @@ def search_html_part(message):
     """
     Parses the html message using BeautifulSoup and searches for all href
     references. Any links that contain the word 'unsubscribe' are added
-    to a list of unsubscribe_links and returned
+    to a list of unsubscribe_links along with sender names and returned
 
     :param PyzMessage message: email message in html
     """
@@ -52,7 +52,8 @@ def search_html_part(message):
 
     for link in link_elems:
         if 'unsubscribe' in link.text.lower():
-            unsubscribe_links.append(link.get('href'))
+            unsubscribe_links.append((link.get('href'),
+                                      message.get_address('from')[0]))
 
     return unsubscribe_links
 
@@ -63,8 +64,8 @@ def open_links(links):
 
     :param list links: unsubscribe links
     """
-    for link in links:
-        print(f'Opening link: {link}')
+    for link, sender in links:
+        print(f"Unsubscribing from: '{sender}'")
         webbrowser.open(link)
 
 
