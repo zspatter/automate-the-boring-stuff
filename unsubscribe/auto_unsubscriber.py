@@ -9,6 +9,15 @@ from imapclient import IMAPClient
 
 
 def get_unsubscribe_links(imap_domain, email_address, email_password):
+    """
+    Logs into the IMAP server with the specified credentials. After
+    logging in, all messages in the inbox are searched. This function
+    returns a list of links to unsubscribe from email newsletters
+
+    :param str imap_domain: IMAP server domain name
+    :param str email_address: user
+    :param str email_password: password
+    """
     imaplib._MAXLINE = 10_000_000
     imap = IMAPClient(imap_domain, ssl=True)
     imap.login(email_address, email_password)
@@ -28,6 +37,13 @@ def get_unsubscribe_links(imap_domain, email_address, email_password):
 
 
 def search_html_part(message):
+    """
+    Parses the html message using BeautifulSoup and searches for all href
+    references. Any links that contain the word 'unsubscribe' are added
+    to a list of unsubscribe_links and returned
+
+    :param PyzMessage message: email message in html
+    """
     html = message.html_part.get_payload().decode(message.html_part.charset)
     soup = BeautifulSoup(html, 'html.parser')
 
@@ -42,6 +58,11 @@ def search_html_part(message):
 
 
 def open_links(links):
+    """
+    Opens all of the collected unsubscribe links individually in the browser.
+
+    :param list links: unsubscribe links
+    """
     for link in links:
         print(f'Opening link: {link}')
         webbrowser.open(link)
