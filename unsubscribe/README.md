@@ -7,3 +7,13 @@ Once the script gathers a list of these URLs, it opens each link individually us
 You’ll still have to manually go through and complete any additional steps to unsubscribe yourself from these lists. In most cases, this involves clicking a link to confirm.
 
 But this script saves you from having to go through all of your emails looking for unsubscribe links. You can then pass this script along to your friends so they can run it on their email accounts.
+
+## Sample Output
+<p align=center>
+  <img src=./images/sample_output.png alt=sample output>
+</p>
+
+## Sample Unsubscribe Pages
+<p align=center>
+  <img src=./images/sample_unsubscribe_pages.png alt=sample unsubscribe webpages>
+</p>
