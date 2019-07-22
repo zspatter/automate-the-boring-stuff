@@ -6,13 +6,21 @@ from os import environ
 
 
 def allocate_chores(chores, emails):
+    """
+    Allocates chores randomly to the various emails
+
+    :param list chores: list of chores
+    :param list emails: list of participants' emails
+    """
     chore_assignments = dict()
 
     for email in email_generator(emails):
         if not chores:
             break
+
         chore_assignment = random.choice(chores)
         chores.remove(chore_assignment)
+
         chore_assignments.setdefault(email, [])
         chore_assignments[email].append(chore_assignment)
 
@@ -20,6 +28,15 @@ def allocate_chores(chores, emails):
 
 
 def email_generator(emails):
+    """
+    Shuffles the emails, then after iterating through the entire list,
+    shuffles the emails again.
+
+    This results in a somewhat random allocation while keeping the quantity
+    of chores assigned to each individual consistent.
+
+    :param list emails: list of participants' emails
+    """
     while True:
         random.shuffle(emails)
         yield from emails
@@ -27,6 +44,12 @@ def email_generator(emails):
 
 
 def email_assigned_chores(chore_assignments):
+    """
+    Emails each participant with the list of assigned chores
+
+    :param dict chore_assignments: structure that holds all of the allocated chores
+                in the form {email: [chores]}
+    """
     email = environ.get('AUTO_EMAIL')
     password = environ.get('EMAIL_CREDENTIALS')
 
@@ -49,6 +72,11 @@ def email_assigned_chores(chore_assignments):
 
 
 def format_chores(chores):
+    """
+    Formats the chores to properly utilize the Oxford comma
+
+    :param list chores: list of chores
+    """
     if len(chores) == 1:
         return f'{chores[0]}'
     elif len(chores) == 2:
