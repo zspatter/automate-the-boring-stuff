@@ -64,5 +64,5 @@ if __name__ == '__main__':
                   'clean the fish tank', 'cook dinner', 'set the table']
     email_list = ['resident01@example.com', 'resident02@example.com',
                   'resident03@example.com', 'resident04@example.com']
-    
+
     allocate_chores(chores=chore_list, emails=email_list)
