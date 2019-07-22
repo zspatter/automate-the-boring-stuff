@@ -24,7 +24,7 @@ def allocate_chores(chores, emails):
         chore_assignments.setdefault(email, [])
         chore_assignments[email].append(chore_assignment)
 
-    email_assigned_chores(chore_assignments)
+    return chore_assignments
 
 
 def email_generator(emails):
@@ -40,7 +40,6 @@ def email_generator(emails):
     while True:
         random.shuffle(emails)
         yield from emails
-        print()
 
 
 def email_assigned_chores(chore_assignments):
@@ -93,4 +92,5 @@ if __name__ == '__main__':
     email_list = ['resident01@example.com', 'resident02@example.com',
                   'resident03@example.com', 'resident04@example.com']
 
-    allocate_chores(chores=chore_list, emails=email_list)
+    assignments = allocate_chores(chores=chore_list, emails=email_list)
+    email_assigned_chores(chore_assignments=assignments)
