@@ -3,15 +3,16 @@ from bs4 import BeautifulSoup
 from notifications import text_myself
 
 
-def rain_check(threshold=35):
+def rain_check(url, threshold=35):
     """
-    Quarries today's weather to check if the chance of precipitation is
+    Queries today's weather to check if the chance of precipitation is
     above the threshold. If the precip_chance is, it is returned.
 
-    :param threshold:
-    :return:
+    :param str url: url for query to scrape forecast
+    :param int threshold: bound for notifications. Any precip value above
+            this variable will be returned
     """
-    url = 'https://weather.com/weather/today/l/Kokomo+IN+USIN0331:1:US'
+
     selector = '#daypart-0 > div > div.today-daypart-precip > span.precip-val > span'
 
     try:
@@ -30,7 +31,8 @@ def rain_check(threshold=35):
 
 
 if __name__ == '__main__':
-    precipitation = rain_check(threshold=85)
+    query_url = 'https://weather.com/weather/today/l/Kokomo+IN+USIN0331:1:US'
+    precipitation = rain_check(url=query_url, threshold=85)
     if precipitation:
         text_myself(message=f'Rain alert! The chance of precipitation today is '
         f'{precipitation}% - don\'t forget to take an umbrella!')
