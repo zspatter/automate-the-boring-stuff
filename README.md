@@ -60,6 +60,7 @@ This contains my project solutions for [Automate the Boring Stuff with Python](h
     - [Random Chore Assignment Emailer](./chore_assignment/)
     - [Umbrella Reminder](./umbrella_reminder/)
     - [Auto Unsubscriber](./unsubscribe/)
+    - [Controlling Your Computer Through Email](./torrent_downloader/)
 * Chapter 17 – Manipulating Images
 * Chapter 18 – Controlling the Keyboard and Mouse with GUI Automation
     
