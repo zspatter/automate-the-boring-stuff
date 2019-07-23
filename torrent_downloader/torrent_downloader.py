@@ -4,6 +4,7 @@ import imaplib
 import json
 import subprocess
 from os import environ
+from pathlib import Path
 
 from imapclient import IMAPClient
 from notifications import text_myself
@@ -11,6 +12,19 @@ from pyzmail import PyzMessage
 
 
 def check_for_torrents(imap_domain, email_address, email_password, verification):
+    """
+    Logs into the specified email address with the given credentials. Then
+    gathers all unique ids for emails in the inbox that include "download"
+    the subject line AND are sent from the address specified in the
+    verification structure.
+
+    :param str imap_domain: email provider's IMAP server domain name
+    :param str email_address: user email
+    :param str email_password: email password
+    :param dict verification: structure including 2 entries - an email
+                address corresponding to the sender and a passphrase
+                included in the message body
+    """
     imaplib._MAXLINE = 10_000_000
     imap = IMAPClient(imap_domain, ssl=True)
     imap.login(email_address, email_password)
@@ -24,6 +38,18 @@ def check_for_torrents(imap_domain, email_address, email_password, verification)
 
 
 def check_emails(imap, unique_ids, verification):
+    """
+    Check the email body for all unique ids searching for the passphrase
+    stored in the verification variable. If the message contains the passphrase,
+    the body of the message and unique id are added to respective collections
+    (and returned)
+
+    :param IMAPClient imap: session with user logged in
+    :param list unique_ids: unique ids corresponding with search matches
+    :param dict verification: structure including 2 entries - an email
+                address corresponding to the sender and a passphrase
+                included in the message body
+    """
     instructions, remove_ids = [], []
 
     for unique_id in unique_ids:
@@ -31,7 +57,7 @@ def check_emails(imap, unique_ids, verification):
         message = PyzMessage.factory(raw_messages[unique_id][b'BODY[]'])
         text = message.text_part.get_payload().decode(message.text_part.charset)
 
-        if verification['verification'] in text:
+        if verification['passphrase'] in text:
             if message.html_part:
                 body = message.html_part.get_payload().decode(message.html_part.charset)
             if message.text_part:
@@ -44,6 +70,12 @@ def check_emails(imap, unique_ids, verification):
 
 
 def delete_instruction_emails(imap, remove_ids):
+    """
+    Deletes all emails that matched the search AND contained the expected passphrase
+
+    :param IMAPClient imap: session with user logged in
+    :param list remove_ids: unique ids corresponding with valid instructional emails
+    """
     if remove_ids:
         imap.delete_messages(remove_ids)
         imap.expunge()
@@ -51,17 +83,26 @@ def delete_instruction_emails(imap, remove_ids):
     imap.logout()
 
 
-def parse_email_body(email_body, torrent_client):
+def parse_email_body(email_body, client_path):
+    """
+    Parses email body to extract magnet link. Once the link is found,
+    the torrent client is launched and begins downloading the torrent.
+    After the download completes, a confirmation SMS message is sent.
+
+    :param str email_body: body of the email
+    :param Path client_path: path to torrent client
+    """
     lines = email_body.split('\n')
     for line in lines:
         if line.startswith('magnet:?'):
             print(line)
-            subprocess.Popen(f'{torrent_client} {line}')
-            text_myself(message=f'Downloading magnet link: {line}')
+            torrent_process = subprocess.Popen(f'{client_path} {line}')
+            torrent_process.wait()
+            text_myself(message=f'Finished downloading magnet link: {line}')
 
 
 if __name__ == '__main__':
-    TORRENT_CLIENT = 'path'
+    TORRENT_CLIENT = Path('usr/share/applications/qbittorent')
     EMAIL = environ.get('AUTO_EMAIL')
     PASSWORD = environ.get('EMAIL_CREDENTIALS')
     TORRENT_VERIFICATION = json.loads(environ.get('TORRENT_VERIFICATION'))
@@ -72,4 +113,4 @@ if __name__ == '__main__':
                                             verification=TORRENT_VERIFICATION)
     for instruction_email in instruction_emails:
         parse_email_body(email_body=instruction_email,
-                         torrent_client=TORRENT_CLIENT)
+                         client_path=TORRENT_CLIENT)
