@@ -14,7 +14,7 @@ def get_unsubscribe_links(imap_domain, email_address, email_password):
     logging in, all messages in the inbox are searched. This function
     returns a list of links to unsubscribe from email newsletters
 
-    :param str imap_domain: IMAP server domain name
+    :param str imap_domain: email provider's IMAP server domain name
     :param str email_address: user
     :param str email_password: password
     """
