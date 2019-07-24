@@ -11,5 +11,5 @@ Of course, you’ll want the program to make sure the emails come from you. In p
 
 ## Sample Notification
 <p align=center>
-  <img src=./images/sample_notification.jpeg alt=sample notification message height=300>
+  <img src=./images/sample_notification.jpeg alt=sample notification message height=250>
 </p>
