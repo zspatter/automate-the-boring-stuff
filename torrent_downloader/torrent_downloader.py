@@ -1,13 +1,12 @@
 #! /usr/bin/env python3
 
 import imaplib
-import json
 import subprocess
+from notifications import text_myself
 from os import environ
 from pathlib import Path
 
 from imapclient import IMAPClient
-from notifications import text_myself
 from pyzmail import PyzMessage
 
 
@@ -29,7 +28,7 @@ def check_for_torrents(imap_domain, email_address, email_password, verification)
     imap = IMAPClient(imap_domain, ssl=True)
     imap.login(email_address, email_password)
     imap.select_folder('INBOX')
-    unique_ids = imap.search(['SUBJECT', 'download', 'FROM', verification['email']])
+    unique_ids = imap.search(['FROM', verification['email'], 'SUBJECT', 'download'])
 
     if unique_ids:
         links, remove_ids = check_emails(imap, unique_ids, verification)
@@ -55,7 +54,7 @@ def check_emails(imap, unique_ids, verification):
     for unique_id in unique_ids:
         raw_messages = imap.fetch([unique_id], ['BODY[]'])
         message = PyzMessage.factory(raw_messages[unique_id][b'BODY[]'])
-        text = message.text_part.get_payload().decode(message.text_part.charset)
+        text = message.text_part.get_payload().decode('ascii')
 
         if verification['passphrase'] in text:
             if message.html_part:
@@ -96,21 +95,23 @@ def parse_email_body(email_body, client_path):
     for line in lines:
         if line.startswith('magnet:?'):
             print(line)
-            torrent_process = subprocess.Popen(f'{client_path} {line}')
+            torrent_process = subprocess.Popen([client_path, line], shell=True)
             torrent_process.wait()
             text_myself(message=f'Finished downloading magnet link: {line}')
 
 
 if __name__ == '__main__':
-    TORRENT_CLIENT = Path('usr/share/applications/qbittorent')
+    TORRENT_CLIENT = Path('/Applications/qbittorrent.app/Contents/MacOS/qbittorrent')
     EMAIL = environ.get('AUTO_EMAIL')
     PASSWORD = environ.get('EMAIL_CREDENTIALS')
-    TORRENT_VERIFICATION = json.loads(environ.get('TORRENT_VERIFICATION'))
+    BOT_VERIFICATION = {'email':      environ.get('TORRENT_EMAIL'),
+                        'passphrase': environ.get('TORRENT_PASSPHRASE')}
 
     instruction_emails = check_for_torrents(imap_domain='imap.gmail.com',
                                             email_address=EMAIL,
                                             email_password=PASSWORD,
-                                            verification=TORRENT_VERIFICATION)
-    for instruction_email in instruction_emails:
-        parse_email_body(email_body=instruction_email,
-                         client_path=TORRENT_CLIENT)
+                                            verification=BOT_VERIFICATION)
+    if instruction_emails:
+        for instruction_email in instruction_emails:
+            parse_email_body(email_body=instruction_email,
+                             client_path=TORRENT_CLIENT)
