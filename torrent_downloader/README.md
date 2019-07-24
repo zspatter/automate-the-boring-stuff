@@ -6,7 +6,7 @@ Of course, you’ll want the program to make sure the emails come from you. In p
 
 ## Sample Instructional Email
 <p align=center>
-  <img src=./sample_instructional_email.png alt=sample instructional email>
+  <img src=./images/sample_instructional_email.png alt=sample instructional email>
 </p>
 
 ## Sample Notification
