@@ -94,10 +94,9 @@ def parse_email_body(email_body, client_path):
     lines = email_body.split('\n')
     for line in lines:
         if line.startswith('magnet:?'):
-            print(line)
             torrent_process = subprocess.Popen([client_path, line])
             torrent_process.wait()
-            text_myself(message=f'Finished downloading magnet link: \n{line}')
+            text_myself(message=f'Finished downloading a magnet link!')
 
 
 if __name__ == '__main__':
