@@ -96,7 +96,9 @@ def parse_email_body(email_body, client_path):
         if line.startswith('magnet:?'):
             torrent_process = subprocess.Popen([client_path, line])
             torrent_process.wait()
-            text_myself(message=f'Finished downloading a magnet link!')
+            # removes trackers with torrent info from shared magnet link
+            text_myself(message=f'Finished downloading the following torrent: '
+                                f'\n\n{line[0:line.find("&")]}')
 
 
 if __name__ == '__main__':
