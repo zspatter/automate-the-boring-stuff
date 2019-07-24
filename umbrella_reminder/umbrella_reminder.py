@@ -35,7 +35,7 @@ def rain_check(url, threshold=35):
 
 if __name__ == '__main__':
     query_url = 'https://weather.com/weather/today/l/Kokomo+IN+USIN0331:1:US'
-    precipitation = rain_check(url=query_url, threshold=85)
+    precipitation = rain_check(url=query_url)
     if precipitation:
         text_myself(message=f"Rain alert! The chance of precipitation today is "
                             f"{precipitation}% - don't forget to take an umbrella!")
