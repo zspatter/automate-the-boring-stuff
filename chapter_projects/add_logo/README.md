@@ -15,11 +15,11 @@ At a high level, here’s what the program should do:
 Before
 -
 <p align=center>
-  <img src=./images/zophie.png alt=original image height=400>
+  <img src=./images/zophie.png alt=original image height=500>
 </p>
 
 After
 -
 <p align=center>
-  <img src=./images/zophie_with_logo.png alt=image with logo height=400>
+  <img src=./images/zophie_with_logo.png alt=image with logo height=500>
 </p>
