@@ -23,3 +23,12 @@ After
 <p align=center>
   <img src=./images/zophie_with_logo.png alt=image with logo height=500>
 </p>
+
+## Ideas For Similar Programs
+Being able to composite images or modify image sizes in a batch can be useful in many applications. You could write similar programs to do the following:
+
+- Add text or a website URL to images
+- Add timestamps to images
+- Copy or move images into different folders based on their sizes
+- Add a mostly transparent watermark to an image to prevent others from copying it
+
