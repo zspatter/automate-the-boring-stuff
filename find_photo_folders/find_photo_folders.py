@@ -17,7 +17,7 @@ def find_photo_folders(root):
     print(f'Searching for photo folders recursively in: {root.resolve()}...\n')
 
     for directory in directories:
-        file_count = len([f for f in directory.iterdir() if f.is_file()])
+        file_count = len([file for file in directory.iterdir() if file.is_file()])
         images = get_images(path=directory)
 
         for filename in images:
