@@ -21,7 +21,7 @@ Before
 After
 -
 <p align=center>
-  <img src=./images/zophie_with_logo.png alt=image with logo height=500>
+  <img src=./images/with_logo/zophie_with_logo.png alt=image with logo height=500>
 </p>
 
 ## Ideas For Similar Programs
