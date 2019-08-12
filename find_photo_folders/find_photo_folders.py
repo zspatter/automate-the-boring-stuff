@@ -3,14 +3,15 @@ from pathlib import Path
 from PIL import Image
 
 
-def find_folders(root):
+def find_photo_folders(root):
     """
     Finds all folders containing more image files that non-image files
     and prints the corresponding absolute paths.
 
-    Images are only considered images if they are at least 500x500 in size
+    Image files are only considered an image if they are PNG, JPG, GIF, or BMP
+    format and at least 500x500 in size
 
-    :param root:
+    :param Path root: root of the path to search recursively
     """
     directories = get_subdirectories(path=root)
     print(f'Searching for photo folders recursively in: "{root}"...\n')
@@ -33,8 +34,8 @@ def find_folders(root):
 
 def get_subdirectories(path):
     """
-    Gets list of all subdirectories (including current directory)
-    recursively at path
+    Gets list of all directories contained within path recursively
+    (including root)
 
     :param Path path: path to search
     """
@@ -56,4 +57,4 @@ def get_images(path):
 
 
 if __name__ == '__main__':
-    find_folders(root=Path('../../..'))
+    find_photo_folders(root=Path('../../..'))
