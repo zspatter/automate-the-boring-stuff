@@ -14,7 +14,7 @@ def find_photo_folders(root):
     :param Path root: root of the path to search recursively
     """
     directories = get_subdirectories(path=root)
-    print(f'Searching for photo folders recursively in: "{root}"...\n')
+    print(f'Searching for photo folders recursively in: {root.resolve()}...\n')
 
     for directory in directories:
         file_count = len([f for f in directory.iterdir() if f.is_file()])
