@@ -82,7 +82,7 @@ def add_logo(image, logo, save_as):
     width, height = image.size
     logo_width, logo_height = logo.size
     if width >= logo_width * 2 and height >= logo_height * 2:
-        image.paste(logo_image, (width - logo_width, height - logo_height), logo_image)
+        image.paste(logo, (width - logo_width, height - logo_height), logo)
         print(f'Saving resulting image as "{save_as}"...')
         image.save(save_as)
     else:
