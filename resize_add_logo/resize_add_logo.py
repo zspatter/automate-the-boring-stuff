@@ -45,7 +45,7 @@ def resize_logo(logo, scaling_factor):
     """
     Scales the logo image according to the scaling factor
 
-    :param Image logo: image for the logo
+    :param Image.Image logo: image for the logo
     :param float scaling_factor: scaling factor for resizing logo image
     """
     width, height = logo.size
@@ -56,7 +56,7 @@ def resize_image(image):
     """
     Resizes image according to SQUARE_FIT_SIZE value (if required)
 
-    :param Image image: image to resize
+    :param Image.Image image: image to resize
     """
     width, height = image.size
     if width > SQUARE_FIT_SIZE and height > SQUARE_FIT_SIZE:
@@ -76,7 +76,7 @@ def add_logo(image, logo, save_as):
     """
     Adds logo to bottom right corner of image and saves result as save_as
 
-    :param Image image: image to add logo to
+    :param Image.Image image: image to add logo to
     :param Path save_as: path of desired output
     """
     width, height = image.size
