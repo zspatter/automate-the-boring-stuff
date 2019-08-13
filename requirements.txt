@@ -13,3 +13,4 @@ pyzmail36
 lxml
 twilio
 pillow
+pyautogui
