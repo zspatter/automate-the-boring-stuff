@@ -12,6 +12,7 @@ def make_seating_cards(guest_list_path, directory):
     guests = guest_list_path.read_text().strip().split('\n')
 
     for guest in guests:
+        print(f'Creating custom seating card for {guest}...')
         # add flower background
         flower = resize_image(filename=random.choice(images))
         card = Image.new('RGBA', (360, 288), 'white')
@@ -22,7 +23,7 @@ def make_seating_cards(guest_list_path, directory):
         border.paste(card, (2, 2))
 
         # adds centered text and saves final image
-        card = draw_text(border, card, guest)
+        card = draw_text(border, guest)
         formatted_guest = guest.lower().replace(" ", "_").replace(".", "")
         card.save(output_path / f'{formatted_guest}_card.png')
 
