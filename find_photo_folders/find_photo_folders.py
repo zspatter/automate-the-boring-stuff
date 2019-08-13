@@ -21,7 +21,11 @@ def find_photo_folders(root):
         images = get_images(path=directory)
 
         for filename in images:
-            image = Image.open(filename)
+            try:
+                image = Image.open(filename)
+            except OSError:
+                continue
+
             width, height = image.size
 
             if width < 500 or height < 500:
@@ -57,4 +61,4 @@ def get_images(path):
 
 
 if __name__ == '__main__':
-    find_photo_folders(root=Path('../../..'))
+    find_photo_folders(root=Path('../..'))
