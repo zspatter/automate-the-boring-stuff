@@ -8,6 +8,6 @@ Col_Mustard_card.png
 
 ## Sample Seating Card
 <p align=center>
-  <img src=./seating_cards/col_mustard_card.png alt=sample seating card>
+  <img src=./seating_cards/robocop_card.png alt=sample seating card>
 </p>
 
