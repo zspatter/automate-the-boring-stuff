@@ -31,7 +31,7 @@ def make_seating_cards(guest_list_path, directory):
 
         # adds centered text and saves final image
         card = draw_text(border, guest)
-        formatted_guest = guest.lower().replace(" ", "_").replace(".", "")
+        formatted_guest = guest.replace(" ", "_").replace(".", "").lower()
         card.save(output_path / f'{formatted_guest}_card.png')
 
 
