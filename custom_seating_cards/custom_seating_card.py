@@ -26,8 +26,8 @@ def make_seating_cards(guest_list_path, directory):
         card.paste(im=flower, box=(0, 0))
 
         # adds exterior border and text
-        border = Image.new(mode='RGBA', size=(364, 292), color='black')
-        border.paste(im=card, box=(2, 2))
+        border = Image.new(mode='RGBA', size=(366, 294), color='black')
+        border.paste(im=card, box=(3, 3))
         card = draw_text(image=border, text=guest)
 
         # saves final image
