@@ -6,3 +6,7 @@ First, a photo file must have the file extension .png or .jpg. Also, photos are 
 
 When the program runs, it should print the absolute path of any photo folders to the screen.
 
+## Sample Output
+<p align=center>
+  <img src=./sample_output.png alt=sample console output>
+</p>
