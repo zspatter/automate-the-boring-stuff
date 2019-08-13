@@ -22,13 +22,13 @@ def make_seating_cards(guest_list_path, directory):
         print(f'Creating custom seating card for {guest}...')
         # add flower background
         flower = resize_image(filename=random.choice(images))
-        card = Image.new('RGBA', (360, 288), 'white')
-        card.paste(flower, (0, 0))
+        card = Image.new(mode='RGBA', size=(360, 288), color='white')
+        card.paste(im=flower, box=(0, 0))
 
         # adds exterior border and text
-        border = Image.new('RGBA', (364, 292), 'black')
-        border.paste(card, (2, 2))
-        card = draw_text(border, guest)
+        border = Image.new(mode='RGBA', size=(364, 292), color='black')
+        border.paste(im=card, box=(2, 2))
+        card = draw_text(image=border, text=guest)
 
         # saves final image
         formatted_guest = guest.lower().replace(" ", "_").replace(".", "")
@@ -63,7 +63,9 @@ def resize_image(filename):
     width, height = image.size
     width_factor = width / 360
     height_factor = height / 288
-    return image.resize((int(width / width_factor), int(height / height_factor)))
+
+    return image.resize((int(width / width_factor),
+                         int(height / height_factor)))
 
 
 def draw_text(image, text):
@@ -99,7 +101,7 @@ def get_text_size(image_size, text, font):
     :param str text: text to be added to image
     :param ImageFont.FreeTypeFont font: font type/size for text
     """
-    image = Image.new('RGBA', image_size, 'white')
+    image = Image.new(mode='RGBA', size=image_size, color='white')
     draw = ImageDraw.Draw(image)
     return draw.textsize(text=text, font=font)
 
@@ -116,13 +118,21 @@ def draw_text_with_halo(image, position, text, font, halo_color, color):
     :param str halo_color: color of exterior halo effect
     :param str color: color of interior of halo effect
     """
-    halo = Image.new('RGBA', image.size, (0, 0, 0, 0))
-    ImageDraw.Draw(halo).text(position, text, font=font, fill=halo_color)
+    halo = Image.new(mode='RGBA', size=image.size, color=(0, 0, 0, 0))
+    ImageDraw.Draw(halo).text(xy=position,
+                              text=text,
+                              font=font,
+                              fill=halo_color)
 
     blurred_halo = halo.filter(ImageFilter.BLUR)
-    ImageDraw.Draw(blurred_halo).text(position, text=text, font=font, fill=color)
+    ImageDraw.Draw(blurred_halo).text(xy=position,
+                                      text=text,
+                                      font=font,
+                                      fill=color)
 
-    return Image.composite(image, blurred_halo, ImageChops.invert(blurred_halo))
+    return Image.composite(image1=image,
+                           image2=blurred_halo,
+                           mask=ImageChops.invert(blurred_halo))
 
 
 if __name__ == '__main__':
