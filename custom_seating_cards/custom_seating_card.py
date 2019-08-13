@@ -12,8 +12,8 @@ def make_seating_cards(guest_list_path, directory):
     :param Path guest_list_path: path to guest list
     :param Path directory: path to directory containing invitation images
     """
-    output_path = Path(guest_list_path.parent / 'seating_cards')
-    output_path.mkdir(exist_ok=True)
+    output_root = Path(guest_list_path.parent / 'seating_cards')
+    output_root.mkdir(exist_ok=True)
 
     images = get_images(directory=directory)
     guests = guest_list_path.read_text().strip().split('\n')
@@ -25,14 +25,16 @@ def make_seating_cards(guest_list_path, directory):
         card = Image.new('RGBA', (360, 288), 'white')
         card.paste(flower, (0, 0))
 
-        # adds exterior border
+        # adds exterior border and text
         border = Image.new('RGBA', (364, 292), 'black')
         border.paste(card, (2, 2))
-
-        # adds centered text and saves final image
         card = draw_text(border, guest)
-        formatted_guest = guest.replace(" ", "_").replace(".", "").lower()
-        card.save(output_path / f'{formatted_guest}_card.png')
+
+        # saves final image
+        formatted_guest = guest.lower().replace(" ", "_").replace(".", "")
+        output_path = output_root / f'{formatted_guest}_card.png'
+        print(f'Saving custom seating card for {guest} as {output_path}...\n')
+        card.save(output_path)
 
 
 def get_images(directory):
