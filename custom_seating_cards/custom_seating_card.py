@@ -5,6 +5,13 @@ from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
 
 
 def make_seating_cards(guest_list_path, directory):
+    """
+    Creates a custom seating card for each guest on the guest list
+    using a random image from the given directory as the background
+
+    :param Path guest_list_path: path to guest list
+    :param Path directory: path to directory containing invitation images
+    """
     output_path = Path(guest_list_path.parent / 'seating_cards')
     output_path.mkdir(exist_ok=True)
 
@@ -29,6 +36,11 @@ def make_seating_cards(guest_list_path, directory):
 
 
 def get_images(directory):
+    """
+    Gets all PNG, JPG, GIF, and BMP format files at path
+
+    :param Path directory: location to search for image files
+    """
     files = []
     patterns = ('*.png', '*.jpg', '*.gif', '*.bmp')
     for pattern in patterns:
@@ -38,6 +50,13 @@ def get_images(directory):
 
 
 def resize_image(filename):
+    """
+    Opens the image corresponding with the given filename and explicitly
+    resizes the image to 360x288 (5"x4"). This function assumes the source
+    image has the correct aspect ratio.
+
+    :param Path filename: path to source image
+    """
     image = Image.open(filename)
     width, height = image.size
     width_factor = width / 360
@@ -46,6 +65,13 @@ def resize_image(filename):
 
 
 def draw_text(image, text):
+    """
+    Draws the specified text on the given image. The text itself is
+    centered on the image and a halo effect (border) is added to the text.
+
+    :param Image.Image image: source image to add text to
+    :param str text: text to add to the image
+    """
     card_font = ImageFont.truetype('arial.ttf', 36)
     width, height = image.size
     text_width, text_height = get_text_size(image_size=image.size,
@@ -64,16 +90,36 @@ def draw_text(image, text):
 
 
 def get_text_size(image_size, text, font):
+    """
+    Gets size of text to be added to an image (this is used to center text)
+
+    :param tuple image_size: (width, height) of image text will be added to
+    :param str text: text to be added to image
+    :param ImageFont.FreeTypeFont font: font type/size for text
+    """
     image = Image.new('RGBA', image_size, 'white')
     draw = ImageDraw.Draw(image)
     return draw.textsize(text=text, font=font)
 
 
 def draw_text_with_halo(image, position, text, font, halo_color, color):
+    """
+    Draws specified text on provided image at the given position. The text
+    itself is given a halo effect (border) using the given color values
+
+    :param Image.Image image: source image to add text to
+    :param tuple position: (width, height) to position text
+    :param str text: text to be added
+    :param ImageFont.FreeTypeFont font: font face/point to be used
+    :param str halo_color: color of exterior halo effect
+    :param str color: color of interior of halo effect
+    """
     halo = Image.new('RGBA', image.size, (0, 0, 0, 0))
     ImageDraw.Draw(halo).text(position, text, font=font, fill=halo_color)
+
     blurred_halo = halo.filter(ImageFilter.BLUR)
     ImageDraw.Draw(blurred_halo).text(position, text=text, font=font, fill=color)
+
     return Image.composite(image, blurred_halo, ImageChops.invert(blurred_halo))
 
 
