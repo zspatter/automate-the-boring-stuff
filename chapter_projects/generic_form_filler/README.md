@@ -11,3 +11,8 @@ At a high level, here’s what your program should do:
 - Repeat the process with the next set of data
 
 This implementation relies on images of the name field and submit another link to locate the coordinates of these items on the form. Consequently, these images are not compatible across different resolutions. Replacing these images using the desired resolution will allow the program to run on different environments.
+
+## Sample Execution
+<p align=center>
+  <img src=./sample_output.gif alt=sample execution including console output>
+</p>
