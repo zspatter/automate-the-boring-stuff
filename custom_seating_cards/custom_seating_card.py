@@ -33,7 +33,7 @@ def make_seating_cards(guest_list_path, directory):
         # saves final image
         formatted_guest = guest.lower().replace(" ", "_").replace(".", "")
         output_path = output_root / f'{formatted_guest}_card.png'
-        print(f'Saving custom seating card for {guest} as {output_path}...\n')
+        print(f'Saving custom seating card for {guest} as {output_path}\n')
         card.save(output_path)
 
 
@@ -76,7 +76,7 @@ def draw_text(image, text):
     :param Image.Image image: source image to add text to
     :param str text: text to add to the image
     """
-    card_font = ImageFont.truetype('arial.ttf', 36)
+    card_font = ImageFont.truetype('Arial.ttf', 36)
     width, height = image.size
     text_width, text_height = get_text_size(image_size=image.size,
                                             text=text,
