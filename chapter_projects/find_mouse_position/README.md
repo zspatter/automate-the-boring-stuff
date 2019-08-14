@@ -7,3 +7,8 @@ Additionally, it would be handy for this program to grab the RGB color value of 
 At a high level, here’s what your program should do:
 - Display the current x- and y-coordinates and RGB value of the mouse cursor
 - Update these coordinates and RGB value as the mouse moves around the screen
+
+## Sample Output
+<p align=center>
+  <img src=./sample_output.png alt=sample console output>
+</p>
