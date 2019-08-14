@@ -43,3 +43,4 @@ Chapter projects are included in each chapter starting in chapter 6. These proje
     - [Adding a Logo](resize_add_logo/)
 * Chapter 18 – Controlling the Keyboard and Mouse with GUI Automation
     - ["Where is the Mouse Right Now?"](./find_mouse_position/)
+    - [Automatic Form Filler](./generic_form_filler/)
