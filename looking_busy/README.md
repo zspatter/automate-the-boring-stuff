@@ -4,4 +4,4 @@ Many instant messaging programs determine whether you are idle, or away from you
 
 This program nudges the mouse slightly then immediately returns the mouse to it's original position. The relative X and Y values as well as the duration of each move are chosen randomly to reduce the predictability of the program. Additionally, the interval between nudges is chosen randomly between half of the specified interval and the specified interval in seconds. 
 
-Furthermore, this program chooses a function key bound to no action (F15-F24) to simulate keyboard input.
+Furthermore, this program randomly chooses a function key bound to no action (F15-F24) to simulate keyboard input after each mouse nudge.
