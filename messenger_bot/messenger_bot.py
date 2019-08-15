@@ -4,6 +4,12 @@ import pyautogui
 
 
 def send_notifications(recipients, notification):
+    """
+    Distributes notification to each recipient individually
+
+    :param list recipients: all recipients to receive notification
+    :param str notification: message to distribute via IM
+    """
     print('5 seconds to navigate to Slack.')
     sleep(5)
 
@@ -15,6 +21,14 @@ def send_notifications(recipients, notification):
 
 
 def send_notification(recipient, notification):
+    """
+    Distributes notification to individual recipient by first searching
+    for recipient, then checking recipient's status (availability).
+    Assuming the recipient is available the message is sent.
+
+    :param str recipient: recipient username
+    :param str notification: message to distribute via IM
+    """
     try:
         pyautogui.hotkey('command', 'k')
         pyautogui.typewrite(recipient)
