@@ -66,5 +66,6 @@ This contains my project solutions for [Automate the Boring Stuff with Python](h
     - [Identifying Photo Folders on the Hard Drive](find_photo_folders/)
     - [Custom Seating Cards](./custom_seating_cards/)
 * Chapter 18 – Controlling the Keyboard and Mouse with GUI Automation
+    - [Looking Busy](./looking_busy/)
     
 The Automate the Boring Stuff text includes project examples/demonstrations. My implementations to these guided projects can be found [here](./chapter_projects). 
