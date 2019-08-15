@@ -55,15 +55,16 @@ def radio_button(value):
 
 
 def submit_another_coords(path1, path2):
-    submit_link = pyautogui.center(pyautogui.locateOnScreen(str(path1)))
+    submit_link = pyautogui.center(pyautogui.locateOnScreen(str(path1)))  # lgtm [py/call/wrong-arguments]
     if submit_link:
         return submit_link
     else:
-        return pyautogui.center(pyautogui.locateOnScreen(str(path2)))
+        return pyautogui.center(pyautogui.locateOnScreen(str(path2)))  # lgtm [py/call/wrong-arguments]
 
 
 if __name__ == '__main__':
-    name_field = pyautogui.center(pyautogui.locateOnScreen(str(Path('images/name_field.png'))))
+    name_field = pyautogui.center(
+        pyautogui.locateOnScreen(str(Path('images/name_field.png'))))  # lgtm [py/call/wrong-arguments]
     pyautogui.PAUSE = 0.5
 
     form_data = [{'name':     'Alice',
