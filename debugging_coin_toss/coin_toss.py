@@ -25,8 +25,6 @@ def get_input():
 def coin_toss():
     """
     Simulated coin toss
-
-    :return:
     """
     guess = get_input()
     toss = random.choice(('heads', 'tails'))

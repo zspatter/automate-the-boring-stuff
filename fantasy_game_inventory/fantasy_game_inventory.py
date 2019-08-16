@@ -23,7 +23,7 @@ def add_to_inventory(inventory, items):
     Adds items to inventory
 
     :param dict inventory: collection to add item(s) to
-    :param dict items: individual items to add
+    :param list items: individual items to add
     """
     for item in items:
         inventory.setdefault(item, 0)

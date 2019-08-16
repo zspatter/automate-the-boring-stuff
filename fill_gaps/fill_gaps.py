@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# fill_gaps.py -
+# fill_gaps.py - fills gaps in seqentially named files (or optionally inserts gap)
 
 import re
 import shutil
