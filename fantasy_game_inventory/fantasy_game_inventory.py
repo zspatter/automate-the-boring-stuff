@@ -1,4 +1,5 @@
 #! /usr/bin/env python3
+# fantasy_game_inventory.py -
 
 
 def display_inventory(inventory):

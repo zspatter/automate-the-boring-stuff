@@ -1,3 +1,6 @@
+#! /usr/bin/env python3
+# custom_seating_card.py -
+
 import random
 from pathlib import Path
 

@@ -1,3 +1,6 @@
+#! /usr/bin/env python3
+# find_photo_folders.py -
+
 from pathlib import Path
 
 from PIL import Image

@@ -1,4 +1,5 @@
 #! /usr/bin/env python3
+# chore_assignment.py -
 
 import random
 import smtplib

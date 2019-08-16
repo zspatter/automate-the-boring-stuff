@@ -1,4 +1,5 @@
 #! /usr/bin/env python3
+# command_line_emailer.py -
 
 import getpass
 import re

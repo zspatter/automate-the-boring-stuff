@@ -1,7 +1,8 @@
 #! /usr/bin/env python3
+# collatz_sequence.py -
 
 
-def collatz(number: int) -> int:
+def collatz(number):
     if number % 2 == 0:
         print(number // 2)
         return number // 2

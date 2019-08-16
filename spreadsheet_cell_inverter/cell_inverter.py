@@ -1,11 +1,12 @@
 #! /usr/bin/env python3
+# cell_inverter.py -
 
 import os
 
 import openpyxl
 
 
-def invert_cells(filename: str):
+def invert_cells(filename):
     wb = openpyxl.load_workbook(filename=filename)
     sheet = wb.active
 

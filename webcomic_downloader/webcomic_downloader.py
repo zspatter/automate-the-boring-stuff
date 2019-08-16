@@ -1,4 +1,5 @@
 #! /usr/bin/env python3
+# webcomic_downloader.py - 
 
 import os
 import shelve

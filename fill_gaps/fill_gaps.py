@@ -1,4 +1,5 @@
 #! /usr/bin/env python3
+# fill_gaps.py -
 
 import re
 import shutil
@@ -52,10 +53,10 @@ def fill_sequence_gap(root, prefix, extension):
         if sequence_num != expected_num:
             # if file number isn't expected, build new filename
             filename = f"{prefix}" \
-                f"{'0' * (max_length - len(str(expected_num)))}" \
-                f"{expected_num}" \
-                f"{match_object.group(3)}" \
-                f"{match_object.group(4)}"
+                       f"{'0' * (max_length - len(str(expected_num)))}" \
+                       f"{expected_num}" \
+                       f"{match_object.group(3)}" \
+                       f"{match_object.group(4)}"
 
             # rename file
             shutil.move(Path(f'{root}/{match}'), Path(f'{root}/{filename}'))
@@ -111,10 +112,10 @@ def insert_gap(root, prefix, extension, start, stop=None):
 
             # builds new filename
             filename = f'{prefix}' \
-                f'{"0" * (max_length - len(str(new_number)))}' \
-                f'{new_number}' \
-                f'{match_object.group(3)}' \
-                f'{match_object.group(4)}'
+                       f'{"0" * (max_length - len(str(new_number)))}' \
+                       f'{new_number}' \
+                       f'{match_object.group(3)}' \
+                       f'{match_object.group(4)}'
 
             # rename file
             shutil.move(Path(f'{root}/{match}'), Path(f'{root}/{filename}'))

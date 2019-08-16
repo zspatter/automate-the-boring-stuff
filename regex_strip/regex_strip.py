@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 # regex_strip.py - an implementation of string's strip() method using regex
+
 import re
 
 

@@ -5,6 +5,7 @@
 #        mcb.py list - Loads all keywords to clipboard
 #        mcb.py delete <keyword> - Deletes entry associated with keyword
 #        mcb.py delete - Deletes all saved entries
+
 import shelve
 import sys
 

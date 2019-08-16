@@ -1,4 +1,5 @@
 #! /usr/bin/env python3
+# custom_invitations.py -
 
 from os.path import abspath, join
 
@@ -7,7 +8,7 @@ from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 from docx.shared import Pt
 
 
-def generate_invitations(textfile: str, filename: str) -> None:
+def generate_invitations(textfile, filename):
     """
     Generates a custom invitation for each name in the given text file.
     Each individual invitation corresponds to a single page in the .docx
@@ -21,17 +22,17 @@ def generate_invitations(textfile: str, filename: str) -> None:
         # generates a custom invitation for each guest
         for guest in guests:
             style_run(run=center_paragraph(document=doc).add_run(
-                    'It would be a pleasure to have the company of'),
-                    is_bold=True,
-                    is_italic=True,
-                    font_size=13)
+                'It would be a pleasure to have the company of'),
+                is_bold=True,
+                is_italic=True,
+                font_size=13)
             style_run(run=center_paragraph(document=doc).add_run(guest.strip()),
                       is_bold=True,
                       font_size=15)
             style_run(run=center_paragraph(document=doc).add_run(
-                    'at 11101 Memory lane on the evening of'),
-                    is_bold=True,
-                    is_italic=True)
+                'at 11101 Memory lane on the evening of'),
+                is_bold=True,
+                is_italic=True)
             style_run(run=center_paragraph(document=doc).add_run('April 31st'))
             style_run(run=center_paragraph(document=doc).add_run("at 24 O'Clock"),
                       is_bold=True,
@@ -42,7 +43,7 @@ def generate_invitations(textfile: str, filename: str) -> None:
     doc.save(filename)
 
 
-def center_paragraph(document: 'Document') -> 'Paragraph':
+def center_paragraph(document):
     """
     Adds new paragraph and sets alignment to be centered
 
@@ -54,8 +55,7 @@ def center_paragraph(document: 'Document') -> 'Paragraph':
     return paragraph
 
 
-def style_run(run: 'Run', is_bold: bool = None, is_italic: bool = None,
-              font_size: int = 12) -> None:
+def style_run(run, is_bold=None, is_italic=None, font_size=12):
     """
     Applies rich text styles to the given Run text object.
 

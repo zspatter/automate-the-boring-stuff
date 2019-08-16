@@ -1,4 +1,5 @@
 #! /usr/bin/env python3
+# text_to_spreadsheet.py -
 
 import os
 
@@ -6,8 +7,7 @@ import openpyxl
 from openpyxl.styles import Font
 
 
-def text_to_spreadsheet(directory: str = '.',
-                        output_file: str = 'text_to_sheet.xlsx'):
+def text_to_spreadsheet(directory='.', output_file='text_to_sheet.xlsx'):
     """
     Searches for all text files at the given directory. Each individual
     text file is converted to a column in the output_file spreadsheet.

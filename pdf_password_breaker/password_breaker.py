@@ -1,4 +1,5 @@
 #! /usr/bin/env python3
+# password_breaker.py -
 
 from os.path import abspath, basename, join
 

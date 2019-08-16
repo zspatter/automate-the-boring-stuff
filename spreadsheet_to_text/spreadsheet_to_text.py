@@ -1,4 +1,5 @@
 #! /usr/bin/env python3
+# spreadsheet_to_text.py -
 
 import os
 from os.path import join, abspath
@@ -6,7 +7,7 @@ from os.path import join, abspath
 import openpyxl
 
 
-def spreadsheet_to_text(filename: str):
+def spreadsheet_to_text(filename):
     """
     Writes column data in worksheet to text files. The filenames are
     in the first row of each column. Each subsequent row represents an

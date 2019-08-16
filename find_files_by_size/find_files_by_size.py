@@ -1,4 +1,5 @@
 #! /usr/bin/env python3
+# find_files_by_size.py -
 
 import os
 
@@ -32,7 +33,7 @@ def get_dir_size(path):
     Get's the cumulative size of a directory and all of it's contents
 
     :param str path: absolute path to directory
-    :return: int cumulative size of directroy
+    :return: int cumulative size of directory
     """
     size = 0
     for root, _, files in os.walk(path):

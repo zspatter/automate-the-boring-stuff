@@ -1,4 +1,5 @@
 #! /usr/bin/env python3
+# multiplication_table.py -
 
 import sys
 
@@ -21,7 +22,7 @@ grey = PatternFill(start_color='D9D9D9',
                    fill_type='solid')
 
 
-def generate_multiplication_table(n: int, filename: str = 'multiplication_table.xlsx'):
+def generate_multiplication_table(n, filename='multiplication_table.xlsx'):
     """
     Generates an NxN multiplication table and saves the workbook with
     the filename.

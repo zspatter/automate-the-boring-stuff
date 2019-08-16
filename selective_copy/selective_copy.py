@@ -1,8 +1,9 @@
 #! /usr/bin/env python3
+# selective_copy.py - TODO generator?
 
 import os
-import shutil
 import re
+import shutil
 
 
 def selective_copy(source, destination_path, extension):
@@ -47,8 +48,9 @@ def selective_copy(source, destination_path, extension):
 
                 # move file to destination
                 shutil.copy(filepath, destination_path)
-                print(f'\tCopied {os.path.basename(filepath)} to {os.path.abspath(destination_path)}')
+                print(
+                    f'\tCopied {os.path.basename(filepath)} to {os.path.abspath(destination_path)}')
 
 
 if __name__ == '__main__':
-    selective_copy('..', './matches/', '.txt')
+    selective_copy(source='..', destination_path='./matches/', extension='.txt')

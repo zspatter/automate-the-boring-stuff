@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 # strong_pw_detector.py - determines whether or not passed password is strong
+
 import re
 import sys
 

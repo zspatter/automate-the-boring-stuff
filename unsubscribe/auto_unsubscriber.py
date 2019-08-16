@@ -1,4 +1,6 @@
 #! /usr/bin/env python3
+# auto_unsubscriber.py -
+
 import imaplib
 import webbrowser
 from os import environ

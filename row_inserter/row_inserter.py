@@ -1,4 +1,5 @@
 #! /usr/bin/env python3
+# row_inserter.py -
 
 import sys
 
@@ -6,7 +7,7 @@ import openpyxl
 from openpyxl.utils.cell import get_column_letter
 
 
-def insert_blank_rows(index: int, filename: str, offset: int = 1):
+def insert_blank_rows(index, filename, offset=1):
     """
     Inserts a blank row at the passed index. If an offset is provided,
     multiple blank rows are inserted.
@@ -38,7 +39,7 @@ def insert_blank_rows(index: int, filename: str, offset: int = 1):
     print(f"Resulting file saved as 'result_{filename}'")
 
 
-def insert_via_move_range(index: int, filename: str, offset: int = 1):
+def insert_via_move_range(index, filename, offset=1):
     """
     Achieves the same result as insert_blank_rows() using openpyxl's
     move_range() function.
@@ -61,7 +62,7 @@ def insert_via_move_range(index: int, filename: str, offset: int = 1):
     print(f"Resulting file saved as 'result_{filename}'")
 
 
-def easy_insert(index: int, filename: str, offset: int = 1):
+def easy_insert(index, filename, offset=1):
     """
     Achieves the same result as insert_blank_rows() using openpyxl's
     intended insert_rows() function for moving rows.

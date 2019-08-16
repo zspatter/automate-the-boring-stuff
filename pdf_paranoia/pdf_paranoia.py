@@ -1,4 +1,6 @@
 #! /usr/bin/env python3
+# pdf_paranoia.py -
+
 
 import os
 import re
@@ -58,10 +60,10 @@ def decrypt_pdfs(path, password):
     :param str path: path to directory to search
     :param str password: password used for encryption
     """
-    regex = re.compile(r'(?i)'              # case insensitive
-                       r'^(.*?)'            # any number of characters (non-greedy)
-                       r'(_encrypted)?'     # optional '_encrypted'
-                       r'(\.pdf)$',          # ends with .pdf
+    regex = re.compile(r'(?i)'  # case insensitive
+                       r'^(.*?)'  # any number of characters (non-greedy)
+                       r'(_encrypted)?'  # optional '_encrypted'
+                       r'(\.pdf)$',  # ends with .pdf
                        re.VERBOSE)
 
     for filepath, pdf, reader in pdf_reader_generator(path):

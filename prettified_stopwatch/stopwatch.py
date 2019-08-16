@@ -64,11 +64,11 @@ def build_header():
     :return: formatted unicode header
     """
     return f"{build_table_border(outer_left='╔', inner='═', outer_right='╗')}" \
-        f"\n║{'Stopwatch':^54}║" \
-        f"\n{build_table_border(inner='╦')}" \
-        f"\n{'║':<3}{'Lap Number':^10}{column_spacer}" \
-        f"{'Lap Time':^14}{column_spacer}{'Total Time':^16}{'║':>3}" \
-        f"\n{build_table_border()}"
+           f"\n║{'Stopwatch':^54}║" \
+           f"\n{build_table_border(inner='╦')}" \
+           f"\n{'║':<3}{'Lap Number':^10}{column_spacer}" \
+           f"{'Lap Time':^14}{column_spacer}{'Total Time':^16}{'║':>3}" \
+           f"\n{build_table_border()}"
 
 
 def build_table_border(outer_left='╠', inner='╬', outer_right='╣'):
@@ -94,7 +94,7 @@ def build_row(lap_num, lap_time, total_time):
     :return: formatted unicode string representing an individual table row
     """
     return f"{'║':<3}Lap #{lap_num:<5,}{column_spacer}" \
-        f"{lap_time:>14}{column_spacer}{total_time:>16}{'║':>3}"
+           f"{lap_time:>14}{column_spacer}{total_time:>16}{'║':>3}"
 
 
 if __name__ == '__main__':

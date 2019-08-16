@@ -1,3 +1,6 @@
+#! /usr/bin/env python3
+# resize_add_logo.py -
+
 from pathlib import Path
 
 from PIL import Image

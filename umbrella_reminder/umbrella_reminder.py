@@ -1,4 +1,6 @@
 #! /usr/bin/env python3
+# umbrella_reminder.py -
+
 from notifications import text_myself
 
 import requests
