@@ -9,7 +9,7 @@
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/zspatter/automate-the-boring-stuff.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/zspatter/automate-the-boring-stuff/context:python)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/931210b8e8d440ba8e0ce706214f2da2)](https://www.codacy.com/app/localhost_2/automate-the-boring-stuff?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=zspatter/automate-the-boring-stuff&amp;utm_campaign=Badge_Grade)
 
-This contains my project solutions for [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/ "Automate the Boring Stuff with Python") by Al Sweigart. These projects start in Chapter 3 and are included at the end of every chapter thereafter. 
+This repository contains my project solutions for [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/ "Automate the Boring Stuff with Python") by Al Sweigart. These projects start in Chapter 3 and are included at the end of every chapter thereafter. 
 
 * Chapter 0 – Introduction
 * Chapter 1 – Python Basics
