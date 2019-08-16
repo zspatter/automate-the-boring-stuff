@@ -7,7 +7,13 @@ import sys
 import requests
 
 
-def request_url(query='San Fransisco, CA', api_key='11e927016e40363a91708daf37fcccc4'):
+def request_url(query='San Francisco', api_key='11e927016e40363a91708daf37fcccc4'):
+    """
+    API request for given location
+
+    :param str query: location to get weather data for
+    :param str api_key: key for API usage
+    """
     url = f'https://api.openweathermap.org/data/2.5/forecast?q={query}&units=imperial&appid={api_key}'
     response = requests.get(url)
     response.raise_for_status()
@@ -15,6 +21,12 @@ def request_url(query='San Fransisco, CA', api_key='11e927016e40363a91708daf37fc
 
 
 def print_forecast(weather_data, query):
+    """
+    Prints 3 day forecast parsing json results in weather_data
+
+    :param dict weather_data: API json response
+    :param str query: location searched
+    """
     forecast_details = weather_data['list']
     print(f"Current weather in {query}:"
           f"\n\t{'Description:':<14}{forecast_details[0]['weather'][0]['main']} - "

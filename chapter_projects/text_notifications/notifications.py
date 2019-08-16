@@ -12,5 +12,10 @@ MY_NUMBER = environ.get('MY_NUMBER')
 
 
 def text_myself(message):
+    """
+    Sends message to myself via SMS
+
+    :param str message: message body to send
+    """
     client = Client(ACCOUNT_SID, AUTH_TOKEN)
     client.messages.create(body=message, from_=TWILIO_NUMBER, to=MY_NUMBER)

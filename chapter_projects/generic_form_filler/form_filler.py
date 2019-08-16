@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# form_filler.py -
+# form_filler.py - fills out a generic form using GUI automation
 
 from pathlib import Path
 from time import sleep
@@ -8,6 +8,13 @@ import pyautogui
 
 
 def fill_forms(field_position, data, paths):
+    """
+    Fills out generic forms with entries for each field sourced from data var
+
+    :param tuple field_position: coordinates of name field (first field)
+    :param list data: data corresponding to multiple entries for the form
+    :param list paths: paths to multiple images for locateOnScreen (submit another link)
+    """
     submit_another = None
 
     for person in data:
@@ -22,6 +29,12 @@ def fill_forms(field_position, data, paths):
 
 
 def fill_form(field_position, data):
+    """
+    Fills out individual form
+
+    :param tuple field_position: coordinates of name field (first field)
+    :param dict data: data corresponding to each field the form
+    """
     print(f'Entering {data["name"]} info...')
     pyautogui.doubleClick(field_position)
 
@@ -34,6 +47,11 @@ def fill_form(field_position, data):
 
 
 def drop_down_menu(text):
+    """
+    Returns key sequence associated with specified selection
+
+    :param str text: text to match
+    """
     if text == 'wand':
         return ['down', 'enter', 'tab']
     elif text == 'amulet':
@@ -45,6 +63,11 @@ def drop_down_menu(text):
 
 
 def radio_button(value):
+    """
+    Returns key sequence associated with specified selection
+
+    :param int value: value to match
+    """
     if value == 1:
         return [' ', 'tab']
     elif value == 2:
@@ -58,6 +81,12 @@ def radio_button(value):
 
 
 def submit_another_coords(path1, path2):
+    """
+    Finds and returns coordinates of the submit another link
+
+    :param Path path1: path to first image (unvisited URL)
+    :param Path path2: path to second image (previously visited URL)
+    """
     submit_link = pyautogui.center(pyautogui.locateOnScreen(str(path1)))  # lgtm [py/call/wrong-arguments]
     if submit_link:
         return submit_link

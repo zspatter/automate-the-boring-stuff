@@ -9,6 +9,11 @@ import openpyxl
 
 
 def get_unpaid_members(worksheet):
+    """
+    Searches for members who haven't paid their dues for the latest month
+
+    :param  openpyxl.worksheet.worksheet.Worksheet worksheet: worksheet tracking dues payment
+    """
     unpaid_members = dict()
 
     for x in range(2, worksheet.max_row + 1):
@@ -22,6 +27,14 @@ def get_unpaid_members(worksheet):
 
 
 def send_reminders(user, password, month, unpaid_members):
+    """
+    Sends dues reminder emails to those who haven't paid
+
+    :param str user: email login info
+    :param str password: email login info
+    :param str month: month that is unpaid
+    :param str unpaid_members: name of member
+    """
     smtp = smtplib.SMTP('smtp.gmail.com', 587)
     smtp.ehlo()
     smtp.starttls()
@@ -47,10 +60,11 @@ def send_reminders(user, password, month, unpaid_members):
 if __name__ == '__main__':
     # open spreadsheet and get latest dues status
     wb = openpyxl.load_workbook(join(abspath('.'), 'duesRecords.xlsx'))
+
     sheet = wb.active
     last_month = sheet.cell(row=1, column=sheet.max_column).value
 
-    unpaid = get_unpaid_members(sheet)
+    unpaid = get_unpaid_members(worksheet=sheet)
     email_password = sys.argv[1]
     send_reminders(user='cli.disposable@gmail.com',
                    password=email_password,

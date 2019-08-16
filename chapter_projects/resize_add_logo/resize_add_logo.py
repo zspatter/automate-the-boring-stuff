@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# resize_add_logo.py -
+# resize_add_logo.py - takes in images, resizes all to predefined size, then adds logo
 
 from pathlib import Path
 
@@ -7,6 +7,11 @@ from PIL import Image
 
 
 def get_images(path):
+    """
+    Gets all image files and iterates over the matches
+
+    :param Path path: path to search for source images
+    """
     files = list(path.glob('*.[pP][nN][gG]')) + list(path.glob('*.[jJ][pP][gG]'))
     files.remove(LOGO_FILENAME)
 
@@ -61,4 +66,4 @@ if __name__ == '__main__':
     logo_image = logo_image.resize((int(logo_width / 5), int(logo_height / 5)))
     logo_width, logo_height = logo_image.size
 
-    get_images(Path('./images'))
+    get_images(path=Path('./images'))

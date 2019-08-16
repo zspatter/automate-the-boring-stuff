@@ -12,7 +12,6 @@ def archive_directory(directory):
     This function takes special care to ignore the preceding absolute path.
 
     :param str directory: path to directory to compress
-    :return:
     """
     # gathers absolute path and determines length of path to parent directory
     directory = os.path.abspath(directory)
@@ -56,4 +55,4 @@ def archive_directory(directory):
 
 
 if __name__ == "__main__":
-    archive_directory('..')
+    archive_directory(directory='..')

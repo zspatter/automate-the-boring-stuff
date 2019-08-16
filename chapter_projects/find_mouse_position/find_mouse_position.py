@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# find_mouse_position.py -
+# find_mouse_position.py - prints coordinates and RGB value of current mouse position
 
 import pyautogui
 

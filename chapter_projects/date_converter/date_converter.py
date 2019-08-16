@@ -46,4 +46,4 @@ def convert_dates(path):
 
 
 if __name__ == '__main__':
-    convert_dates(Path('./sample_files'))
+    convert_dates(path=Path('./sample_files'))

@@ -5,6 +5,9 @@ import time
 
 
 def print_instructions():
+    """
+    Prints instructions for using the stopwatch
+    """
     input("Press ENTER to begin."
           "\nAfterwards, press ENTER to 'click' the stopwatch."
           "\nPress Ctrl + C to quit.\n")
@@ -12,6 +15,11 @@ def print_instructions():
 
 
 def stopwatch():
+    """
+    Creates an interactive stopwatch that displays details in the console.
+    CTRL + C will cause the stopwatch to terminate - before doing so, the
+    stopwatch table is copied to the clipboard.
+    """
     start = time.time()
     previous_time = start
     lap_num = 1
@@ -46,6 +54,11 @@ def stopwatch():
 
 
 def build_table_separator(outer_left='╠', inner='╬', outer_right='╣'):
+    """
+    Builds formatted unicode header for the stopwatch table.
+
+    :return: formatted unicode header
+    """
     return f"{outer_left}{'═' * 14}{inner}{'═' * 18}{inner}{'═' * 20}{outer_right}"
 
 

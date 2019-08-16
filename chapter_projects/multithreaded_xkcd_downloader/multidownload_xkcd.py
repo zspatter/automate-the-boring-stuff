@@ -14,6 +14,14 @@ ANSI_RESET = '\033[0m'
 
 
 def download_pages(start_num, end_num, root):
+    """
+    Downloads all webcomic images from start_num to end_num and saves
+    results to root
+
+    :param int start_num: webcomic number to start downloading from
+    :param int end_num: webcomic number to stop downloading at
+    :param str root: output path
+    """
     if start_num < 1:
         start_num = 1
     for comic_num in range(start_num, end_num - 1, -1):
@@ -31,10 +39,16 @@ def download_pages(start_num, end_num, root):
         if not comic_element:
             print(f'\n{ANSI_RED}Could not find comic image.{ANSI_RESET}\n')
         else:
-            download_image(comic_element, root)
+            download_image(comic_element=comic_element, root=root)
 
 
 def download_image(comic_element, root):
+    """
+    Download image from individual comic entry
+
+    :param list comic_element: list of matches to CSS selector
+    :param str root: output path
+    """
     # download the image
     comic_url = f'https:{comic_element[0].get("src")}'
     print(f"{'Downloading image:':<19} {comic_url}...")
@@ -53,6 +67,11 @@ def download_image(comic_element, root):
 
 
 def get_latest_comic_number(comic_num=2101):
+    """
+    Finds number of latest comic from the homepage
+
+    :param int comic_num: default value returned if match isn't found
+    """
     try:
         # download homepage
         homepage = requests.get('https://xkcd.com/')
@@ -69,6 +88,11 @@ def get_latest_comic_number(comic_num=2101):
 
 
 def download_all_comics(output_path='xkcd_comics'):
+    """
+    Downloads all XKCD webcomics
+
+    :param str output_path: path to desired output directory
+    """
     # create directory for output
     os.makedirs(output_path, exist_ok=True)
     threads = []
