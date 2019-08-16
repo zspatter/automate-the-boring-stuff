@@ -2,6 +2,7 @@
 # play_2048.py - simple blind bot that plays 2048 online
 
 import random
+from itertools import cycle
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -23,17 +24,18 @@ def play_2048(random_input=False):
     game_status = browser.find_element_by_css_selector('.game-container p')
     html_element = browser.find_element_by_css_selector('html')
 
-    # possible input keys for game play
-    input_keys = (Keys.UP, Keys.RIGHT, Keys.DOWN, Keys.LEFT)
-    game_input = lambda x: x
-
     # if input should be random, change game_input alias to call random.choice
     if random_input:
+        sequence = KEY_INPUTS
         game_input = random.choice
+    # otherwise cycle possible inputs
+    else:
+        sequence = cycle(KEY_INPUTS)
+        game_input = next
 
     # while game isn't over, either give random or sequential input
     while game_status.text != 'Game over!':
-        html_element.send_keys(game_input(input_keys))
+        html_element.send_keys(game_input(sequence))
         game_status = browser.find_element_by_css_selector('.game-container p')
 
     # gather and print final score
@@ -44,6 +46,7 @@ def play_2048(random_input=False):
 
 
 if __name__ == '__main__':
+    KEY_INPUTS = (Keys.UP, Keys.RIGHT, Keys.DOWN, Keys.LEFT)
     for _ in range(10):
         play_2048()
         play_2048(random_input=True)
