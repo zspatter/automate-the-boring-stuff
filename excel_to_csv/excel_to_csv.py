@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# excel_to_csv.py -
+# excel_to_csv.py - converts .XLSX files to .CSV files
 
 import csv
 import os

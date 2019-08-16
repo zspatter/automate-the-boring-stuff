@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# custom_seating_card.py -
+# custom_seating_card.py - creates seating card images customized with names
 
 import random
 from pathlib import Path

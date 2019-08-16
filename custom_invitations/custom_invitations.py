@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# custom_invitations.py -
+# custom_invitations.py - creates invitation .DOCX files customized with names
 
 from os.path import abspath, join
 

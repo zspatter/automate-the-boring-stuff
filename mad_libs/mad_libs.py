@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# mad_libs.py -
+# mad_libs.py - simple console madlibs game
 
 import re
 
@@ -7,6 +7,13 @@ regex = re.compile(r'ADJECTIVE|NOUN|ADVERB|VERB')
 
 
 def mad_libs(source, destination):
+    """
+    Takes source madlib file and replaces each placeholder word with
+    input gathered from user and saves result
+
+    :param str source: input madlib to fill out
+    :param str destination:  resulting file
+    """
     with open(source, 'r') as source, open(destination, 'w') as out:
         text = source.read()
 

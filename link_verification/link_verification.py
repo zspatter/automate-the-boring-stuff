@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# link_verification.py -
+# link_verification.py - takes a webpage and searches for broken URLs
 
 import bs4
 import requests

@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
-# find_files_by_size.py -
+# find_files_by_size.py - finds files along a specified path larger than
+#       a specified threshold in size
 
 import os
 

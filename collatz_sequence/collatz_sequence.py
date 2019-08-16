@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# collatz_sequence.py -
+# collatz_sequence.py - performs collatz sequence operations until a 1 is returned
 
 
 def collatz(number):

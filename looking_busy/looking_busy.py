@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# looking_busy.py -
+# looking_busy.py - simple script that simulates user input to keep IM status active
 
 import random
 from time import sleep

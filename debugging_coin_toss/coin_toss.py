@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# coin_toss.py -
+# coin_toss.py - simple coin toss guessing game
 
 import logging
 import random

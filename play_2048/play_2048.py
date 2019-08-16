@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# play_2048.py -
+# play_2048.py - simple blind bot that plays 2048 online
 
 import random
 

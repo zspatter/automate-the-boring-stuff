@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# find_photo_folders.py -
+# find_photo_folders.py - finds all folders that contain >50% image files
 
 from pathlib import Path
 

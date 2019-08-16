@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# pdf_paranoia.py -
+# pdf_paranoia.py - simple program that can batch encrypt and decrypt PDFs
 
 
 import os

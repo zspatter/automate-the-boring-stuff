@@ -1,8 +1,13 @@
 #! /usr/bin/env python3
-# fantasy_game_inventory.py -
+# fantasy_game_inventory.py - simple representation of a RPG's inventory
 
 
 def display_inventory(inventory):
+    """
+    Formats and prints inventory shows details and quantities of each item
+
+    :param dict inventory: inventory structure
+    """
     output = 'Inventory:\n'
     total_items = 0
 
@@ -14,6 +19,12 @@ def display_inventory(inventory):
 
 
 def add_to_inventory(inventory, items):
+    """
+    Adds items to inventory
+
+    :param dict inventory: collection to add item(s) to
+    :param dict items: individual items to add
+    """
     for item in items:
         inventory.setdefault(item, 0)
         inventory[item] += 1

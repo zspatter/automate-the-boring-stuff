@@ -1,11 +1,18 @@
 #! /usr/bin/env python3
-# regex_search.py -
+# regex_search.py - simple text search utilizing regex engine
 
 import re
 from pathlib import Path
 
 
 def regex_search(regex, path):
+    """
+    Searches text file at path for matches to the specified pattern
+
+    :param re.Pattern regex: pattern to search for
+    :param Path path: path to source file to search
+    :return:
+    """
     path = path.resolve()
     if not path.is_dir():
         print('The file path must be to a directory.')

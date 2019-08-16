@@ -13,11 +13,22 @@ import pyperclip
 
 
 def save_entry(shelf, entry):
+    """
+    Saves specified entry to shelve file
+
+    :param shelve.DbfilenameShelf shelf: source shelf file
+    :param str entry: key to save to clipboard
+    """
     shelf[entry] = pyperclip.paste()
     pyperclip.copy(shelf[entry])
 
 
 def list_entries(shelf):
+    """
+    Lists all entries saved in shelve file
+
+    :param shelve.DbfilenameShelf shelf: source shelf file
+    """
     if len(shelf.keys()) > 0:
         pyperclip.copy(str(list(shelf.keys())))
     else:
@@ -25,6 +36,12 @@ def list_entries(shelf):
 
 
 def get_entry(shelf, entry):
+    """
+    Searches for entry in shelf file
+
+    :param shelve.DbfilenameShelf shelf: source shelf file
+    :param str entry: key to search for in clipboard
+    """
     if entry in shelf:
         pyperclip.copy(shelf[entry])
     else:
@@ -32,6 +49,12 @@ def get_entry(shelf, entry):
 
 
 def delete_entry(shelf, entry):
+    """
+    Deletes individual entry from shelve file
+
+    :param shelve.DbfilenameShelf shelf: source shelf file
+    :param str entry: key to remove from clipboard
+    """
     if entry in shelf:
         del shelf[entry]
         pyperclip.copy(f'"{entry}" deleted from the multi-clipboard')
@@ -40,6 +63,11 @@ def delete_entry(shelf, entry):
 
 
 def delete_all_entries(shelf):
+    """
+    Deletes all data from shelf file
+
+    :param shelve.DbfilenameShelf shelf: source shelf file
+    """
     shelf.clear()
 
 

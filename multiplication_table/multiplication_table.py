@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# multiplication_table.py -
+# multiplication_table.py - generates NxN multiplication table as spreadsheet
 
 import sys
 

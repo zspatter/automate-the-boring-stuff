@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# messenger_bot.py -
+# messenger_bot.py - simple Slack messenger bot that sends a message to multiple recipients
 
 from time import sleep
 

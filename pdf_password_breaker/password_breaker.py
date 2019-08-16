@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# password_breaker.py -
+# password_breaker.py - simple program that attempts to brute force encrypted PDF
 
 from os.path import abspath, basename, join
 

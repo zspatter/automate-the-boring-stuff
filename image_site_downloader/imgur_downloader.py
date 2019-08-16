@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# imgur_downloader.py -
+# imgur_downloader.py - downloads images from a specified guery on imgur
 
 import os
 

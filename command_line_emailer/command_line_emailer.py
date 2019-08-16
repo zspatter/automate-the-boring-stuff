@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# command_line_emailer.py -
+# command_line_emailer.py - sends message through gmail via the terminal
 
 import getpass
 import re
@@ -11,6 +11,16 @@ from selenium.webdriver.common.keys import Keys
 
 
 def emailer(sender, password, recipient, subject, message):
+    """
+    Takes credentials to email and message details. Logs into emaial client
+    and sends the desired message to the recipient.
+
+    :param str sender: sender email address
+    :param str password: sender account password
+    :param str recipient: recipient email address
+    :param str subject: subject line of email
+    :param str message: message body of email
+    """
     email_regex = re.compile(r'''(
             [a-zA-Z0-9._%+-]+      # username
             @                      # @ symbol
