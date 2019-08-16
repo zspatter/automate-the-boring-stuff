@@ -16,7 +16,7 @@ def resize_and_add_logos(path, logo_path, scaling_factor):
     :param Path logo_path: logo image to add to all images
     :param float scaling_factor: scaling factor for resizing logo image
     """
-    files = get_image_files(path)
+    files = get_image_files(path=path)
     files.remove(logo_path)
     logo = resize_logo(logo=Image.open(logo_path), scaling_factor=scaling_factor)
     Path(path / 'with_logo').mkdir(exist_ok=True)

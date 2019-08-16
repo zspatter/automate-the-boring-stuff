@@ -20,7 +20,7 @@ def encrypt_pdfs(path, password):
     """
     for filepath, pdf, reader in pdf_reader_generator(path):
         if not reader.isEncrypted:
-            writer = copy_pdf_pages(reader)
+            writer = copy_pdf_pages(pdf_reader=reader)
             writer.encrypt(password)
 
             base, ext = splitext(basename(filepath))
@@ -30,7 +30,9 @@ def encrypt_pdfs(path, password):
                 writer.write(output)
 
             pdf.close()
-            remove_unencrypted_pdf(new_filepath, filepath, password)
+            remove_unencrypted_pdf(encrypted_path=new_filepath,
+                                   unencrypted_path=filepath,
+                                   password=password)
 
 
 def remove_unencrypted_pdf(encrypted_path, unencrypted_path, password):
@@ -65,10 +67,10 @@ def decrypt_pdfs(path, password):
                        r'(\.pdf)$',  # ends with .pdf
                        re.VERBOSE)
 
-    for filepath, pdf, reader in pdf_reader_generator(path):
+    for filepath, pdf, reader in pdf_reader_generator(path=path):
         if reader.isEncrypted:
             if reader.decrypt(password):
-                writer = copy_pdf_pages(reader)
+                writer = copy_pdf_pages(pdf_reader=reader)
 
                 match_object = regex.search(basename(filepath))
                 new_filepath = join(dirname(abspath(filepath)),
@@ -114,5 +116,5 @@ def copy_pdf_pages(pdf_reader):
 
 
 if __name__ == '__main__':
-    encrypt_pdfs(join('.', 'sample_files'), 'password')
-    decrypt_pdfs(join('.', 'sample_files'), 'password')
+    encrypt_pdfs(path=join('.', 'sample_files'), password='password')
+    decrypt_pdfs(path=join('.', 'sample_files'), password='password')

@@ -93,7 +93,7 @@ def insert_gap(root, prefix, extension, start, stop=None):
 
     # builds regex with given prefix and extension to find pattern matches
     regex = re.compile(f'(^{prefix})(\\d+)(.*)?(\\.{extension}$)')
-    matches = get_matching_files(root, regex)
+    matches = get_matching_files(root=root, regex=regex)
 
     # numbering sequence details
     max_length = len(regex.search(matches[-1]).group(2))
@@ -136,5 +136,5 @@ if __name__ == '__main__':
         with open(path / f'spam{x:03}.txt', 'w') as spam:
             spam.write(f'spam{x:03}')
 
-    fill_sequence_gap(path, 'spam', '.txt')
-    insert_gap(path, 'spam', '.txt', 5, 10)
+    fill_sequence_gap(root=path, prefix='spam', extension='.txt')
+    insert_gap(root=path, prefix='spam', extension='.txt', start=5, stop=10)

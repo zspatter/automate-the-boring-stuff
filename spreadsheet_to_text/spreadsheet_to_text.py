@@ -32,4 +32,4 @@ def spreadsheet_to_text(filename):
 
 if __name__ == '__main__':
     os.chdir(join(abspath('.'), 'sample_files'))
-    spreadsheet_to_text('text_to_sheet.xlsx')
+    spreadsheet_to_text(filename='text_to_sheet.xlsx')

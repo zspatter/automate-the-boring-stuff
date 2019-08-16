@@ -35,4 +35,4 @@ if __name__ == '__main__':
               ['O', 'O', 'O', 'O', '.', '.'],
               ['.', 'O', 'O', '.', '.', '.'],
               ['.', '.', '.', '.', '.', '.']]
-    print(format_grid(rotate_grid(input_)))
+    print(format_grid(grid=rotate_grid(grid=input_)))

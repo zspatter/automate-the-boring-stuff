@@ -39,7 +39,9 @@ def stopwatch():
             # builds results of current lap
             lap_time = f'{time.time() - previous_time:,.2f} s'
             total_time = f'{time.time() - start:,.2f} s'
-            row_content = build_row(lap_num, lap_time, total_time)
+            row_content = build_row(lap_num=lap_num,
+                                    lap_time=lap_time,
+                                    total_time=total_time)
 
             # increments stopwatch variables
             lap_num += 1
@@ -66,8 +68,8 @@ def build_header():
     return f"{build_table_border(outer_left='╔', inner='═', outer_right='╗')}" \
            f"\n║{'Stopwatch':^54}║" \
            f"\n{build_table_border(inner='╦')}" \
-           f"\n{'║':<3}{'Lap Number':^10}{column_spacer}" \
-           f"{'Lap Time':^14}{column_spacer}{'Total Time':^16}{'║':>3}" \
+           f"\n{'║':<3}{'Lap Number':^10}{COLUMN_SPACER}" \
+           f"{'Lap Time':^14}{COLUMN_SPACER}{'Total Time':^16}{'║':>3}" \
            f"\n{build_table_border()}"
 
 
@@ -93,10 +95,10 @@ def build_row(lap_num, lap_time, total_time):
     :param str total_time: formatted string representing total time in seconds
     :return: formatted unicode string representing an individual table row
     """
-    return f"{'║':<3}Lap #{lap_num:<5,}{column_spacer}" \
-           f"{lap_time:>14}{column_spacer}{total_time:>16}{'║':>3}"
+    return f"{'║':<3}Lap #{lap_num:<5,}{COLUMN_SPACER}" \
+           f"{lap_time:>14}{COLUMN_SPACER}{total_time:>16}{'║':>3}"
 
 
 if __name__ == '__main__':
-    column_spacer = '  ║  '
+    COLUMN_SPACER = '  ║  '
     stopwatch()

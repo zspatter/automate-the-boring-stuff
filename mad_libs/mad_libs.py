@@ -28,4 +28,4 @@ def mad_libs(source, destination):
 
 
 if __name__ == "__main__":
-    mad_libs('./sample_files/input.txt', './sample_files/output.txt')
+    mad_libs(source='./sample_files/input.txt', destination='./sample_files/output.txt')

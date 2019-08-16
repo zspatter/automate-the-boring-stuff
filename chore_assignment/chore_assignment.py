@@ -15,7 +15,7 @@ def allocate_chores(chores, emails):
     """
     chore_assignments = dict()
 
-    for email in email_generator(emails):
+    for email in email_generator(emails=emails):
         if not chores:
             break
 
@@ -62,7 +62,7 @@ def email_assigned_chores(chore_assignments):
         message = f'To: {recipient}' \
             f'\nSubject: Chore Assignments' \
             f'\nGreetings,' \
-            f'\n\nYour assigned chores are: {format_chores(chores)}.'
+            f'\n\nYour assigned chores are: {format_chores(chores=chores)}.'
 
         sendmail_status = smtp.sendmail(email, recipient, message)
 

@@ -32,8 +32,8 @@ def add_to_inventory(inventory, items):
 
 if __name__ == '__main__':
     inv = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
-    print(display_inventory(inv), '\n')
+    print(display_inventory(inventory=inv), '\n')
 
     dragon_loot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
-    add_to_inventory(inv, dragon_loot)
-    print(display_inventory(inv), '\n')
+    add_to_inventory(inventory=inv, items=dragon_loot)
+    print(display_inventory(inventory=inv), '\n')

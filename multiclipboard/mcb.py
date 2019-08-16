@@ -23,6 +23,20 @@ def save_entry(shelf, entry):
     pyperclip.copy(shelf[entry])
 
 
+def delete_entry(shelf, entry):
+    """
+    Deletes individual entry from shelve file
+
+    :param shelve.DbfilenameShelf shelf: source shelf file
+    :param str entry: key to remove from clipboard
+    """
+    if entry in shelf:
+        del shelf[entry]
+        pyperclip.copy(f'"{entry}" deleted from the multi-clipboard')
+    else:
+        pyperclip.copy(f'Error: deletion failed as there is no saved entry that matches "{entry}"')
+
+
 def list_entries(shelf):
     """
     Lists all entries saved in shelve file
@@ -48,20 +62,6 @@ def get_entry(shelf, entry):
         pyperclip.copy(f'Error: "{entry}" not found in multi-clipboard')
 
 
-def delete_entry(shelf, entry):
-    """
-    Deletes individual entry from shelve file
-
-    :param shelve.DbfilenameShelf shelf: source shelf file
-    :param str entry: key to remove from clipboard
-    """
-    if entry in shelf:
-        del shelf[entry]
-        pyperclip.copy(f'"{entry}" deleted from the multi-clipboard')
-    else:
-        pyperclip.copy(f'Error: deletion failed as there is no saved entry that matches "{entry}"')
-
-
 def delete_all_entries(shelf):
     """
     Deletes all data from shelf file
@@ -77,20 +77,20 @@ if __name__ == '__main__':
     if len(sys.argv) == 3:
         # save new entry
         if sys.argv[1].lower() == 'save':
-            save_entry(mcb_shelve, sys.argv[2])
+            save_entry(shelf=mcb_shelve, entry=sys.argv[2])
         # delete entry
         elif sys.argv[1].lower() == 'delete':
-            delete_entry(mcb_shelve, sys.argv[2])
+            delete_entry(shelf=mcb_shelve, entry=sys.argv[2])
 
     elif len(sys.argv) == 2:
         # list stored entries
         if sys.argv[1].lower() == 'list':
-            list_entries(mcb_shelve)
+            list_entries(shelf=mcb_shelve)
         # delete all entries
         elif sys.argv[1].lower() == 'delete':
-            delete_all_entries(mcb_shelve)
+            delete_all_entries(shelf=mcb_shelve)
         # copy value associated with key
         else:
-            get_entry(mcb_shelve, sys.argv[1])
+            get_entry(shelf=mcb_shelve, entry=sys.argv[1])
 
     mcb_shelve.close()

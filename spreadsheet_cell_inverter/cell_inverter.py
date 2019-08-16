@@ -31,4 +31,4 @@ def invert_cells(filename):
 
 if __name__ == '__main__':
     os.chdir(os.path.join(os.path.abspath('.'), 'sample_files'))
-    invert_cells('example.xlsx')
+    invert_cells(filename='example.xlsx')

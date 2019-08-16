@@ -24,8 +24,8 @@ def comma_code(collection):
 if __name__ == '__main__':
     test = ['cat', 'dog', 'bird', 'snake', 'rock']
     test2 = [3, 4, 5, 6]
-    print(comma_code(test))
-    print(comma_code(test2))
-    count = Counter(comma_code(test))
+    print(comma_code(collection=test))
+    print(comma_code(collection=test2))
+    count = Counter(comma_code(collection=test))
     print(count[','])
-    print(comma_code(['apples', 'bananas', 'tofu', 'cats']))
+    print(comma_code(collection=['apples', 'bananas', 'tofu', 'cats']))

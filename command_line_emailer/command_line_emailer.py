@@ -79,10 +79,10 @@ if __name__ == '__main__':
         session_sender = input('Enter your gmail email: ')
         session_password = getpass.getpass('Enter your email password: ')
 
-        emailer(session_sender,
-                session_password,
-                session_recipient,
-                session_subject,
-                session_message)
+        emailer(sender=session_sender,
+                password=session_password,
+                recipient=session_recipient,
+                subject=session_subject,
+                message=session_message)
     else:
         print("Usage: command_line_emailer.py [recipient] [subject] [message]")

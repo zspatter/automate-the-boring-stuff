@@ -5,12 +5,12 @@ import re
 import sys
 
 
-def check_pw_strength(pw):
+def check_pw_strength(password):
     """
     Determines if the argument satisfies the requirements of a strong
     password (uppercase, lowercase, digit, special character, and length >= 8)
 
-    :param str pw: password to evaluate
+    :param str password: password to evaluate
     :return: bool indicating whether or not the password is strong
     """
     pw_regex = re.compile(r'''
@@ -21,7 +21,7 @@ def check_pw_strength(pw):
         .{8,}$                          # at least 8 characters long
     ''', re.VERBOSE)
 
-    if pw_regex.search(pw):
+    if pw_regex.search(password):
         return True
     return False
 
@@ -31,7 +31,7 @@ if __name__ == "__main__":
         print('Usage: python strong_pw_detector.py [password] - determines if password is strong')
         exit()
 
-    if check_pw_strength(str(sys.argv[1])):
+    if check_pw_strength(password=str(sys.argv[1])):
         print('The tested password is strong!')
     else:
         print('The tested password is not strong!'

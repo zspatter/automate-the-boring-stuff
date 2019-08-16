@@ -32,4 +32,4 @@ if __name__ == "__main__":
                   ['Alice', 'Bob', 'Carol', 'David'],
                   ['dogs', 'cats', 'moose', 'goose']]
 
-    print(build_table(table_data))
+    print(build_table(data=table_data))

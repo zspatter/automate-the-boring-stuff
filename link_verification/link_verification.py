@@ -51,4 +51,4 @@ def verify_links(url):
 
 
 if __name__ == '__main__':
-    verify_links('https://nostarch.com')
+    verify_links(url='https://nostarch.com')

@@ -40,4 +40,4 @@ if __name__ == '__main__':
          (\.[a-zA-Z]{2,4})      # dot-something
          )''', re.VERBOSE)
 
-    print('\n'.join(regex_search(email_regex, Path('./sample_data'))))
+    print('\n'.join(regex_search(regex=email_regex, path=Path('./sample_data'))))

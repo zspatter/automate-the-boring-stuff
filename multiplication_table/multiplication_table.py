@@ -68,4 +68,4 @@ if __name__ == '__main__':
     if len(sys.argv) != 2:
         print('Usage: multiplication_table.py [max integer value]')
     else:
-        generate_multiplication_table(int(sys.argv[1]))
+        generate_multiplication_table(n=int(sys.argv[1]))

@@ -47,4 +47,4 @@ def text_to_spreadsheet(directory='.', output_file='text_to_sheet.xlsx'):
 
 
 if __name__ == '__main__':
-    text_to_spreadsheet(os.path.join(os.path.abspath('.'), 'sample_files'))
+    text_to_spreadsheet(directory=os.path.join(os.path.abspath('.'), 'sample_files'))

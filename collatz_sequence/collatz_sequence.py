@@ -15,6 +15,6 @@ if __name__ == '__main__':
     try:
         result = int(input("Enter number: "))
         while result != 1:
-            result = collatz(result)
+            result = collatz(number=result)
     except ValueError:
         print('Error: input must be an integer')

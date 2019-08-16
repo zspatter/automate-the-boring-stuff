@@ -32,7 +32,9 @@ def check_for_torrents(imap_domain, email_address, email_password, verification)
     unique_ids = imap.search(['FROM', verification['email'], 'SUBJECT', 'download'])
 
     if unique_ids:
-        links, remove_ids = check_emails(imap, unique_ids, verification)
+        links, remove_ids = check_emails(imap=imap,
+                                         unique_ids=unique_ids,
+                                         verification=verification)
         delete_instruction_emails(imap=imap, remove_ids=remove_ids)
         return links
 

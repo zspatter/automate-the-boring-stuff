@@ -34,7 +34,7 @@ def get_unsubscribe_links(imap_domain, email_address, email_password):
         message = pyzmail.PyzMessage.factory(raw_messages[unique_id][b'BODY[]'])
 
         if message.html_part:
-            links.extend(search_html_part(message))
+            links.extend(search_html_part(message=message))
 
     return links
 

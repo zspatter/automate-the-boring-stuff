@@ -21,7 +21,7 @@ def find_large_files(path, threshold):
         filepath = os.path.join(path, content)
 
         if os.path.isdir(filepath):
-            size = get_dir_size(filepath)
+            size = get_dir_size(path=filepath)
         else:
             size = os.path.getsize(filepath)
 
@@ -46,4 +46,4 @@ def get_dir_size(path):
 
 
 if __name__ == '__main__':
-    find_large_files(os.path.join('..', '..', '..'), 1_000_000)
+    find_large_files(path=os.path.join('..', '..', '..'), threshold=1_000_000)

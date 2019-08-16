@@ -51,4 +51,4 @@ def downloader(query, max_quantity=100, output_path=os.path.join('.', 'imgur')):
 
 
 if __name__ == '__main__':
-    downloader('happy', 50)
+    downloader(query='happy', max_quantity=50)
