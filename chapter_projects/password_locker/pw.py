@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 # pw.py - an insecure password locker program
+
 import sys
 
 import pyperclip

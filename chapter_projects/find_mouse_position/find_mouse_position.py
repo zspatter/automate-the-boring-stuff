@@ -1,3 +1,6 @@
+#! /usr/bin/env python3
+# find_mouse_position.py -
+
 import pyautogui
 
 

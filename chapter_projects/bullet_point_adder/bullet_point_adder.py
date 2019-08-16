@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 # bullet_point_adder.py - prefixes bullet points to each line of text on the clipboard
+
 import pyperclip
 
 text = pyperclip.paste()
