@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# resize_add_logo.py -
+# resize_add_logo.py - resizes images to standard square size and adds logo
 
 from pathlib import Path
 

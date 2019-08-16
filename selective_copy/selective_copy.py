@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
-# selective_copy.py - TODO generator?
+# selective_copy.py - selectively copies a specific filetype's matched
+#                       files to a destination directory TODO generator?
 
 import os
 import re

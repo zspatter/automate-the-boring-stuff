@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# spreadsheet_to_text.py -
+# spreadsheet_to_text.py - converts spreadsheet (.XLSX) to text (.TXT)
 
 import os
 from os.path import join, abspath

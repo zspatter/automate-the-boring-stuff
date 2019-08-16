@@ -5,6 +5,14 @@ import re
 
 
 def regex_strip(text, remove=None):
+    """
+    Takes a string and performs the same operation as str.strip()
+    This function defaults to removing whitespace, but if the optional
+    remove argument is supplied, the remove value is removed from the text
+
+    :param str text: source string
+    :param str remove: optional value to remove from source string
+    """
     if not remove:
         return re.compile(r'^\s*|\s*$').sub('', text)
     else:

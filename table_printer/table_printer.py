@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# table_printer.py - formats lists of string into a table
+# table_printer.py - formats lists of string into a tabular format
 
 
 def build_table(data):

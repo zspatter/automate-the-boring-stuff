@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# cell_inverter.py -
+# cell_inverter.py - rotates cells in spreadsheet (transpose)
 
 import os
 
@@ -7,6 +7,11 @@ import openpyxl
 
 
 def invert_cells(filename):
+    """
+    Creates a new sheet and rotates the active sheet's cells
+
+    :param str filename: path to source file (.XLSX)
+    """
     wb = openpyxl.load_workbook(filename=filename)
     sheet = wb.active
 

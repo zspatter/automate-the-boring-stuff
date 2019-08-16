@@ -1,5 +1,7 @@
 #! /usr/bin/env python3
-# umbrella_reminder.py -
+# umbrella_reminder.py - checks the chance of precipitation, and if the
+#                       chance is above the given threshold, a SMS message
+#                       is sent to notify the recipient
 
 from notifications import text_myself
 

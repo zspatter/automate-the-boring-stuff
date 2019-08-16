@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# row_inserter.py -
+# row_inserter.py - inserts blank row(s) into a spreadsheet at a specified index
 
 import sys
 

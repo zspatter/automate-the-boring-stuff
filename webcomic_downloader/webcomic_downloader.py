@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
-# webcomic_downloader.py -
+# webcomic_downloader.py - automatically downloads any webcomics
+#                           published since the last check
 
 import os
 import shelve

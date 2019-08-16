@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
-# auto_unsubscriber.py -
+# auto_unsubscriber.py - navigates to the unsubscribe link associated
+#                       with any emails in the inbox
 
 import imaplib
 import webbrowser

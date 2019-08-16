@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# torrent_downloader.py -
+# torrent_downloader.py - downloads torrents specified via magnet link through email
 
 import imaplib
 import subprocess

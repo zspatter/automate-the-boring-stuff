@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# text_to_spreadsheet.py -
+# text_to_spreadsheet.py - converts text (.TXT) to spreadsheet (.XLSX)
 
 import os
 
