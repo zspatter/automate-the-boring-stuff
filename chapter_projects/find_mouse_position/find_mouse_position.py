@@ -5,6 +5,9 @@ import pyautogui
 
 
 def get_mouse_position():
+    """
+    Prints coordinates and RGB value of current mouse position
+    """
     print('Press Ctrl-C to quit.\n')
     backspace = '\b'
 

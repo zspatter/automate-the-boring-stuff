@@ -10,5 +10,5 @@ At a high level, here’s what your program should do:
 
 ## Sample Output
 <p align=center>
-  <img src=./sample_output.png alt=sample console output>
+  <img src=./sample_output.gif alt=sample console output>
 </p>
