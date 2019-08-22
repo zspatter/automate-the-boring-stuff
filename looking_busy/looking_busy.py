@@ -25,10 +25,10 @@ def simulate_input(interval):
     pyautogui.moveRel(xOffset=x, yOffset=y, duration=random.uniform(a=0.1, b=0.5))
     pyautogui.moveRel(xOffset=-x, yOffset=-y, duration=random.uniform(a=0.1, b=0.5))
 
-    sleep(random.randint(a=1, b=interval % 120))
+    sleep(random.uniform(a=3.5, b=interval % 120 + 1))
     pyautogui.press(f'f{random.randint(15, 24)}')
 
-    sleep(random.randint(a=interval // 2, b=interval))
+    sleep(random.uniform(a=interval // 2, b=interval))
 
 
 def look_busy(interval=60):
