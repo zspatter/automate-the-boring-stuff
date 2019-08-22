@@ -24,6 +24,8 @@ def simulate_input(interval):
 
     pyautogui.moveRel(xOffset=x, yOffset=y, duration=random.uniform(a=0.1, b=0.5))
     pyautogui.moveRel(xOffset=-x, yOffset=-y, duration=random.uniform(a=0.1, b=0.5))
+
+    sleep(random.randint(a=1, b=interval % 120))
     pyautogui.press(f'f{random.randint(15, 24)}')
 
     sleep(random.randint(a=interval // 2, b=interval))
@@ -32,7 +34,7 @@ def simulate_input(interval):
 def look_busy(interval=60):
     """
     Continues to simulate mouse/keyboard input until the process is
-    explicitly interupted
+    explicitly interrupted
 
     :param float interval: max interval between mouse nudges
     """
@@ -86,6 +88,6 @@ def look_busy_for(interval=60, duration=timedelta(hours=1, minutes=30)):
 
 
 if __name__ == '__main__':
-    look_busy_until(interval=5 * 60, until=time(hour=10, minute=20))
-    # look_busy_for(interval=5 * 60, duration=timedelta(hours=1, minutes=30))
+    # look_busy_until(interval=5 * 60, until=time(hour=10, minute=20))
+    look_busy_for(interval=5 * 60, duration=timedelta(hours=1, minutes=30))
     # look_busy(interval=5 * 60)
