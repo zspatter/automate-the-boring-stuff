@@ -2,9 +2,21 @@
 # looking_busy.py - simple script that simulates user input to keep IM status active
 
 import random
+from datetime import datetime, time, timedelta
 from time import sleep
 
 import pyautogui
+
+
+def simulated_input(interval):
+    x = random.randint(a=-10, b=10)
+    y = random.randint(a=-10, b=10)
+
+    pyautogui.moveRel(xOffset=x, yOffset=y, duration=random.uniform(a=0.1, b=0.5))
+    pyautogui.moveRel(xOffset=-x, yOffset=-y, duration=random.uniform(a=0.1, b=0.5))
+    pyautogui.press(f'f{random.randint(15, 24)}')
+
+    sleep(random.randint(a=interval // 2, b=interval))
 
 
 def look_busy(interval=60):
@@ -20,18 +32,35 @@ def look_busy(interval=60):
     print('Press CTRL-C to quit.\n')
     try:
         while True:
-            x = random.randint(a=-10, b=10)
-            y = random.randint(a=-10, b=10)
-
-            pyautogui.moveRel(xOffset=x, yOffset=y, duration=random.uniform(a=0.1, b=0.5))
-            pyautogui.moveRel(xOffset=-x, yOffset=-y, duration=random.uniform(a=0.1, b=0.5))
-            pyautogui.press(f'f{random.randint(15, 24)}')
-
-            sleep(random.randint(a=interval // 2, b=interval))
+            simulated_input(interval=interval)
 
     except KeyboardInterrupt:
         print('Process quit.')
 
 
+def look_busy_until(interval=60, until=time(hour=10, minute=15)):
+    try:
+        while datetime.now().time() < until:
+            simulated_input(interval=interval)
+
+        pyautogui.hotkey('win', 'l')
+    except KeyboardInterrupt:
+        print('Process quit.')
+
+
+def look_busy_for(interval=60, duration=timedelta(hours=1, minutes=30)):
+    end = datetime.now() + duration
+
+    try:
+        while datetime.now() < end:
+            simulated_input(interval=interval)
+
+        pyautogui.hotkey('win', 'l')
+    except KeyboardInterrupt:
+        print('Process quit.')
+
+
 if __name__ == '__main__':
-    look_busy(interval=5 * 60)
+    look_busy_until(until=time(hour=11))
+    # look_busy_for(duration=timedelta(minutes=5))
+    # look_busy(interval=5 * 60)
