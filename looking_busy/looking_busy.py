@@ -3,8 +3,8 @@
 
 import ctypes
 import random
+import sys
 from datetime import datetime, time, timedelta
-from sys import exit
 from time import sleep
 
 import pyautogui
@@ -53,7 +53,7 @@ def look_busy(interval=60):
         print(f"{datetime.now().replace(microsecond=0)}: PyAutoGui's "
               f"fail-safe safety feature encountered. Process quit.")
     finally:
-        exit(0)
+        sys.exit(0)
 
 
 def look_busy_until(interval=60, until=time(hour=10, minute=15)):
@@ -80,7 +80,7 @@ def look_busy_until(interval=60, until=time(hour=10, minute=15)):
         print(f'{datetime.now().replace(microsecond=0)}: Process complete - logging out.')
         ctypes.windll.user32.LockWorkStation()
     finally:
-        exit(0)
+        sys.exit(0)
 
 
 def look_busy_for(interval=60, duration=timedelta(hours=1, minutes=30)):
@@ -109,7 +109,7 @@ def look_busy_for(interval=60, duration=timedelta(hours=1, minutes=30)):
         print(f'{datetime.now().replace(microsecond=0)}: Process complete - logging out.')
         ctypes.windll.user32.LockWorkStation()
     finally:
-        exit(0)
+        sys.exit(0)
 
 
 if __name__ == '__main__':
