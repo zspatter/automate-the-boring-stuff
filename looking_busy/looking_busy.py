@@ -4,6 +4,7 @@
 import ctypes
 import random
 from datetime import datetime, time, timedelta
+from sys import exit
 from time import sleep
 
 import pyautogui
@@ -39,13 +40,20 @@ def look_busy(interval=60):
     :param float interval: max interval between mouse nudges
     """
     try:
-        print('Press CTRL-C to quit.\n')
+        print(f'{datetime.now().replace(microsecond=0)}: Process start.'
+              f'\nPress CTRL-C to quit at any time.\n')
 
         while True:
             simulate_input(interval=interval)
 
     except KeyboardInterrupt:
-        print('Process quit.')
+        print(f'{datetime.now().replace(microsecond=0)}: Process '
+              f'interrupted via keyboard input. Process quit.')
+    except pyautogui.FailSafeException:
+        print(f"{datetime.now().replace(microsecond=0)}: PyAutoGui's "
+              f"fail-safe safety feature encountered. Process quit.")
+    finally:
+        exit(0)
 
 
 def look_busy_until(interval=60, until=time(hour=10, minute=15)):
@@ -56,15 +64,23 @@ def look_busy_until(interval=60, until=time(hour=10, minute=15)):
     :param datetime.time until: time to stop input
     """
     try:
-        print('Press CTRL-C to quit.\n')
+        print(f'{datetime.now().replace(microsecond=0)}: Process start.'
+              f'\nPress CTRL-C to quit at any time.\n')
 
         while datetime.now().time() < until:
             simulate_input(interval=interval)
 
-        ctypes.windll.user32.LockWorkStation()
-
     except KeyboardInterrupt:
-        print('Process quit.')
+        print(f'{datetime.now().replace(microsecond=0)}: Process '
+              f'interrupted via keyboard input. Process quit.')
+    except pyautogui.FailSafeException:
+        print(f"{datetime.now().replace(microsecond=0)}: PyAutoGui's "
+              f"fail-safe safety feature encountered. Process quit.")
+    else:
+        print(f'{datetime.now().replace(microsecond=0)}: Process complete - logging out.')
+        ctypes.windll.user32.LockWorkStation()
+    finally:
+        exit(0)
 
 
 def look_busy_for(interval=60, duration=timedelta(hours=1, minutes=30)):
@@ -77,17 +93,26 @@ def look_busy_for(interval=60, duration=timedelta(hours=1, minutes=30)):
     end = datetime.now() + duration
 
     try:
-        print('Press CTRL-C to quit.\n')
+        print(f'{datetime.now().replace(microsecond=0)}: Process start.'
+              f'\nPress CTRL-C to quit at any time.\n')
+
         while datetime.now() < end:
             simulate_input(interval=interval)
 
-        ctypes.windll.user32.LockWorkStation()
-
     except KeyboardInterrupt:
-        print('Process quit.')
+        print(f'{datetime.now().replace(microsecond=0)}: Process '
+              f'interrupted via keyboard input. Process quit.')
+    except pyautogui.FailSafeException:
+        print(f"{datetime.now().replace(microsecond=0)}: PyAutoGui's "
+              f"fail-safe safety feature encountered. Process quit.")
+    else:
+        print(f'{datetime.now().replace(microsecond=0)}: Process complete - logging out.')
+        ctypes.windll.user32.LockWorkStation()
+    finally:
+        exit(0)
 
 
 if __name__ == '__main__':
     # look_busy_until(interval=5 * 60, until=time(hour=10, minute=20))
-    look_busy_for(interval=5 * 60, duration=timedelta(hours=1, minutes=30))
+    look_busy_for(interval=5 * 60, duration=timedelta(hours=2, minutes=0))
     # look_busy(interval=5 * 60)
