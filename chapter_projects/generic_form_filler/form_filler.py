@@ -95,8 +95,8 @@ def submit_another_coords(path1, path2):
 
 
 if __name__ == '__main__':
-    name_field = pyautogui.center(
-        pyautogui.locateOnScreen(str(Path('images/name_field.png'))))  # lgtm [py/call/wrong-arguments]
+    name_field_box = pyautogui.locateOnScreen(str(Path('images/name_field.png')))  # lgtm [py/call/wrong-arguments]
+    name_field = pyautogui.center(name_field_box)  # lgtm [py/call/wrong-arguments]
     pyautogui.PAUSE = 0.5
 
     form_data = [{'name':     'Alice',
