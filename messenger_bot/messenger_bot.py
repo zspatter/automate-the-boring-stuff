@@ -37,7 +37,7 @@ def send_notification(recipient, notification):
         pyautogui.typewrite(recipient)
         pyautogui.press('enter')
 
-        if not pyautogui.locateOnScreen('active_identifier.png'):
+        if not pyautogui.locateOnScreen('active_identifier.png'):  # lgtm [py/call/wrong-arguments]
             print(f'{recipient} is not active - message not sent.')
             return
 
