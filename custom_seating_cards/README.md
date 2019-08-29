@@ -1,4 +1,4 @@
-a# Custom Seating Cards
+# Custom Seating Cards
 
 [Chapter 13's Custom Invitations as Word Documents](../custom_invitations/)  included a practice project to create custom invitations from a list of guests in a plaintext file. As an additional project, use the `pillow` module to create images for custom seating cards for your guests. For each of the guests listed in the guests.txt file, generate an image file with the guest name and some flowery decoration.
 
