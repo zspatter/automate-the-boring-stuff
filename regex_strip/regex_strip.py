@@ -16,7 +16,7 @@ def regex_strip(text, remove=None):
     if not remove:
         return re.compile(r'^\s*|\s*$').sub('', text)
     else:
-        return re.compile(f'^({remove})+|({remove})+$').sub('', text)
+        return re.compile(f'^({remove})*|({remove})*$').sub('', text)
 
 
 if __name__ == "__main__":
