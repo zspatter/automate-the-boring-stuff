@@ -21,6 +21,9 @@ def regex_strip(text, remove=None):
 
 if __name__ == "__main__":
     print(f"'     test     ' \t->\t '{regex_strip(text='     test     ')}'")
-    print(f"'123home123' \t\t->\t '{regex_strip(text='123home123', remove='123')}'")
-    print(f"'123home123home123' \t\t->\t '{regex_strip(text='123home123home123', remove='123')}'")
-    print(f"'123123home123home123123' \t\t->\t '{regex_strip(text='123123home123home123123', remove='123')}'")
+    print(f"'123home123' \t\t->\t "
+          f"'{regex_strip(text='123home123', remove='123')}'")
+    print(f"'123home123home123' \t\t->\t "
+          f"'{regex_strip(text='123home123home123', remove='123')}'")
+    print(f"'123123home123home123123' \t\t->\t "
+          f"'{regex_strip(text='123123home123home123123', remove='123')}'")
