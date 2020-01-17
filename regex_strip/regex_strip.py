@@ -16,9 +16,11 @@ def regex_strip(text, remove=None):
     if not remove:
         return re.compile(r'^\s*|\s*$').sub('', text)
     else:
-        return re.compile(str(remove)).sub('', text)
+        return re.compile(f'^({remove})+|({remove})+$').sub('', text)
 
 
 if __name__ == "__main__":
     print(f"'     test     ' \t->\t '{regex_strip(text='     test     ')}'")
     print(f"'123home123' \t\t->\t '{regex_strip(text='123home123', remove='123')}'")
+    print(f"'123home123home123' \t\t->\t '{regex_strip(text='123home123home123', remove='123')}'")
+    print(f"'123123home123home123123' \t\t->\t '{regex_strip(text='123123home123home123123', remove='123')}'")
